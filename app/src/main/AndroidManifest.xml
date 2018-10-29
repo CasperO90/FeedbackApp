@@ -24,7 +24,10 @@
         <activity android:name=".Tab4" />
         <activity android:name=".Tab5" />
         <activity android:name=".Tab6" />
-        <activity android:name=".StartActivity"></activity>
+        <activity android:name=".StartActivity" />
+        <activity android:name=".MoedeDeltagActivity" />
+        <activity android:name=".FoersteLederActivity" />
+        <activity android:name=".LederOpretMoedeActivity"></activity>
     </application>
 
 </manifest>
