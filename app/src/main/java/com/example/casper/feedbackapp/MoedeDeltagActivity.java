@@ -22,7 +22,7 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
     }
 
     public void deltagMøde(){
-        Intent intent = new Intent(this, Tab1.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 

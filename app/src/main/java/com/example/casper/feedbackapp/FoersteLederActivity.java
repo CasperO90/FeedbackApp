@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 
 public class FoersteLederActivity extends AppCompatActivity implements OnClickListener{
 
-    private Button opretMødeBtn, startmødeBtn, tilbageBtn;
+    private Button opretMødeBtn, startMødeBtn, tilbageBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +17,11 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         setContentView(R.layout.activity_foerste_leder);
 
         //Button
-        opretMødeBtn = findViewById(R.id.opretmødeBtn);
+        opretMødeBtn = findViewById(R.id.opretMødeBtn);
         opretMødeBtn.setOnClickListener(this);
 
-        startmødeBtn = findViewById(R.id.startmødeBtn);
-        startmødeBtn.setOnClickListener(this);
+        startMødeBtn = findViewById(R.id.startMødeBtn);
+        startMødeBtn.setOnClickListener(this);
 
         tilbageBtn = findViewById(R.id.tilbageBtn);
         tilbageBtn.setOnClickListener(this);

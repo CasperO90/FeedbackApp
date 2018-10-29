@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Tab1" />
         <activity
-            android:name=".MainActivity"
+            android:name=".StartActivity"
             android:label="feedbackapp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,10 +24,11 @@
         <activity android:name=".Tab4" />
         <activity android:name=".Tab5" />
         <activity android:name=".Tab6" />
-        <activity android:name=".StartActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".MoedeDeltagActivity" />
         <activity android:name=".FoersteLederActivity" />
-        <activity android:name=".LederOpretMoedeActivity"></activity>
+        <activity android:name=".LederOpretMoedeActivity" />
+        <activity android:name=".deltagerDagsordenActivity"></activity>
     </application>
 
 </manifest>
