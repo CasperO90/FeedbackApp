@@ -11,9 +11,15 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Tab1" />
         <activity
-            android:name=".Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name="com.example.casper.feedbackapp.MainActivity"
+            android:label="feedbackapp">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".Tab2" />
         <activity android:name=".Tab3" />
         <activity android:name=".Tab4" />
