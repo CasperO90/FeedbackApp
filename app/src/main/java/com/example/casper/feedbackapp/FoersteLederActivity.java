@@ -37,6 +37,11 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         startActivity(intent);
     }
 
+    public void startMøde(){
+        Intent intent = new Intent(this, LederStartMoedeActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void onClick(View view) {
         if(view instanceof Button){
@@ -45,9 +50,11 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
             if(button == tilbageBtn){
                 tilbage();
             }
-
             else if(button == opretMødeBtn){
                 opretMøde();
+            }
+            else if(button == startMødeBtn){
+                startMøde();
             }
         }
     }

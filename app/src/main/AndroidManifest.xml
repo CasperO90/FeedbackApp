@@ -28,7 +28,8 @@
         <activity android:name=".MoedeDeltagActivity" />
         <activity android:name=".FoersteLederActivity" />
         <activity android:name=".LederOpretMoedeActivity" />
-        <activity android:name=".deltagerDagsordenActivity"></activity>
+        <activity android:name=".deltagerDagsordenActivity" />
+        <activity android:name=".LederStartMoedeActivity"></activity>
     </application>
 
 </manifest>
