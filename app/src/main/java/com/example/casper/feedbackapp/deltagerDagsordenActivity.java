@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class deltagerDagsordenActivity extends AppCompatActivity implements OnClickListener {
 
-    private Button feedbackBtn, tilbageBtn;
+    private Button feedbackBtn, tilbageLederBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,8 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         feedbackBtn = findViewById(R.id.feedbackBtn);
         feedbackBtn.setOnClickListener(this);
 
-        tilbageBtn = findViewById(R.id.tilbageBtn);
-        tilbageBtn.setOnClickListener(this);
+        tilbageLederBtn = findViewById(R.id.tilbageLederBtn);
+        tilbageLederBtn.setOnClickListener(this);
     }
 
     public void startFeedback() {
@@ -43,7 +43,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
                 startFeedback();
             }
 
-            else if(button == tilbageBtn){
+            else if(button == tilbageLederBtn){
                 tilbage();
             }
 
