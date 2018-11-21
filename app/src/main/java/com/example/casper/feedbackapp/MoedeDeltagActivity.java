@@ -28,13 +28,9 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
 
     @Override
     public void onClick(View view) {
-        if(view instanceof Button){
-            Button button = (Button) view;
-
-            if(button == deltagBtn){
-                deltagMøde();
+        if(view == deltagBtn){
+           deltagMøde();
             }
         }
-    }
-}
 
+}

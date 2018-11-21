@@ -30,7 +30,8 @@
         <activity android:name=".LederOpretMoedeActivity" />
         <activity android:name=".deltagerDagsordenActivity" />
         <activity android:name=".LederStartMoedeActivity" />
-        <activity android:name=".Highscore"></activity>
+        <activity android:name=".Highscore" />
+        <activity android:name=".MoedeOprettet"></activity>
     </application>
 
 </manifest>
