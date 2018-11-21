@@ -44,18 +44,15 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
 
     @Override
     public void onClick(View view) {
-        if(view instanceof Button){
-            Button button = (Button) view;
-
-            if(button == tilbageBtn){
-                tilbage();
-            }
-            else if(button == opretMødeBtn){
-                opretMøde();
-            }
-            else if(button == startMødeBtn){
-                startMøde();
-            }
+        if(view == tilbageBtn){
+            tilbage();
+        }
+        if(view == opretMødeBtn){
+            opretMøde();
+        }
+        else if(view == startMødeBtn){
+            startMøde();
         }
     }
 }
+
