@@ -14,13 +14,13 @@ public class AppState {
 
     public static int getMødeID(){return mødeID;}
 
-    public static int hentMødeID(SharedPreferences preferences){
-        int loadMødeID = preferences.getInt(MØDEIDE, 0);
+    public static String hentMødeID(SharedPreferences preferences){
+        String loadMødeID = preferences.getString(MØDEIDE,"");
         return loadMødeID;
     }
 
     public static void gemMødeID(SharedPreferences preferences){
-        int nytMødeID = hentMødeID(preferences);
+        String nytMødeID = hentMødeID(preferences);
 
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt(MØDEIDE, 0);
