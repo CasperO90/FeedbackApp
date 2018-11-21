@@ -36,17 +36,14 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
     @Override
     public void onClick(View view) {
-        if (view instanceof Button) {
-            Button button = (Button) view;
-
-            if(button == feedbackBtn){
+        if(view == feedbackBtn){
                 startFeedback();
             }
 
-            else if(button == tilbageLederBtn){
-                tilbage();
-            }
-
+        if(view == tilbageLederBtn){
+            tilbage();
         }
+
+
     }
 }
