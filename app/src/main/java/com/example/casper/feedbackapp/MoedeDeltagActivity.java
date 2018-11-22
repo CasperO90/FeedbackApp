@@ -7,17 +7,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MoedeDeltagActivity extends AppCompatActivity implements OnClickListener{
 
     private Button deltagBtn;
     private EditText indtastMødeID;
-    private String MødeIDIntastet;
-    private String nytMødeID;
+    private int MødeIDIntastet;
+    private int nytMødeID;
+    private TextView tekst;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,46 +31,30 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         deltagBtn = findViewById(R.id.deltagBtn);
         deltagBtn.setOnClickListener(this);
 
-        //EditText
-        indtastMødeID.findViewById(R.id.indtastMødeID);
-        MødeIDIntastet = indtastMødeID.getText().toString();
 
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        //Edittxt
+        indtastMødeID = findViewById(R.id.indtastMødeID);
+
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
 
-        nytMødeID = AppState.hentMødeID(preferences);
+        nytMødeID = AppState.getMødeID();
 
-        indtastMødeID.addTextChangedListener (mødeIDWatcher);
+
+       tekst = findViewById(R.id.textView5);
+       tekst.setText(" her er dit id " + nytMødeID);
     }
 
-    private TextWatcher mødeIDWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            String mødeIDInput = MødeIDIntastet.toString().trim();
-
-            deltagBtn.setEnabled(nytMødeID == mødeIDInput);
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-
-        }
-    };
-
     public void deltagMøde(){
-        Intent intent = new Intent(this, deltagerDagsordenActivity.class);
-        startActivity(intent);
+            Intent intent = new Intent(this, deltagerDagsordenActivity.class);
+            startActivity(intent);
     }
 
     @Override
     public void onClick(View view) {
-        if(view == deltagBtn){
-           deltagMøde();
+            if(view == deltagBtn){
+                deltagMøde();
             }
         }
 
