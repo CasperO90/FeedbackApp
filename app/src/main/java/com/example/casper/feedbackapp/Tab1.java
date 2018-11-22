@@ -1,5 +1,6 @@
 package com.example.casper.feedbackapp;
 
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -27,6 +28,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
     Button surBtn,neutralBtn,tilfredsBtn,gladBtn;
     int a,b,c,d = 0;
+    TextView spm1;
 
     //public static betyder at værdierne kan blive videre givet, så når jeg kalder på dem i en anden klasse
     //har de samme værdier.
@@ -37,15 +39,16 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab1, container, false);
 
-
-
+        //Resources res = getResources();
 
         surBtn = (Button) view.findViewById(R.id.surBtn);
         neutralBtn = (Button) view.findViewById(R.id.neutralBtn);
         tilfredsBtn = (Button) view.findViewById(R.id.tilfredsBtn);
         gladBtn = (Button) view.findViewById(R.id.gladBtn);
 
+        spm1 = (TextView) view.findViewById(R.id.spm1TextView);
 
+        spm1.setText(R.string.spm1);
 
 
         surBtn.setOnClickListener(this);
@@ -57,6 +60,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         neutralBtn.setAlpha(0.2f);
         tilfredsBtn.setAlpha(0.2f);
         gladBtn.setAlpha(0.2f);
+
 
 
 

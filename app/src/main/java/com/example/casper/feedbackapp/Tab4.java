@@ -1,5 +1,6 @@
 package com.example.casper.feedbackapp;
 
+import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,12 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Tab4 extends Fragment implements View.OnClickListener {
 
 
     Button surBtn,neutralBtn,tilfredsBtn,gladBtn;
     int a,b,c,d = 0;
+    TextView spm4;
 
     public static int sur3,neutral3,tilfreds3,glad3;
 
@@ -24,13 +27,16 @@ public class Tab4 extends Fragment implements View.OnClickListener {
 
 
 
-
+        Resources res = getResources();
 
         surBtn = (Button) view.findViewById(R.id.surBtn);
         neutralBtn = (Button) view.findViewById(R.id.neutralBtn);
         tilfredsBtn = (Button) view.findViewById(R.id.tilfredsBtn);
         gladBtn = (Button) view.findViewById(R.id.gladBtn);
 
+        spm4 = (TextView) view.findViewById(R.id.spm4TextView);
+
+        spm4.setText(R.string.spm4);
 
 
 

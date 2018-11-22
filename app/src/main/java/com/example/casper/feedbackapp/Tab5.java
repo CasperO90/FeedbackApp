@@ -9,12 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class Tab5 extends Fragment implements View.OnClickListener {
 
 
     Button surBtn,neutralBtn,tilfredsBtn,gladBtn;
     int a,b,c,d = 0;
+    TextView spm5;
 
     public static int sur4,neutral4,tilfreds4,glad4;
 
@@ -31,7 +33,9 @@ public class Tab5 extends Fragment implements View.OnClickListener {
         tilfredsBtn = (Button) view.findViewById(R.id.tilfredsBtn);
         gladBtn = (Button) view.findViewById(R.id.gladBtn);
 
+        spm5 = (TextView) view.findViewById(R.id.spm5TextView);
 
+        spm5.setText(R.string.spm5);
 
 
         surBtn.setOnClickListener(this);

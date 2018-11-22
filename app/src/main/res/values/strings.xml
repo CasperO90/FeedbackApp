@@ -6,4 +6,29 @@
     <string name="title_activity_main2">Main2Activity</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="spm1">
+        Var mødet for kort?
+    </string>
+
+    <string name="spm2">
+        Fik du noget ud af at deltage?
+    </string>
+
+    <string name="spm3">
+        Startede mødet til tiden?
+    </string>
+
+    <string name="spm4">
+        Holdte mødeleder sig til planen?
+    </string>
+
+    <string name="spm5">
+       Synes du alt blev dækket?
+    </string>
+
+    <string name="spm6">
+        Hvordan vurderer du mødelederens indsats idag?
+    </string>
+
 </resources>
