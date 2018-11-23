@@ -47,7 +47,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         tilfredsBtn = (Button) view.findViewById(R.id.tilfredsBtn);
         gladBtn = (Button) view.findViewById(R.id.gladBtn);
 
-       //spm1 = (TextView) view.findViewById(R.id.sp
+       spm1 = (TextView) view.findViewById(R.id.spm1TextView);
 
         spm1.setText(R.string.spm1);
 
