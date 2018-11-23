@@ -16,7 +16,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
     private TextView mødeIdTekst;
     private int mødeID;
     private String mødeID1;
-    private Button button5;
+    private Button button5,button7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,8 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
 
         button5 = findViewById(R.id.button5);
         button5.setOnClickListener(this);
+        button7 = findViewById(R.id.button7);
+        button7.setOnClickListener(this);
 
     }
 
@@ -51,5 +53,26 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
             Intent intent = new Intent(this, MoedeDeltagActivity.class);
             startActivity(intent);
         }
+
+        if(view == button7) {
+            afslutAlleActivity();
+
+        }
+
+
+
+
+
+
     }
+
+
+    public void afslutAlleActivity(){
+        Intent intent = new Intent(this, FoersteLederActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+        finish();
+    }
+
+
 }
