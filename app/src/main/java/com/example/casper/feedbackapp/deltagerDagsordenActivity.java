@@ -13,7 +13,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
     private Button feedbackBtn, tilbageLederBtn;
 
-    TextView tv,tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
+    private TextView tv,tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
 
     LederOpretMoedeActivity id = new LederOpretMoedeActivity();
 
@@ -46,17 +46,65 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
 
 
-            // textviews der står tekst i hvis brugeren har oprettet dem
+                checkTextTOM();
+
+
+
+
+
+    }
+
+
+
+    @Override
+    public void onClick(View view) {
+        if(view == feedbackBtn){
+                startFeedback();
+            }
+
+        if(view == tilbageLederBtn){
+            tilbage();
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    public void startFeedback() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    public void tilbage() {
+        Intent intent = new Intent(this, MoedeDeltagActivity.class);
+        startActivity(intent);
+    }
+
+
+
+
+
+    public void checkTextTOM(){
+
+        // textviews der står tekst i hvis brugeren har oprettet dem
         if(id.text == null){
-            Log.d("test","IF");
             tv.setText("");
         }
         else if(id.text.equals("")){
-            Log.d("test","ELSE IF");
-                tv.setText("");
-            }
+            tv.setText("");
+        }
         else {
-            Log.d("test","ELSE ");
+
             tv.setText("Punkt 1: " +id.text);
         }
 
@@ -75,7 +123,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
         if(id.text2 == null){
             tv2.setText("");
-            }
+        }
 
         else if(id.text2.equals("")) {
             tv2.setText("");
@@ -192,48 +240,5 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
 
 
-
-
-
-
-
-
-
-    }
-
-
-
-    @Override
-    public void onClick(View view) {
-        if(view == feedbackBtn){
-                startFeedback();
-            }
-
-        if(view == tilbageLederBtn){
-            tilbage();
-        }
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-    public void startFeedback() {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
-
-    public void tilbage() {
-        Intent intent = new Intent(this, MoedeDeltagActivity.class);
-        startActivity(intent);
     }
 }
