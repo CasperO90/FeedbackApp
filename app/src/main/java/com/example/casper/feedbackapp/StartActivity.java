@@ -12,8 +12,7 @@ import java.nio.channels.InterruptedByTimeoutException;
 
 public class StartActivity extends AppCompatActivity implements OnClickListener{
 
-    private Button deltagBtn;
-    private Button lederBtn, facebookBtn, linkedinBtn, hjemmesideBtn;
+        private Button lederBtn, facebookBtn, linkedinBtn, hjemmesideBtn, deltagBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

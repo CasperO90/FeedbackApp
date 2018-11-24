@@ -54,9 +54,9 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
     public void deltagMøde() {
 
         String værdi = editText5.getText().toString();
-        if(værdi.matches("")){
+        if (værdi.matches("")) {
             Toast.makeText(this, "Du har ikke indtastet et id", Toast.LENGTH_SHORT).show();
-return;
+            return;
         }
 
         finalID = Integer.parseInt(værdi);

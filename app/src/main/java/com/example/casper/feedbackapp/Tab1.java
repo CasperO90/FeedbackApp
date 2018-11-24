@@ -17,62 +17,46 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 
-
-
-
-
-
 public class Tab1 extends Fragment implements View.OnClickListener {
 
 
-
-
-    Button surBtn,neutralBtn,tilfredsBtn,gladBtn;
-    int a,b,c,d = 0;
+    Button surBtn, neutralBtn, tilfredsBtn, gladBtn;
+    int a, b, c, d = 0;
     TextView spm1;
 
     //public static betyder at værdierne kan blive videre givet, så når jeg kalder på dem i en anden klasse
     //har de samme værdier.
 
-    public static int sur,neutral,tilfreds,glad;
+    public static int sur, neutral, tilfreds, glad;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab1, container, false);
 
-        //Resources res = getResources();
-
-        surBtn = (Button) view.findViewById(R.id.surBtn);
-        neutralBtn = (Button) view.findViewById(R.id.neutralBtn);
-        tilfredsBtn = (Button) view.findViewById(R.id.tilfredsBtn);
-        gladBtn = (Button) view.findViewById(R.id.gladBtn);
-
-       spm1 = (TextView) view.findViewById(R.id.spm1TextView);
-
-        spm1.setText(R.string.spm1);
-
-
+        //Buttons
+        surBtn = view.findViewById(R.id.surBtn);
         surBtn.setOnClickListener(this);
+
+        neutralBtn = view.findViewById(R.id.neutralBtn);
         neutralBtn.setOnClickListener(this);
+
+        tilfredsBtn = view.findViewById(R.id.tilfredsBtn);
         tilfredsBtn.setOnClickListener(this);
+
+        gladBtn = view.findViewById(R.id.gladBtn);
         gladBtn.setOnClickListener(this);
+
+        //Textview
+        spm1 = view.findViewById(R.id.spm1TextView);
+        spm1.setText(R.string.spm1);
 
         surBtn.setAlpha(0.2f);
         neutralBtn.setAlpha(0.2f);
         tilfredsBtn.setAlpha(0.2f);
         gladBtn.setAlpha(0.2f);
 
-
-
-
         return view;
-
-
-
-
     }
-
-
 
     // her bliver stemmerne givet, når brugeren trykker på knappen sætter den alle de andre værdier
     // til 0 for man kan kun stemme engang.
@@ -81,7 +65,6 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
 
         if (v == surBtn) {
 
@@ -94,20 +77,17 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                 sur = 1;
                 neutral = 0;
                 tilfreds = 0;
-                glad=0;
+                glad = 0;
                 surBtn.setAlpha(1f);
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
-
-
             }
+        }
 
-
-        } else if (v == neutralBtn) {
+        else if (v == neutralBtn) {
 
             b++;
-
 
             if (b == 1) {
                 a = 0;
@@ -116,17 +96,16 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
                 sur = 0;
                 neutral = 1;
-                tilfreds =0;
-                glad=0;
+                tilfreds = 0;
+                glad = 0;
                 surBtn.setAlpha(0.2f);
                 neutralBtn.setAlpha(1f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
-
             }
+        }
 
-
-        } else if (v == tilfredsBtn) {
+        else if (v == tilfredsBtn) {
 
             c++;
 
@@ -146,7 +125,6 @@ public class Tab1 extends Fragment implements View.OnClickListener {
             }
         }
 
-
         else if (v == gladBtn) {
 
             d++;
@@ -164,17 +142,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(1f);
-
             }
-
         }
-
-
-
     }
-
-
-
-    }
-
-
+}

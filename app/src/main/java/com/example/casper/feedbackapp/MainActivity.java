@@ -30,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
+        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        // setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -103,42 +103,39 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
         }
+
         // her skal der tilføjes et nyt item hvis vi skal lave flere tabs
         @Override
         public Fragment getItem(int position) {
-            switch (position){
+            switch (position) {
                 case 0:
                     Tab1 tab1 = new Tab1();
                     return tab1;
                 case 1:
                     Tab2 tab2 = new Tab2();
-                    return  tab2;
+                    return tab2;
 
                 case 2:
                     Tab3 tab3 = new Tab3();
-                    return  tab3;
+                    return tab3;
 
                 case 3:
                     Tab4 tab4 = new Tab4();
-                    return  tab4;
+                    return tab4;
                 case 4:
                     Tab5 tab5 = new Tab5();
-                    return  tab5;
+                    return tab5;
 
                 case 5:
                     Tab6 tab6 = new Tab6();
-                    return  tab6;
+                    return tab6;
             }
-            return  null;
+            return null;
         }
 
         @Override

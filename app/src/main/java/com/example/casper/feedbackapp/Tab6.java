@@ -16,16 +16,13 @@ import android.widget.TextView;
 
 public class Tab6 extends Fragment implements View.OnClickListener {
 
+    Button surBtn,neutralBtn,tilfredsBtn,gladBtn, btn;
 
-    Button surBtn,neutralBtn,tilfredsBtn,gladBtn;
-    int a,b,c,d = 0;
     TextView spm6;
 
     public static int sur5,neutral5,tilfreds5,glad5;
-    Button btn;
-
     public static int sur,neutral,tilfreds,glad;
-
+    int a,b,c,d = 0;
 
     Tab1 Score1 = new Tab1();
     Tab2 Score2 = new Tab2();
@@ -33,35 +30,32 @@ public class Tab6 extends Fragment implements View.OnClickListener {
     Tab4 Score4 = new Tab4();
     Tab5 Score5 = new Tab5();
 
-
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab6, container, false);
 
+        //Buttons
+        btn = view.findViewById(R.id.button3);
 
-
-
-        btn =(Button) view.findViewById(R.id.button3);
-        surBtn = (Button) view.findViewById(R.id.surBtn);
-        neutralBtn = (Button) view.findViewById(R.id.neutralBtn);
-        tilfredsBtn = (Button) view.findViewById(R.id.tilfredsBtn);
-        gladBtn = (Button) view.findViewById(R.id.gladBtn);
-
-        spm6 = (TextView) view.findViewById(R.id.spm6TextView);
-
-        spm6.setText(R.string.spm6);
-
+        surBtn = view.findViewById(R.id.surBtn);
         surBtn.setOnClickListener(this);
+
+        neutralBtn = view.findViewById(R.id.neutralBtn);
         neutralBtn.setOnClickListener(this);
+
+        tilfredsBtn = view.findViewById(R.id.tilfredsBtn);
         tilfredsBtn.setOnClickListener(this);
+
+        gladBtn = view.findViewById(R.id.gladBtn);
         gladBtn.setOnClickListener(this);
+
+        //Textview
+        spm6 = view.findViewById(R.id.spm6TextView);
+        spm6.setText(R.string.spm6);
 
         surBtn.setAlpha(0.2f);
         neutralBtn.setAlpha(0.2f);
         tilfredsBtn.setAlpha(0.2f);
         gladBtn.setAlpha(0.2f);
-
-
-
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,17 +67,10 @@ public class Tab6 extends Fragment implements View.OnClickListener {
                     intent.putExtra("tilfreds", String.valueOf(tilfreds));
                     intent.putExtra("glad", String.valueOf(glad));
                     getActivity().startActivity(intent);
-                    Log.d("sker det her ","gør det ");
-
-
             }
         });
 
-
-
         return view;
-
-
     }
 
     @Override
@@ -104,10 +91,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
-
-
             }
-
 
         } else if (v == neutralBtn) {
 
@@ -127,9 +111,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
                 neutralBtn.setAlpha(1f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
-
             }
-
 
         } else if (v == tilfredsBtn) {
 
@@ -151,7 +133,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
             }
         }
 
-
         else if (v == gladBtn) {
 
             d++;
@@ -169,22 +150,12 @@ public class Tab6 extends Fragment implements View.OnClickListener {
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(1f);
-
             }
-
         }
-
-
-
 
         sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3+ Score5.sur4 +sur5;
         neutral = Score1.neutral +Score2.neutral1 +Score3.neutral2 + Score4.neutral3+ Score5.neutral4 + neutral5;
         tilfreds =Score1.tilfreds +Score2.tilfreds1 +Score3.tilfreds2 + Score4.tilfreds3+ Score5.tilfreds4 + tilfreds5;
         glad =Score1.glad +Score2.glad1 +Score3.glad2 + Score4.glad3+ Score5.glad4 + glad5;
-
-
-
-
-
     }
 }
