@@ -16,7 +16,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
     private TextView mødeIdTekst;
     private int mødeID;
     private String mødeID1;
-    private Button button5;
+    private Button forsideBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,15 +40,15 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
         mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
 
 
-        button5 = findViewById(R.id.button5);
-        button5.setOnClickListener(this);
+        forsideBtn = findViewById(R.id.forsideBtn);
+        forsideBtn.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View view) {
-        if(view == button5) {
-            Intent intent = new Intent(this, MoedeDeltagActivity.class);
+        if(view == forsideBtn) {
+            Intent intent = new Intent(this, StartActivity.class);
             startActivity(intent);
         }
     }
