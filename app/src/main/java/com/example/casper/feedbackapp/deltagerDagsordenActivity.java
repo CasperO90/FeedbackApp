@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,6 +24,10 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deltager_dagsorden);
+
+        // action bar
+        getSupportActionBar().setTitle("Dagsorden"); // for set actionbar title
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
         //Button
         feedbackBtn = findViewById(R.id.feedbackBtn);
@@ -236,4 +241,18 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         Intent intent = new Intent(this, MoedeDeltagActivity.class);
         startActivity(intent);
     }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // TODO Auto-generated method stub
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
 }

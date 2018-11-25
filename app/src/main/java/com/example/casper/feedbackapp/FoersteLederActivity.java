@@ -3,6 +3,7 @@ package com.example.casper.feedbackapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
@@ -15,6 +16,12 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foerste_leder);
+
+
+        // action bar
+        getSupportActionBar().setTitle("Første leder"); // for set actionbar title
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
+
 
         //Button
         opretMødeBtn = findViewById(R.id.opretMødeBtn);
@@ -57,5 +64,17 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
             startMøde();
         }
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // TODO Auto-generated method stub
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }
 

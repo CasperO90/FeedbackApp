@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
@@ -22,6 +23,10 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moede_oprettet);
+
+        //action bar
+        getSupportActionBar().setTitle("Møde er Oprettet"); // for set actionbar title
+
 
 
         //Textview
@@ -52,4 +57,9 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
             startActivity(intent);
         }
     }
+
+
+
+
+
 }
