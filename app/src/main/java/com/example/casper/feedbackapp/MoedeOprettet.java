@@ -23,7 +23,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moede_oprettet);
 
-
+        //123 test halløj
         //Textview
         mødeIdTekst = findViewById(R.id.mødeIdTekst);
 
