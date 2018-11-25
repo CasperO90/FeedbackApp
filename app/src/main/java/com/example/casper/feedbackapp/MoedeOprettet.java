@@ -1,6 +1,7 @@
 package com.example.casper.feedbackapp;
 
 import android.content.Intent;
+import android.support.v4.content.IntentCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -54,6 +55,9 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
     public void onClick(View view) {
         if(view == button5) {
             Intent intent = new Intent(this, MoedeDeltagActivity.class);
+
+            // denne linje kalder. finish på alle tidligere aktiviteret
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
     }
