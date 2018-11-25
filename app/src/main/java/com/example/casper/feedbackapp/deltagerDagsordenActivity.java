@@ -78,7 +78,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
             tv.setText("");
         }
 
-
         else {
             tv.setText("Punkt 1: " + id.text);
         }
@@ -129,7 +128,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
         if (id.text5 == null) {
             tv5.setText("");
-
         }
 
         else if (id.text5.equals("")) {
@@ -155,7 +153,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
         if (id.text7 == null) {
             tv7.setText("");
-
         }
 
         else if (id.text7.equals("")) {
