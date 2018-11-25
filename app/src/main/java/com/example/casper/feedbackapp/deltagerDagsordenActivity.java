@@ -58,12 +58,17 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
     @Override
     public void onClick(View view) {
+
+        //videre knap
         if(view == feedbackBtn){
                 startFeedback();
             }
 
+
+            //tilbage knap
         if(view == tilbageLederBtn){
             tilbage();
+            finish();
         }
 
 
@@ -79,7 +84,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
 
 
-
+    //intents
     public void startFeedback() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
@@ -93,10 +98,10 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
 
 
-
+    // checker om textviews er tomme.
     public void checkTextTOM(){
 
-        // textviews der står tekst i hvis brugeren har oprettet dem
+
         if(id.text == null){
             tv.setText("");
         }
