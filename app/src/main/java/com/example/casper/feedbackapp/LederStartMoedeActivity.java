@@ -56,7 +56,6 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
 
 
-
     public void tilbage(){
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
