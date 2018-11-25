@@ -67,4 +67,10 @@
         Afslut
     </string>
 
+    <string name="deltagBtn">
+        Deltag
+    </string>
+
+
+
 </resources>
