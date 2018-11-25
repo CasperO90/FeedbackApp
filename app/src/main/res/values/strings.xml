@@ -30,7 +30,7 @@
     <string name="spm6">
         Hvordan vurderer du mødelederens indsats idag?
     </string>
-    
+
     <string name="fremskridt1">
         1 ud af 6
     </string>
@@ -53,6 +53,18 @@
 
     <string name="fremskridt6">
         6 ud af 6
+    </string>
+
+    <string name="slutTak">
+        Tak for dine svar
+    </string>
+
+    <string name="forsideBtn">
+        Til Forsiden
+    </string>
+
+    <string name="færdigBtn">
+        Afslut
     </string>
 
 </resources>

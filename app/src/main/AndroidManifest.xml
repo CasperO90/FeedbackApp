@@ -27,12 +27,14 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".MoedeDeltagActivity" />
         <activity android:name=".FoersteLederActivity" />
-        <activity android:name=".LederOpretMoedeActivity"
-            android:windowSoftInputMode="adjustPan|adjustResize"/>
+        <activity
+            android:name=".LederOpretMoedeActivity"
+            android:windowSoftInputMode="adjustPan|adjustResize" />
         <activity android:name=".deltagerDagsordenActivity" />
         <activity android:name=".LederStartMoedeActivity" />
         <activity android:name=".Highscore" />
-        <activity android:name=".MoedeOprettet"></activity>
+        <activity android:name=".MoedeOprettet" />
+        <activity android:name=".SlutActivity"></activity>
     </application>
 
 </manifest>
