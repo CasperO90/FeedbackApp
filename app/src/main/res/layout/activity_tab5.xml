@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DFE0E0"
     tools:context=".Tab5">
 
 
@@ -73,9 +74,9 @@
     <TextView
         android:id="@+id/spm5TextView"
         android:layout_width="417dp"
-        android:layout_height="79dp"
+        android:layout_height="100dp"
         android:layout_marginBottom="8dp"
-        android:background="#8BC53E"
+        android:background="@color/colorPrimary"
         android:text="Spørgsmål 5"
         android:textAlignment="center"
         android:textColor="@android:color/black"

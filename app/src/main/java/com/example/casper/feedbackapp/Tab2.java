@@ -11,9 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Tab2 extends Fragment implements View.OnClickListener {
-
 
     Button surBtn,neutralBtn,tilfredsBtn,gladBtn;
     int a,b,c,d = 0;
@@ -21,46 +21,42 @@ public class Tab2 extends Fragment implements View.OnClickListener {
 
     public static int sur1,neutral1,tilfreds1,glad1;
 
-
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab2, container, false);
 
-
-
-
-        surBtn = (Button) view.findViewById(R.id.surBtn);
-        neutralBtn = (Button) view.findViewById(R.id.neutralBtn);
-        tilfredsBtn = (Button) view.findViewById(R.id.tilfredsBtn);
-        gladBtn = (Button) view.findViewById(R.id.gladBtn);
-
-        spm2 = (TextView) view.findViewById(R.id.spm2TextView);
-
-        spm2.setText(R.string.spm2);
-
+        //Buttons
+        surBtn = view.findViewById(R.id.surBtn);
         surBtn.setOnClickListener(this);
+
+        neutralBtn = view.findViewById(R.id.neutralBtn);
         neutralBtn.setOnClickListener(this);
+
+        tilfredsBtn = view.findViewById(R.id.tilfredsBtn);
         tilfredsBtn.setOnClickListener(this);
+
+        gladBtn = view.findViewById(R.id.gladBtn);
         gladBtn.setOnClickListener(this);
+
+        //Textview
+        spm2 = view.findViewById(R.id.spm2TextView);
+        spm2.setText(R.string.spm2);
 
         surBtn.setAlpha(0.2f);
         neutralBtn.setAlpha(0.2f);
         tilfredsBtn.setAlpha(0.2f);
         gladBtn.setAlpha(0.2f);
 
-
-
-
         return view;
+    }
 
-
-
-
+    public void toastTekst() {
+        Toast.makeText(getActivity(), "Svipe videre", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onClick(View v) {
         if (v == surBtn) {
-
+            toastTekst();
             a++;
 
             if (a == 1) {
@@ -75,13 +71,10 @@ public class Tab2 extends Fragment implements View.OnClickListener {
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
-
-
             }
 
-
         } else if (v == neutralBtn) {
-
+            toastTekst();
             b++;
 
 
@@ -101,9 +94,8 @@ public class Tab2 extends Fragment implements View.OnClickListener {
 
             }
 
-
         } else if (v == tilfredsBtn) {
-
+            toastTekst();
             c++;
 
             if (c == 1) {
@@ -122,9 +114,8 @@ public class Tab2 extends Fragment implements View.OnClickListener {
             }
         }
 
-
         else if (v == gladBtn) {
-
+            toastTekst();
             d++;
 
             if (d == 1) {
@@ -140,13 +131,7 @@ public class Tab2 extends Fragment implements View.OnClickListener {
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(1f);
-
             }
-
         }
-
-
-
-
     }
 }

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Tab1 extends Fragment implements View.OnClickListener {
@@ -58,16 +59,19 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         return view;
     }
 
+    public void toastTekst() {
+        Toast.makeText(getActivity(), "Svipe videre", Toast.LENGTH_SHORT).show();
+    }
+
     // her bliver stemmerne givet, når brugeren trykker på knappen sætter den alle de andre værdier
     // til 0 for man kan kun stemme engang.
     // og det er sur,neutral,tilfreds,glad der bliver brugt i de andre fragmenter og til sidste i highscore
-
 
     @Override
     public void onClick(View v) {
 
         if (v == surBtn) {
-
+            toastTekst();
             a++;
 
             if (a == 1) {
@@ -83,10 +87,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
-
-        else if (v == neutralBtn) {
-
+        } else if (v == neutralBtn) {
+            toastTekst();
             b++;
 
             if (b == 1) {
@@ -103,10 +105,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
-
-        else if (v == tilfredsBtn) {
-
+        } else if (v == tilfredsBtn) {
+            toastTekst();
             c++;
 
             if (c == 1) {
@@ -123,10 +123,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(1f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
-
-        else if (v == gladBtn) {
-
+        } else if (v == gladBtn) {
+            toastTekst();
             d++;
 
             if (d == 1) {

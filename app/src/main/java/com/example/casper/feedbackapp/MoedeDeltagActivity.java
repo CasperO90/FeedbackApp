@@ -40,7 +40,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         //Edittext
         editText5 = findViewById(R.id.indtastMødeID);
 
-
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
 
