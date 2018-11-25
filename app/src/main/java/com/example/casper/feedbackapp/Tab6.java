@@ -13,13 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Tab6 extends Fragment implements View.OnClickListener {
 
     Button surBtn,neutralBtn,tilfredsBtn,gladBtn, btn;
-
     TextView spm6;
-
     public static int sur5,neutral5,tilfreds5,glad5;
     public static int sur,neutral,tilfreds,glad;
     int a,b,c,d = 0;
@@ -34,7 +33,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.activity_tab6, container, false);
 
         //Buttons
-        btn = view.findViewById(R.id.button3);
+        btn = view.findViewById(R.id.afslutBtn);
 
         surBtn = view.findViewById(R.id.surBtn);
         surBtn.setOnClickListener(this);
@@ -61,22 +60,32 @@ public class Tab6 extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View v) {
 
+                Intent i = new Intent(getActivity().getBaseContext(), SlutActivity.class);
+                startActivity(i);
+
+                /*
                     Intent intent = new Intent(getActivity().getBaseContext(), Highscore.class);
                     intent.putExtra("sur", String.valueOf(sur));
                     intent.putExtra("neutral", String.valueOf(neutral));
                     intent.putExtra("tilfreds", String.valueOf(tilfreds));
                     intent.putExtra("glad", String.valueOf(glad));
                     getActivity().startActivity(intent);
+                    */
             }
         });
 
         return view;
     }
 
+    public void toastTekst() {
+        Toast.makeText(getActivity(), "Dette var sidste spørgsmål", Toast.LENGTH_SHORT).show();
+    }
+
+
     @Override
     public void onClick(View v) {
         if (v == surBtn) {
-
+            toastTekst();
             a++;
 
             if (a == 1) {
@@ -92,11 +101,11 @@ public class Tab6 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
+        }
 
-        } else if (v == neutralBtn) {
-
+        else if (v == neutralBtn) {
+            toastTekst();
             b++;
-
 
             if (b == 1) {
                 a = 0;
@@ -112,9 +121,10 @@ public class Tab6 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
+        }
 
-        } else if (v == tilfredsBtn) {
-
+        else if (v == tilfredsBtn) {
+            toastTekst();
             c++;
 
             if (c == 1) {
@@ -134,7 +144,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == gladBtn) {
-
+            toastTekst();
             d++;
 
             if (d == 1) {

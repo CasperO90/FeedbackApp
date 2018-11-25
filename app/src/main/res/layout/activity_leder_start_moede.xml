@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#DFE0E0"
     tools:context=".LederStartMoedeActivity">
 
     <TextView
@@ -11,7 +12,7 @@
         android:layout_width="419dp"
         android:layout_height="48dp"
         android:layout_marginTop="65dp"
-        android:background="#CCD6DD"
+        android:background="@color/colorPrimary"
         android:text="Indtast pinkode"
         android:textAlignment="center"
         android:textColor="@android:color/black"
@@ -43,7 +44,7 @@
         android:layout_width="419dp"
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
-        android:background="#CCD6DD"
+        android:background="@color/colorPrimary"
         android:text="Indtast møde ID"
         android:textAlignment="center"
         android:textColor="@android:color/black"
@@ -83,6 +84,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/knap_baggrund"
         android:text="Start møde"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -101,7 +103,7 @@
         android:fadingEdge="vertical"
         android:fontFamily="sans-serif"
         android:text="Tilbage"
-        android:textColor="#050505"
+        android:textColor="#FFFFFF"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
