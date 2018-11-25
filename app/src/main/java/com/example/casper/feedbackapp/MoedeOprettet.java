@@ -33,6 +33,8 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
 
         //Gem møde
         AppState.setMødeID(mødeID);
+        Log.d("TEST", "" + mødeID);
+
 
         //Sæt tekst
         mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
