@@ -30,16 +30,19 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
     public void tilbage(){
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void opretMøde(){
         Intent intent = new Intent(this, LederOpretMoedeActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void startMøde(){
         Intent intent = new Intent(this, LederStartMoedeActivity.class);
         startActivity(intent);
+        finish();
     }
 
     @Override
