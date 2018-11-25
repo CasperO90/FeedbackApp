@@ -45,7 +45,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
         mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
 
 
-        button5 = findViewById(R.id.button5);
+        button5 = findViewById(R.id.forsideBtn);
         button5.setOnClickListener(this);
 
     }
