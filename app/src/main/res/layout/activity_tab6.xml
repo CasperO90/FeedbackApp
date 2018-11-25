@@ -89,12 +89,13 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/afslutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="84dp"
         android:layout_marginEnd="16dp"
-        android:text="Button"
+        android:layout_marginBottom="84dp"
+        android:background="@drawable/knap_baggrund"
+        android:text="@string/færdigBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

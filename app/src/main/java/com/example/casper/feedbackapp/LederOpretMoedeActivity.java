@@ -3,6 +3,7 @@ package com.example.casper.feedbackapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -26,6 +27,11 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leder_opret_moede);
+
+        // action bar
+        getSupportActionBar().setTitle("Opret Møde"); // for set actionbar title
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
+
 
         //Layout
         mLayout = findViewById(R.id.linearLayout);
@@ -343,6 +349,19 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
         Intent intent = new Intent(LederOpretMoedeActivity.this, FoersteLederActivity.class);
         startActivity(intent);
         finish();
+    }
+
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // TODO Auto-generated method stub
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 }
