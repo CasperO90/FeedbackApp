@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Tab5 extends Fragment implements View.OnClickListener {
 
@@ -60,12 +61,15 @@ public class Tab5 extends Fragment implements View.OnClickListener {
 
 
     }
+    public void toastTekst() {
+        Toast.makeText(getActivity(), "Svipe videre", Toast.LENGTH_SHORT).show();
+    }
 
     @Override
     public void onClick(View v) {
 
         if (v == surBtn) {
-
+            toastTekst();
             a++;
 
             if (a == 1) {
@@ -86,7 +90,7 @@ public class Tab5 extends Fragment implements View.OnClickListener {
 
 
         } else if (v == neutralBtn) {
-
+            toastTekst();
             b++;
 
 
@@ -108,7 +112,7 @@ public class Tab5 extends Fragment implements View.OnClickListener {
 
 
         } else if (v == tilfredsBtn) {
-
+            toastTekst();
             c++;
 
             if (c == 1) {
@@ -129,7 +133,7 @@ public class Tab5 extends Fragment implements View.OnClickListener {
 
 
         else if (v == gladBtn) {
-
+            toastTekst();
             d++;
 
             if (d == 1) {
