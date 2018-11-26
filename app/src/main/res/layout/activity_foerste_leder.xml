@@ -45,23 +45,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.337" />
 
-    <Button
-        android:id="@+id/tilbageBtn"
-        android:layout_width="154dp"
-        android:layout_height="31dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/knap_baggrund"
-        android:fadingEdge="vertical"
-        android:fontFamily="sans-serif"
-        android:text="Tilbage"
-        android:textColor="#FFFFFF"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.707" />
+
 
 </android.support.constraint.ConstraintLayout>

@@ -10,7 +10,7 @@ import android.widget.Button;
 public class LederStartMoedeActivity extends AppCompatActivity implements View.OnClickListener {
 
 
-    private Button mButton5,mButton6;
+    private Button mButton5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +24,11 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
 
         mButton5 = (Button)findViewById(R.id.button2);
-        mButton6 = (Button)findViewById(R.id.tilbageBtn);
+
 
 
         mButton5.setOnClickListener(this);
-        mButton6.setOnClickListener(this);
+
 
 
     }
@@ -44,10 +44,6 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         }
 
 
-        //tilbage knap
-        if (mButton6 == v){
-            tilbage();
-        }
 
 
     }
@@ -56,11 +52,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
 
 
-    public void tilbage(){
-        Intent intent = new Intent(this, StartActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 
 
     public void videre(){
