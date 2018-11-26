@@ -41,19 +41,18 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         deltagBtn = findViewById(R.id.deltagBtn);
         deltagBtn.setOnClickListener(this);
 
-
         //Edittext
         editText5 = findViewById(R.id.indtastMødeID);
 
+        //Textview
+        tekst = findViewById(R.id.textView5);
+
+        //Hent møde id
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
 
         nytMødeID = AppState.getMødeID();
-
-        tekst = findViewById(R.id.textView5);
-        tekst.setText(" her er dit id " + nytMødeID);
     }
-
 
     public void deltagMøde() {
 
@@ -66,18 +65,14 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         finalID = Integer.parseInt(værdi);
 
         if (finalID == nytMødeID) {
-
-
             Intent intent = new Intent(this, deltagerDagsordenActivity.class);
             startActivity(intent);
         }
-
 
         if (finalID != nytMødeID) {
             tekst.setText("Forkert id \n Prøv igen");
         }
     }
-
 
     @Override
     public void onClick(View view) {
@@ -85,12 +80,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
             deltagMøde();
         }
     }
-
-
-
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -101,8 +90,4 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
-
 }

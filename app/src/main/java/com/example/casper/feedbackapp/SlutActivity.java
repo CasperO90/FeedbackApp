@@ -16,6 +16,7 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slut);
 
+        //Button
         forsideButton = findViewById(R.id.forsideButton);
         forsideButton.setOnClickListener(this);
     }

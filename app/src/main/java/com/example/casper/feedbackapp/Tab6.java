@@ -81,7 +81,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         Toast.makeText(getActivity(), "Dette var sidste spørgsmål", Toast.LENGTH_SHORT).show();
     }
 
-
     @Override
     public void onClick(View v) {
         if (v == surBtn) {
