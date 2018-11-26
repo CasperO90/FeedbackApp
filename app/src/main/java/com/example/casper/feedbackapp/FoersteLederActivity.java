@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 
-public class FoersteLederActivity extends AppCompatActivity implements OnClickListener {
+public class FoersteLederActivity extends AppCompatActivity implements OnClickListener{
 
     private Button opretMødeBtn, startMødeBtn;
 
@@ -17,9 +17,11 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foerste_leder);
 
+
         // action bar
         getSupportActionBar().setTitle("Første leder"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
+
 
         //Button
         opretMødeBtn = findViewById(R.id.opretMødeBtn);
@@ -27,24 +29,31 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
 
         startMødeBtn = findViewById(R.id.startMødeBtn);
         startMødeBtn.setOnClickListener(this);
+
+
     }
 
-    public void opretMøde() {
+
+
+    public void opretMøde(){
         Intent intent = new Intent(this, LederOpretMoedeActivity.class);
         startActivity(intent);
+
     }
 
-    public void startMøde() {
+    public void startMøde(){
         Intent intent = new Intent(this, LederStartMoedeActivity.class);
         startActivity(intent);
+      
     }
 
     @Override
     public void onClick(View view) {
 
-        if (view == opretMødeBtn) {
+        if(view == opretMødeBtn){
             opretMøde();
-        } else if (view == startMødeBtn) {
+        }
+        else if(view == startMødeBtn){
             startMøde();
         }
     }
@@ -58,5 +67,7 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
 

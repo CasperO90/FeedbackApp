@@ -92,12 +92,16 @@
         android:id="@+id/afslutBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="84dp"
+        android:layout_marginBottom="52dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginStart="8dp"
         android:background="@drawable/knap_baggrund"
         android:text="@string/færdigBtn"
+        android:textColor="@android:color/background_light"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
