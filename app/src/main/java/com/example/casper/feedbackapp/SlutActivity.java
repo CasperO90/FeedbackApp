@@ -11,7 +11,7 @@ import android.view.View.OnClickListener;
 public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
     Button forsideButton;
-    public static String slutsur,slutneutral,sluttilfreds,slutglad;
+    public static String slutsur,slutneutral,sluttilfreds,slutglad ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

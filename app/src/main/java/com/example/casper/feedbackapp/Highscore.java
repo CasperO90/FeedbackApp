@@ -40,8 +40,19 @@ public class Highscore extends AppCompatActivity {
         SeScoreFeedback = (TextView)findViewById(R.id.SeScoreFeedback);
 
 
+        if(Score.slutsur == null){
+            Score.slutsur ="";
+        }
 
-
+        if(Score.slutneutral == null){
+            Score.slutneutral ="";
+        }
+        if(Score.sluttilfreds == null){
+            Score.sluttilfreds ="";
+        }
+        if(Score.slutglad == null){
+            Score.slutglad ="";
+        }
 
         tv1.setText("Sur: "+ Score.slutsur);
         tv2.setText("Neutral: "+Score.slutneutral);
