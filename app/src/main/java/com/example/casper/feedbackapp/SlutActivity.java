@@ -16,10 +16,9 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slut);
 
+        //Button
         forsideButton = findViewById(R.id.forsideButton);
         forsideButton.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -27,8 +26,5 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         Intent i = new Intent(this, StartActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | i.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);
-
-
-
     }
 }

@@ -9,7 +9,6 @@ import android.widget.Button;
 
 public class LederStartMoedeActivity extends AppCompatActivity implements View.OnClickListener {
 
-
     private Button mButton5;
 
     @Override
@@ -17,23 +16,14 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leder_start_moede);
 
-
         // action bar
         getSupportActionBar().setTitle("Start Møde"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
-
+        //Button
         mButton5 = (Button)findViewById(R.id.button2);
-
-
-
         mButton5.setOnClickListener(this);
-
-
-
     }
-
-
 
     @Override
     public void onClick(View v) {
@@ -42,26 +32,12 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         if(mButton5 == v){
            // videre();
         }
-
-
-
-
     }
-
-
-
-
-
-
-
 
     public void videre(){
         Intent intent = new Intent(this, StartActivity.class);
         startActivity(intent);
-
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -72,6 +48,4 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }
