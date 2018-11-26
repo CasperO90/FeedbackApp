@@ -85,7 +85,6 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
             else if (button == hjemmesideBtn){
                 browserHjemmeside();
             }
-
         }
     }
 }
