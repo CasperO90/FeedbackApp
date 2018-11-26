@@ -45,7 +45,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
         mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
 
 
-        button5 = findViewById(R.id.button5);
+        button5 = findViewById(R.id.forsideBtn);
         button5.setOnClickListener(this);
 
     }
@@ -54,10 +54,10 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener{
     public void onClick(View view) {
         if(view == button5) {
             Intent intent = new Intent(this, MoedeDeltagActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
     }
-
 
 
 

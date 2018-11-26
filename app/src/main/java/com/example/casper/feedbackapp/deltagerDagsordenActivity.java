@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class deltagerDagsordenActivity extends AppCompatActivity implements OnClickListener {
 
-    private Button feedbackBtn, tilbageLederBtn;
+    private Button feedbackBtn;
 
     TextView tv,tv1,tv2,tv3,tv4,tv5,tv6,tv7,tv8,tv9;
 
@@ -33,8 +33,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         feedbackBtn = findViewById(R.id.feedbackBtn);
         feedbackBtn.setOnClickListener(this);
 
-        tilbageLederBtn = findViewById(R.id.tilbageLederBtn);
-        tilbageLederBtn.setOnClickListener(this);
+
 
 
 
@@ -213,10 +212,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         if(view == feedbackBtn){
                 startFeedback();
             }
-
-        if(view == tilbageLederBtn){
-            tilbage();
-        }
 
 
     }
