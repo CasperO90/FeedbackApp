@@ -10,7 +10,7 @@ import android.view.View.OnClickListener;
 
 public class FoersteLederActivity extends AppCompatActivity implements OnClickListener{
 
-    private Button opretMødeBtn, startMødeBtn, tilbageBtn;
+    private Button opretMødeBtn, startMødeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,33 +30,26 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         startMødeBtn = findViewById(R.id.startMødeBtn);
         startMødeBtn.setOnClickListener(this);
 
-        tilbageBtn = findViewById(R.id.tilbageBtn);
-        tilbageBtn.setOnClickListener(this);
+
     }
 
-    public void tilbage(){
-        Intent intent = new Intent(this, StartActivity.class);
-        startActivity(intent);
-        finish();
-    }
+
 
     public void opretMøde(){
         Intent intent = new Intent(this, LederOpretMoedeActivity.class);
         startActivity(intent);
-        finish();
+
     }
 
     public void startMøde(){
         Intent intent = new Intent(this, LederStartMoedeActivity.class);
         startActivity(intent);
-        finish();
+      
     }
 
     @Override
     public void onClick(View view) {
-        if(view == tilbageBtn){
-            tilbage();
-        }
+
         if(view == opretMødeBtn){
             opretMøde();
         }

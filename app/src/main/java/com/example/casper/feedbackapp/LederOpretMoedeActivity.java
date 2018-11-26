@@ -16,7 +16,7 @@ import java.util.Random;
 public class LederOpretMoedeActivity extends AppCompatActivity {
 
     private LinearLayout mLayout;
-    private Button mButton,mButton2,mButton3,mButton4;
+    private Button mButton,mButton2,mButton3;
     public static int a = 0;
     public static int c = 0;
     public int mødeID;
@@ -48,8 +48,6 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
         mButton3 = (Button)findViewById(R.id.button4);
         mButton3.setOnClickListener(onClick());
 
-        mButton4 = (Button)findViewById(R.id.tilbageLederBtn);
-        mButton4.setOnClickListener(onClick());
 
 
     }
@@ -308,9 +306,7 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
                 }
 
 
-                else if (mButton4 == v){
-                   tilbage();
-                }
+
 
             }
         };
@@ -345,11 +341,6 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void tilbage() {
-        Intent intent = new Intent(LederOpretMoedeActivity.this, FoersteLederActivity.class);
-        startActivity(intent);
-        finish();
-    }
 
 
 

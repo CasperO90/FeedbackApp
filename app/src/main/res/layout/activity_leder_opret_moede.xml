@@ -56,52 +56,25 @@
     <Button
         android:id="@+id/button"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="21dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="52dp"
+
         android:background="@drawable/add_btn"
-        app:layout_constraintBottom_toTopOf="@+id/tilbageLederBtn"
+        app:layout_constraintBottom_toTopOf="@+id/opretmødeBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button4"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <Button
-        android:id="@+id/tilbageLederBtn"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginBottom="16dp"
-        android:background="@drawable/knap_baggrund"
-        android:text="Tilbage"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/opretmødeBtn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/opretmødeBtn"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/knap_baggrund"
-        android:text="opret møde"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintBottom_toBottomOf="@+id/tilbageLederBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tilbageLederBtn"
-        app:layout_constraintTop_toTopOf="@+id/tilbageLederBtn" />
-
-    <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="128dp"
         android:layout_marginStart="56dp"
         android:text="Slet"
-        app:layout_constraintBottom_toTopOf="@+id/tilbageLederBtn"
+        app:layout_constraintBottom_toTopOf="@+id/opretmødeBtn"
         app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -128,5 +101,20 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/opretmødeBtn"
+        android:layout_width="304dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+
+        android:background="@drawable/knap_baggrund"
+        android:text="opret møde"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
