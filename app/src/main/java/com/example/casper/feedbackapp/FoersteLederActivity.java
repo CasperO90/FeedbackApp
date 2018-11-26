@@ -10,7 +10,7 @@ import android.view.View.OnClickListener;
 
 public class FoersteLederActivity extends AppCompatActivity implements OnClickListener{
 
-    private Button opretMødeBtn, startMødeBtn;
+    private Button opretMødeBtn, startMødeBtn,SeFeedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,9 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         startMødeBtn.setOnClickListener(this);
 
 
+        SeFeedback = findViewById(R.id.SeFeedback);
+        SeFeedback.setOnClickListener(this);
+
     }
 
 
@@ -47,6 +50,12 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
       
     }
 
+    public void SeFeedback(){
+        Intent intent = new Intent(this, Highscore.class);
+        startActivity(intent);
+
+    }
+
     @Override
     public void onClick(View view) {
 
@@ -56,6 +65,12 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         else if(view == startMødeBtn){
             startMøde();
         }
+
+
+        if(view == SeFeedback){
+            SeFeedback();
+        }
+
     }
 
     @Override

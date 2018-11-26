@@ -60,8 +60,12 @@ public class Tab6 extends Fragment implements View.OnClickListener {
             @Override
             public void onClick(View v) {
 
-                Intent i = new Intent(getActivity().getBaseContext(), SlutActivity.class);
-                startActivity(i);
+                Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
+                intent.putExtra("sur", String.valueOf(sur));
+                intent.putExtra("neutral", String.valueOf(neutral));
+                intent.putExtra("tilfreds", String.valueOf(tilfreds));
+                intent.putExtra("glad", String.valueOf(glad));
+                startActivity(intent);
 
                 /*
                     Intent intent = new Intent(getActivity().getBaseContext(), Highscore.class);
