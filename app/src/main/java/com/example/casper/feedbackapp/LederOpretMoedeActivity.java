@@ -1,17 +1,18 @@
 package com.example.casper.feedbackapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-
-import java.util.Random;
 
 public class LederOpretMoedeActivity extends AppCompatActivity {
 
@@ -145,6 +146,7 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
 
         if(createNewEditText().getTag().equals("a1")) {
             text = ed.getText().toString();
+
         }
         else if(createNewEditText().getTag().equals("a2")) {
             text = ed.getText().toString();
@@ -330,6 +332,7 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
         final EditText editText = new EditText(this);
         editText.setLayoutParams(lparams);
         editText.setHint("skriv dagsorden");
+        editText.setInputType(InputType.TYPE_CLASS_TEXT);
 
         editText.setId(c);
         editText.setTag("a"+a);
