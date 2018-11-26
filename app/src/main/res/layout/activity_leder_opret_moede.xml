@@ -68,15 +68,15 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_width="75dp"
+        android:layout_height="54dp"
         android:layout_marginEnd="128dp"
         android:layout_marginStart="56dp"
-        android:text="Slet"
-        app:layout_constraintBottom_toTopOf="@+id/opretmødeBtn"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/slet"
         app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
 
     <ScrollView
         android:id="@+id/scrollView2"
