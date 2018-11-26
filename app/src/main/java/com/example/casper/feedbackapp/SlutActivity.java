@@ -18,16 +18,11 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
         forsideButton = findViewById(R.id.forsideButton);
         forsideButton.setOnClickListener(this);
-
-
     }
 
     @Override
     public void onClick(View view) {
         Intent i = new Intent(this, StartActivity.class);
         startActivity(i);
-
-
-
     }
 }
