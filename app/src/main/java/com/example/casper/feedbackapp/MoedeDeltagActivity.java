@@ -22,10 +22,10 @@ import java.security.Key;
 public class MoedeDeltagActivity extends AppCompatActivity implements OnClickListener {
 
     private Button deltagBtn;
-    private EditText editText5;
+    private EditText indtastMødeID;
     private int MødeIDIntastet;
     private int nytMødeID;
-    private TextView tekst;
+    private TextView visMødeTekst;
     private int finalID;
 
     @Override
@@ -42,21 +42,24 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         deltagBtn.setOnClickListener(this);
 
         //Edittext
-        editText5 = findViewById(R.id.indtastMødeID);
+        indtastMødeID = findViewById(R.id.indtastMødeID);
 
         //Textview
-        tekst = findViewById(R.id.textView5);
+        visMødeTekst = findViewById(R.id.visMødeTekst);
+
 
         //Hent møde id
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
 
         nytMødeID = AppState.getMødeID();
+
+        visMødeTekst.setText("Indtast møde id " + "(" + nytMødeID + ")");
     }
 
     public void deltagMøde() {
 
-        String værdi = editText5.getText().toString();
+        String værdi = indtastMødeID.getText().toString();
         if (værdi.matches("")) {
             Toast.makeText(this, "Du har ikke indtastet et id", Toast.LENGTH_SHORT).show();
             return;
@@ -70,7 +73,7 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         }
 
         if (finalID != nytMødeID) {
-            tekst.setText("Forkert id \n Prøv igen");
+            Toast.makeText(this, "Du har intastet et forkert id", Toast.LENGTH_SHORT).show();
         }
     }
 

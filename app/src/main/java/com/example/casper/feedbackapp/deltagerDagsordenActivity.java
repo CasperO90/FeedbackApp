@@ -1,6 +1,8 @@
 package com.example.casper.feedbackapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +17,8 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
     private Button feedbackBtn;
 
     TextView tv, tv1, tv2, tv3, tv4, tv5, tv6, tv7, tv8, tv9;
+    private TextView overskriftTekst;
+    private int nytMødeID;
 
     LederOpretMoedeActivity id = new LederOpretMoedeActivity();
 
@@ -43,6 +47,15 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         tv1 = findViewById(R.id.textView19);
         tv = findViewById(R.id.textView20);
 
+
+        //Hent møde id
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        AppState.gemMødeID(preferences);
+
+        nytMødeID = AppState.getMødeID();
+
+        overskriftTekst = findViewById(R.id.overskriftTekst);
+        overskriftTekst.setText("Velkommen til møde " + nytMødeID + "\nDagsorden ");
 
         // textviews der står tekst i hvis brugeren har oprettet dem
         if (id.text == null) {
