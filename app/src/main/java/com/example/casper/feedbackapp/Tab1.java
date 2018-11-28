@@ -60,7 +60,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     }
 
     public void toastTekst() {
-        Toast.makeText(getActivity(), "Svipe videre", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Swipe videre", Toast.LENGTH_SHORT).show();
     }
 
     // her bliver stemmerne givet, når brugeren trykker på knappen sætter den alle de andre værdier

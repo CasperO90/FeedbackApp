@@ -54,10 +54,10 @@ public class Highscore extends AppCompatActivity {
             Score.slutglad ="";
         }
 
-        tv1.setText("Sur: "+ Score.slutsur);
-        tv2.setText("Neutral: "+Score.slutneutral);
-        tv3.setText("Tilfreds: "+Score.sluttilfreds);
-        tv4.setText("Glad: " + Score.slutglad);
+        tv1.setText(""+ Score.slutsur);
+        tv2.setText(""+Score.slutneutral);
+        tv3.setText(""+Score.sluttilfreds);
+        tv4.setText("" + Score.slutglad);
 
         SeScoreFeedback.setText("Se Feedback fra Møde ID: "+ nytMødeID);
 

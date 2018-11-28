@@ -50,7 +50,7 @@ public class Tab5 extends Fragment implements View.OnClickListener {
     }
 
     public void toastTekst() {
-        Toast.makeText(getActivity(), "Svipe videre", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Swipe videre", Toast.LENGTH_SHORT).show();
     }
 
     @Override

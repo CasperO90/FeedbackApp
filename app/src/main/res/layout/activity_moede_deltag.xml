@@ -26,7 +26,7 @@
         app:layout_constraintVertical_bias="0.859" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/visMødeTekst"
         android:layout_width="229dp"
         android:layout_height="82dp"
         android:layout_marginStart="8dp"
