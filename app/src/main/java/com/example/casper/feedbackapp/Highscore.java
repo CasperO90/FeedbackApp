@@ -59,7 +59,7 @@ public class Highscore extends AppCompatActivity {
         tv3.setText(""+Score.sluttilfreds);
         tv4.setText("" + Score.slutglad);
 
-        SeScoreFeedback.setText("Se Feedback fra Møde ID: "+ nytMødeID);
+        SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ nytMødeID);
 
     }
 
