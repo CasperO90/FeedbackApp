@@ -20,6 +20,7 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
         setContentView(R.layout.activity_start);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false); // for set actionbar title
+        getSupportActionBar().setElevation(0);
 
         //Buttons
         deltagBtn = findViewById(R.id.deltagBtn);
