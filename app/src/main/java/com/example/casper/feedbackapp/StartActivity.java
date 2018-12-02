@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import java.nio.channels.InterruptedByTimeoutException;
+import com.example.casper.feedbackapp.Mødedeltager.MoedeDeltagActivity;
+import com.example.casper.feedbackapp.Mødeleder.FoersteLederActivity;
 
 public class StartActivity extends AppCompatActivity implements OnClickListener{
 

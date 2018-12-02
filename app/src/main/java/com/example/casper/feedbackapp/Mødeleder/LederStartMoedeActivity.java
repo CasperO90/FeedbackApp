@@ -1,4 +1,4 @@
-package com.example.casper.feedbackapp;
+package com.example.casper.feedbackapp.Mødeleder;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.casper.feedbackapp.R;
+import com.example.casper.feedbackapp.StartActivity;
 
 public class LederStartMoedeActivity extends AppCompatActivity implements View.OnClickListener {
 

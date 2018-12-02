@@ -1,4 +1,4 @@
-package com.example.casper.feedbackapp;
+package com.example.casper.feedbackapp.Fragment;
 
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -13,16 +13,18 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Tab5 extends Fragment implements View.OnClickListener {
+import com.example.casper.feedbackapp.R;
 
-    Button surBtn, neutralBtn, tilfredsBtn, gladBtn;
-    int a, b, c, d = 0;
-    TextView spm5;
+public class Tab2 extends Fragment implements View.OnClickListener {
 
-    public static int sur4, neutral4, tilfreds4, glad4;
+    Button surBtn,neutralBtn,tilfredsBtn,gladBtn;
+    int a,b,c,d = 0;
+    TextView spm2;
+
+    public static int sur1,neutral1,tilfreds1,glad1;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_tab5, container, false);
+        View view = inflater.inflate(R.layout.activity_tab2, container, false);
 
         //Buttons
         surBtn = view.findViewById(R.id.surBtn);
@@ -38,8 +40,8 @@ public class Tab5 extends Fragment implements View.OnClickListener {
         gladBtn.setOnClickListener(this);
 
         //Textview
-        spm5 = view.findViewById(R.id.spm5TextView);
-        spm5.setText(R.string.spm5);
+        spm2 = view.findViewById(R.id.spm2TextView);
+        spm2.setText(R.string.spm2);
 
         surBtn.setAlpha(0.2f);
         neutralBtn.setAlpha(0.2f);
@@ -55,7 +57,6 @@ public class Tab5 extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-
         if (v == surBtn) {
             toastTekst();
             a++;
@@ -64,38 +65,38 @@ public class Tab5 extends Fragment implements View.OnClickListener {
                 b = 0;
                 c = 0;
                 d = 0;
-                sur4 = 1;
-                neutral4 = 0;
-                tilfreds4 = 0;
-                glad4 = 0;
+                sur1 = 1;
+                neutral1 = 0;
+                tilfreds1 = 0;
+                glad1=0;
                 surBtn.setAlpha(1f);
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
 
-        else if (v == neutralBtn) {
+        } else if (v == neutralBtn) {
             toastTekst();
             b++;
+
 
             if (b == 1) {
                 a = 0;
                 c = 0;
                 d = 0;
 
-                sur4 = 0;
-                neutral4 = 1;
-                tilfreds4 = 0;
-                glad4 = 0;
+                sur1 = 0;
+                neutral1 = 1;
+                tilfreds1 = 0;
+                glad1 = 0;
                 surBtn.setAlpha(0.2f);
                 neutralBtn.setAlpha(1f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
-            }
-        }
 
-        else if (v == tilfredsBtn) {
+            }
+
+        } else if (v == tilfredsBtn) {
             toastTekst();
             c++;
 
@@ -104,10 +105,10 @@ public class Tab5 extends Fragment implements View.OnClickListener {
                 b = 0;
                 d = 0;
 
-                sur4 = 0;
-                neutral4 = 0;
-                tilfreds4 = 1;
-                glad4 = 0;
+                sur1 = 0;
+                neutral1 = 0;
+                tilfreds1 = 1;
+                glad1 = 0;
                 surBtn.setAlpha(0.2f);
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(1f);
@@ -124,10 +125,10 @@ public class Tab5 extends Fragment implements View.OnClickListener {
                 b = 0;
                 c = 0;
 
-                sur4 = 0;
-                neutral4 = 0;
-                tilfreds4 = 0;
-                glad4 = 1;
+                sur1 = 0;
+                neutral1 = 0;
+                tilfreds1 = 0;
+                glad1 = 1;
                 surBtn.setAlpha(0.2f);
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
