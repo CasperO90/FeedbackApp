@@ -1,19 +1,24 @@
-package com.example.casper.feedbackapp;
+package com.example.casper.feedbackapp.Fragment;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.casper.feedbackapp.Fragment.Tab1;
+import com.example.casper.feedbackapp.Fragment.Tab2;
+import com.example.casper.feedbackapp.Fragment.Tab3;
+import com.example.casper.feedbackapp.Fragment.Tab4;
+import com.example.casper.feedbackapp.Fragment.Tab5;
+import com.example.casper.feedbackapp.R;
+import com.example.casper.feedbackapp.SlutActivity;
 
 public class Tab6 extends Fragment implements View.OnClickListener {
 

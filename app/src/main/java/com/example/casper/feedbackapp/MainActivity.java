@@ -14,7 +14,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import android.widget.TextView;
+import com.example.casper.feedbackapp.Fragment.Tab1;
+import com.example.casper.feedbackapp.Fragment.Tab2;
+import com.example.casper.feedbackapp.Fragment.Tab3;
+import com.example.casper.feedbackapp.Fragment.Tab4;
+import com.example.casper.feedbackapp.Fragment.Tab5;
+import com.example.casper.feedbackapp.Fragment.Tab6;
 
 public class MainActivity extends AppCompatActivity {
 

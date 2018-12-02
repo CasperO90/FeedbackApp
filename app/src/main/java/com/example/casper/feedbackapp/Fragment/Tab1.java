@@ -1,4 +1,4 @@
-package com.example.casper.feedbackapp;
+package com.example.casper.feedbackapp.Fragment;
 
 import android.content.res.Resources;
 import android.support.annotation.NonNull;
@@ -16,6 +16,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.casper.feedbackapp.R;
 
 
 public class Tab1 extends Fragment implements View.OnClickListener {

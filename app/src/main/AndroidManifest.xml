@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Tab1" />
+        <activity android:name=".Fragment.Tab1" />
         <activity
             android:name=".StartActivity"
             android:label="feedbackapp">
@@ -19,21 +19,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Tab2" />
-        <activity android:name=".Tab3" />
-        <activity android:name=".Tab4" />
-        <activity android:name=".Tab5" />
-        <activity android:name=".Tab6" />
+        <activity android:name=".Fragment.Tab2" />
+        <activity android:name=".Fragment.Tab3" />
+        <activity android:name=".Fragment.Tab4" />
+        <activity android:name=".Fragment.Tab5" />
+        <activity android:name=".Fragment.Tab6" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".MoedeDeltagActivity" />
-        <activity android:name=".FoersteLederActivity" />
+        <activity android:name=".Mødedeltager.MoedeDeltagActivity" />
+        <activity android:name=".Mødeleder.FoersteLederActivity" />
         <activity
-            android:name=".LederOpretMoedeActivity"
+            android:name=".Mødeleder.LederOpretMoedeActivity"
             android:windowSoftInputMode="adjustPan|adjustResize" />
-        <activity android:name=".deltagerDagsordenActivity" />
-        <activity android:name=".LederStartMoedeActivity" />
-        <activity android:name=".Highscore" />
-        <activity android:name=".MoedeOprettet" />
+        <activity android:name=".Mødedeltager.deltagerDagsordenActivity" />
+        <activity android:name=".Mødeleder.LederStartMoedeActivity" />
+        <activity android:name=".Mødeleder.Highscore" />
+        <activity android:name=".Mødeleder.MoedeOprettet" />
         <activity android:name=".SlutActivity"></activity>
     </application>
 

@@ -1,6 +1,5 @@
-package com.example.casper.feedbackapp;
+package com.example.casper.feedbackapp.Fragment;
 
-import android.content.res.Resources;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,16 +13,18 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Tab4 extends Fragment implements View.OnClickListener {
+import com.example.casper.feedbackapp.R;
 
-    Button surBtn,neutralBtn,tilfredsBtn,gladBtn;
-    int a,b,c,d = 0;
-    TextView spm4;
+public class Tab5 extends Fragment implements View.OnClickListener {
 
-    public static int sur3,neutral3,tilfreds3,glad3;
+    Button surBtn, neutralBtn, tilfredsBtn, gladBtn;
+    int a, b, c, d = 0;
+    TextView spm5;
+
+    public static int sur4, neutral4, tilfreds4, glad4;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_tab4, container, false);
+        View view = inflater.inflate(R.layout.activity_tab5, container, false);
 
         //Buttons
         surBtn = view.findViewById(R.id.surBtn);
@@ -39,8 +40,8 @@ public class Tab4 extends Fragment implements View.OnClickListener {
         gladBtn.setOnClickListener(this);
 
         //Textview
-        spm4 = view.findViewById(R.id.spm4TextView);
-        spm4.setText(R.string.spm4);
+        spm5 = view.findViewById(R.id.spm5TextView);
+        spm5.setText(R.string.spm5);
 
         surBtn.setAlpha(0.2f);
         neutralBtn.setAlpha(0.2f);
@@ -65,16 +66,18 @@ public class Tab4 extends Fragment implements View.OnClickListener {
                 b = 0;
                 c = 0;
                 d = 0;
-                sur3 = 1;
-                neutral3 = 0;
-                tilfreds3 = 0;
-                glad3 = 0;
+                sur4 = 1;
+                neutral4 = 0;
+                tilfreds4 = 0;
+                glad4 = 0;
                 surBtn.setAlpha(1f);
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
-        } else if (v == neutralBtn) {
+        }
+
+        else if (v == neutralBtn) {
             toastTekst();
             b++;
 
@@ -83,17 +86,18 @@ public class Tab4 extends Fragment implements View.OnClickListener {
                 c = 0;
                 d = 0;
 
-                sur3 = 0;
-                neutral3 = 1;
-                tilfreds3 = 0;
-                glad3 = 0;
+                sur4 = 0;
+                neutral4 = 1;
+                tilfreds4 = 0;
+                glad4 = 0;
                 surBtn.setAlpha(0.2f);
                 neutralBtn.setAlpha(1f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
+        }
 
-        } else if (v == tilfredsBtn) {
+        else if (v == tilfredsBtn) {
             toastTekst();
             c++;
 
@@ -102,10 +106,10 @@ public class Tab4 extends Fragment implements View.OnClickListener {
                 b = 0;
                 d = 0;
 
-                sur3 = 0;
-                neutral3 = 0;
-                tilfreds3 = 1;
-                glad3 = 0;
+                sur4 = 0;
+                neutral4 = 0;
+                tilfreds4 = 1;
+                glad4 = 0;
                 surBtn.setAlpha(0.2f);
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(1f);
@@ -122,10 +126,10 @@ public class Tab4 extends Fragment implements View.OnClickListener {
                 b = 0;
                 c = 0;
 
-                sur3 = 0;
-                neutral3 = 0;
-                tilfreds3 = 0;
-                glad3 = 1;
+                sur4 = 0;
+                neutral4 = 0;
+                tilfreds4 = 0;
+                glad4 = 1;
                 surBtn.setAlpha(0.2f);
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);

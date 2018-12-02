@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".MoedeOprettet">
+    tools:context=".Mødeleder.MoedeOprettet">
 
     <TextView
         android:id="@+id/mødeOprettet"

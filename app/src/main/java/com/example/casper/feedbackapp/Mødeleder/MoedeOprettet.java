@@ -1,4 +1,4 @@
-package com.example.casper.feedbackapp;
+package com.example.casper.feedbackapp.Mødeleder;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
+
+import com.example.casper.feedbackapp.AppState;
+import com.example.casper.feedbackapp.R;
+import com.example.casper.feedbackapp.StartActivity;
 
 import java.util.PriorityQueue;
 import java.util.Random;
