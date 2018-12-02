@@ -1,6 +1,5 @@
-package com.example.casper.feedbackapp;
+package com.example.casper.feedbackapp.Mødeleder;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.example.casper.feedbackapp.R;
 
 public class LederOpretMoedeActivity extends AppCompatActivity {
 

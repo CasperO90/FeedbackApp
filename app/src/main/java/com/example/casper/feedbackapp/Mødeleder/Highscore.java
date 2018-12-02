@@ -1,4 +1,4 @@
-package com.example.casper.feedbackapp;
+package com.example.casper.feedbackapp.Mødeleder;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -7,6 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import com.example.casper.feedbackapp.AppState;
+import com.example.casper.feedbackapp.R;
+import com.example.casper.feedbackapp.SlutActivity;
 
 public class Highscore extends AppCompatActivity {
 
