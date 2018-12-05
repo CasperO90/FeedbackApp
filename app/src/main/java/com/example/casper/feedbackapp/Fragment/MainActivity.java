@@ -1,4 +1,4 @@
-package com.example.casper.feedbackapp;
+package com.example.casper.feedbackapp.Fragment;
 
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +20,7 @@ import com.example.casper.feedbackapp.Fragment.Tab3;
 import com.example.casper.feedbackapp.Fragment.Tab4;
 import com.example.casper.feedbackapp.Fragment.Tab5;
 import com.example.casper.feedbackapp.Fragment.Tab6;
+import com.example.casper.feedbackapp.R;
 
 public class MainActivity extends AppCompatActivity {
 

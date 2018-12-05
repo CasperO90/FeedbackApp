@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.casper.feedbackapp.AppState;
-import com.example.casper.feedbackapp.MainActivity;
+import com.example.casper.feedbackapp.Fragment.MainActivity;
 import com.example.casper.feedbackapp.Mødeleder.LederOpretMoedeActivity;
 import com.example.casper.feedbackapp.R;
 
