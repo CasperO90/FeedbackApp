@@ -29,7 +29,7 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
          sluttilfreds = intent.getStringExtra("tilfreds");
          slutglad = intent.getStringExtra("glad");
 
-
+        
          
 
     }
