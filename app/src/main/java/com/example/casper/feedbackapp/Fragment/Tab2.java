@@ -40,7 +40,7 @@ public class Tab2 extends Fragment implements View.OnClickListener {
         gladBtn.setOnClickListener(this);
 
         //Textview
-        spm2 = view.findViewById(R.id.spm2TextView);
+        spm2 = view.findViewById(R.id.spmTextView);
         spm2.setText(R.string.spm2);
 
         surBtn.setAlpha(0.2f);

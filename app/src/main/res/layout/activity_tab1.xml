@@ -7,4 +7,5 @@
     android:gravity="center_horizontal">
 
 <include layout="@layout/tab_activity"/>
+
 </LinearLayout>

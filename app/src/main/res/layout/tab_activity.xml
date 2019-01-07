@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DFE0E0"
-    tools:context=".Fragment.Tab1">
+    >
 
     <Button
         android:id="@+id/surBtn"
@@ -71,12 +70,11 @@
         app:layout_constraintVertical_bias="0.498" />
 
     <TextView
-        android:id="@+id/spm1TextView"
+        android:id="@+id/spmTextView"
         android:layout_width="417dp"
         android:layout_height="100dp"
         android:layout_marginBottom="8dp"
         android:background="@color/colorPrimary"
-        android:text="Spørgsmål 1"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="24sp"
