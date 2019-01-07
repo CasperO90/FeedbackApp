@@ -52,15 +52,14 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         tv1 = findViewById(R.id.textView19);
         tv = findViewById(R.id.textView20);
 
+        overskriftTekst = findViewById(R.id.overskriftTekst);
+        overskriftTekst.setText("Velkommen til møde " + nytMødeID + "\nDagsorden ");
 
         //Hent møde id
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
-
         nytMødeID = AppState.getMødeID();
 
-        overskriftTekst = findViewById(R.id.overskriftTekst);
-        overskriftTekst.setText("Velkommen til møde " + nytMødeID + "\nDagsorden ");
 
         // textviews der står tekst i hvis brugeren har oprettet dem
         if (id.text == null) {
@@ -91,6 +90,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         } else {
             tv2.setText("Punkt 3: " + id.text2);
         }
+
 
         if (id.text3 == null) {
             tv3.setText("");

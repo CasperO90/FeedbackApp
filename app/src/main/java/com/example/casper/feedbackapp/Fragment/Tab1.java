@@ -29,7 +29,6 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
     //public static betyder at værdierne kan blive videre givet, så når jeg kalder på dem i en anden klasse
     //har de samme værdier.
-
     public static int sur, neutral, tilfreds, glad;
 
 

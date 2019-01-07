@@ -15,7 +15,6 @@ import com.example.casper.feedbackapp.SlutActivity;
 
 public class Highscore extends AppCompatActivity {
 
-
     TextView tv1,tv2,tv3,tv4,SeScoreFeedback;
     private int nytMødeID;
 
@@ -30,19 +29,16 @@ public class Highscore extends AppCompatActivity {
         getSupportActionBar().setTitle("Se Feedback"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
-
-
-
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
 
         nytMødeID = AppState.getMødeID();
 
-        tv1 = (TextView) findViewById(R.id.textView4);
-        tv2 = (TextView) findViewById(R.id.textView6);
-        tv3 = (TextView) findViewById(R.id.textView10);
-        tv4 = (TextView) findViewById(R.id.textView11);
-        SeScoreFeedback = (TextView)findViewById(R.id.SeScoreFeedback);
+        tv1 = findViewById(R.id.textView4);
+        tv2 = findViewById(R.id.textView6);
+        tv3 = findViewById(R.id.textView10);
+        tv4 = findViewById(R.id.textView11);
+        SeScoreFeedback = findViewById(R.id.SeScoreFeedback);
 
 
         if(Score.slutsur == null){
@@ -65,10 +61,7 @@ public class Highscore extends AppCompatActivity {
         tv4.setText("" + Score.slutglad);
 
         SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ nytMødeID);
-
     }
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -79,6 +72,4 @@ public class Highscore extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }
