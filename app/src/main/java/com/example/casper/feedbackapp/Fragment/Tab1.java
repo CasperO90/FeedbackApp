@@ -58,6 +58,11 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         tilfredsBtn.setAlpha(0.2f);
         gladBtn.setAlpha(0.2f);
 
+        //smily farve når man går videre.
+        farveCheck();
+
+
+
         return view;
     }
 
@@ -145,4 +150,25 @@ public class Tab1 extends Fragment implements View.OnClickListener {
             }
         }
     }
+
+
+
+
+
+    // opdater view og sikre sig at farven er den rigtige farve.
+    // den her kan godt blive smidt ind i logik klassen. 
+    public void farveCheck(){
+        if(a == 1) {
+            surBtn.setAlpha(1f);
+        } else if (b == 1) {
+            neutralBtn.setAlpha(1f);
+        } else if (c == 1) {
+            tilfredsBtn.setAlpha(1f);
+        } else if (d == 1) {
+            gladBtn.setAlpha(1f);
+        }
+        return;
+    }
+
+
 }
