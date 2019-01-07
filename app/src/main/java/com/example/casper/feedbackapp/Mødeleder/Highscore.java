@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -63,7 +64,7 @@ public class Highscore extends AppCompatActivity {
         tv3.setText(""+Score.sluttilfreds);
         tv4.setText("" + Score.slutglad);
 
-        SeScoreFeedback.setText("Se Feedback fra Møde ID: "+ nytMødeID);
+        SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ nytMødeID);
 
     }
 

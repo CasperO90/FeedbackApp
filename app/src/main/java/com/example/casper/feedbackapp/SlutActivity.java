@@ -1,6 +1,7 @@
 package com.example.casper.feedbackapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,8 +30,15 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
          sluttilfreds = intent.getStringExtra("tilfreds");
          slutglad = intent.getStringExtra("glad");
 
+        Log.d("check",""+slutsur);
+        Log.d("check",""+slutneutral);
+        Log.d("check",""+sluttilfreds);
+        Log.d("check",""+slutglad);
 
-         
+
+
+
+
 
     }
 

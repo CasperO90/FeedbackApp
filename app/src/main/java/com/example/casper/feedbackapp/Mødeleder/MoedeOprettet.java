@@ -31,7 +31,6 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
         //action bar
         getSupportActionBar().setTitle("Møde er Oprettet"); // for set actionbar title
-
         //Textview
         mødeIdTekst = findViewById(R.id.mødeIdTekst);
 
