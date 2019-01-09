@@ -13,7 +13,7 @@ import android.widget.Chronometer;
 
 import com.example.casper.feedbackapp.R;
 
-public class LederSlutMoedeActivity extends AppCompatActivity implements View.OnClickListener {
+public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
 
     private Button mButton6;
