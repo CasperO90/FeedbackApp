@@ -25,11 +25,10 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
     Button surBtn, neutralBtn, tilfredsBtn, gladBtn;
     int a, b, c, d = 0;
-    TextView spm1;
+    TextView spm1, overskrift;
 
     //public static betyder at værdierne kan blive videre givet, så når jeg kalder på dem i en anden klasse
     //har de samme værdier.
-
     public static int sur, neutral, tilfreds, glad;
 
 
@@ -50,7 +49,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         gladBtn.setOnClickListener(this);
 
         //Textview
-        spm1 = view.findViewById(R.id.spm1TextView);
+        spm1 = view.findViewById(R.id.spmTextView);
         spm1.setText(R.string.spm1);
 
         surBtn.setAlpha(0.2f);

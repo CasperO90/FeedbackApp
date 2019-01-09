@@ -31,14 +31,10 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
 
         startMødeBtn = findViewById(R.id.startMødeBtn);
         startMødeBtn.setOnClickListener(this);
+
         SeFeedback = findViewById(R.id.SeFeedback);
         SeFeedback.setOnClickListener(this);
-
-
-
     }
-
-
 
     public void opretMøde(){
         Intent intent = new Intent(this, LederOpretMoedeActivity.class);
@@ -82,7 +78,5 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 }
 

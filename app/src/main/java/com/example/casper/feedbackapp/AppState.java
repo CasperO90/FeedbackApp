@@ -10,7 +10,6 @@ public class AppState {
 
     private static int mødeID;
     private static final String MØDEIDE = "mødeid";
-    private static String toastTekst;
 
     public static void setMødeID(int IDmøde){mødeID = IDmøde;}
     public static int getMødeID(){return mødeID;}
@@ -25,5 +24,11 @@ public class AppState {
         SharedPreferences.Editor editor = preferences.edit();
         editor.putInt(MØDEIDE, nytMødeID);
         editor.commit();
+    }
+
+    public static int opretMødeID(){
+        Random random = new Random();
+        mødeID = random.nextInt((1000) + 1);
+        return mødeID;
     }
 }

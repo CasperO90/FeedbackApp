@@ -55,7 +55,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         gladBtn.setOnClickListener(this);
 
         //Textview
-        spm6 = view.findViewById(R.id.spm6TextView);
+        spm6 = view.findViewById(R.id.spmTextView);
         spm6.setText(R.string.spm6);
 
         surBtn.setAlpha(0.2f);

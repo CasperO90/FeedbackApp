@@ -31,12 +31,12 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
         //action bar
         getSupportActionBar().setTitle("Møde er Oprettet"); // for set actionbar title
+
         //Textview
         mødeIdTekst = findViewById(R.id.mødeIdTekst);
 
         //Opretter møde id
-        Random random = new Random();
-        mødeID = random.nextInt((1000) + 1);
+        mødeID = AppState.opretMødeID();
 
         //Gem møde
         AppState.setMødeID(mødeID);
