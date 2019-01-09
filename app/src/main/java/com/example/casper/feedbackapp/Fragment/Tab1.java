@@ -25,11 +25,10 @@ public class Tab1 extends Fragment implements View.OnClickListener {
 
     Button surBtn, neutralBtn, tilfredsBtn, gladBtn;
     int a, b, c, d = 0;
-    TextView spm1;
+    TextView spm1, overskrift;
 
     //public static betyder at værdierne kan blive videre givet, så når jeg kalder på dem i en anden klasse
     //har de samme værdier.
-
     public static int sur, neutral, tilfreds, glad;
 
 
@@ -50,13 +49,18 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         gladBtn.setOnClickListener(this);
 
         //Textview
-        spm1 = view.findViewById(R.id.spm1TextView);
+        spm1 = view.findViewById(R.id.spmTextView);
         spm1.setText(R.string.spm1);
 
         surBtn.setAlpha(0.2f);
         neutralBtn.setAlpha(0.2f);
         tilfredsBtn.setAlpha(0.2f);
         gladBtn.setAlpha(0.2f);
+
+        //smily farve når man går videre.
+        farveCheck();
+
+
 
         return view;
     }
@@ -145,4 +149,25 @@ public class Tab1 extends Fragment implements View.OnClickListener {
             }
         }
     }
+
+
+
+
+
+    // opdater view og sikre sig at farven er den rigtige farve.
+    // den her kan godt blive smidt ind i logik klassen. 
+    public void farveCheck(){
+        if(a == 1) {
+            surBtn.setAlpha(1f);
+        } else if (b == 1) {
+            neutralBtn.setAlpha(1f);
+        } else if (c == 1) {
+            tilfredsBtn.setAlpha(1f);
+        } else if (d == 1) {
+            gladBtn.setAlpha(1f);
+        }
+        return;
+    }
+
+
 }

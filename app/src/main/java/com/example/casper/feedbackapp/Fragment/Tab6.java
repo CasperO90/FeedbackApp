@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
 
         //Buttons
         btn = view.findViewById(R.id.afslutBtn);
+        btn.setOnClickListener(this);
 
         surBtn = view.findViewById(R.id.surBtn);
         surBtn.setOnClickListener(this);
@@ -53,7 +55,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         gladBtn.setOnClickListener(this);
 
         //Textview
-        spm6 = view.findViewById(R.id.spm6TextView);
+        spm6 = view.findViewById(R.id.spmTextView);
         spm6.setText(R.string.spm6);
 
         surBtn.setAlpha(0.2f);
@@ -61,28 +63,8 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         tilfredsBtn.setAlpha(0.2f);
         gladBtn.setAlpha(0.2f);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
-                intent.putExtra("sur", String.valueOf(sur));
-                intent.putExtra("neutral", String.valueOf(neutral));
-                intent.putExtra("tilfreds", String.valueOf(tilfreds));
-                intent.putExtra("glad", String.valueOf(glad));
-                startActivity(intent);
-
-                /*
-                    Intent intent = new Intent(getActivity().getBaseContext(), Highscore.class);
-                    intent.putExtra("sur", String.valueOf(sur));
-                    intent.putExtra("neutral", String.valueOf(neutral));
-                    intent.putExtra("tilfreds", String.valueOf(tilfreds));
-                    intent.putExtra("glad", String.valueOf(glad));
-                    getActivity().startActivity(intent);
-                    */
-            }
-        });
-
+        farveCheck();
+        
         return view;
     }
 
@@ -171,9 +153,45 @@ public class Tab6 extends Fragment implements View.OnClickListener {
             }
         }
 
-        sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3+ Score5.sur4 +sur5;
-        neutral = Score1.neutral +Score2.neutral1 +Score3.neutral2 + Score4.neutral3+ Score5.neutral4 + neutral5;
-        tilfreds =Score1.tilfreds +Score2.tilfreds1 +Score3.tilfreds2 + Score4.tilfreds3+ Score5.tilfreds4 + tilfreds5;
-        glad =Score1.glad +Score2.glad1 +Score3.glad2 + Score4.glad3+ Score5.glad4 + glad5;
+
+        else if (v == btn) {
+
+            Log.d("ornligt","test");
+
+
+
+            sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3+ Score5.sur4 +sur5;
+            neutral = Score1.neutral +Score2.neutral1 +Score3.neutral2 + Score4.neutral3+ Score5.neutral4 + neutral5;
+            tilfreds =Score1.tilfreds +Score2.tilfreds1 +Score3.tilfreds2 + Score4.tilfreds3+ Score5.tilfreds4 + tilfreds5;
+            glad =Score1.glad +Score2.glad1 +Score3.glad2 + Score4.glad3+ Score5.glad4 + glad5;
+
+
+            Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
+            intent.putExtra("sur", String.valueOf(sur));
+            intent.putExtra("neutral", String.valueOf(neutral));
+            intent.putExtra("tilfreds", String.valueOf(tilfreds));
+            intent.putExtra("glad", String.valueOf(glad));
+            startActivity(intent);
+
+
+        }
     }
+
+
+    // opdater view og sikre sig at farven er den rigtige farve.
+    // den her kan godt blive smidt ind i logik klassen.
+    public void farveCheck(){
+        if(a == 1) {
+            surBtn.setAlpha(1f);
+        } else if (b == 1) {
+            neutralBtn.setAlpha(1f);
+        } else if (c == 1) {
+            tilfredsBtn.setAlpha(1f);
+        } else if (d == 1) {
+            gladBtn.setAlpha(1f);
+        }
+        return;
+    }
+
+
 }

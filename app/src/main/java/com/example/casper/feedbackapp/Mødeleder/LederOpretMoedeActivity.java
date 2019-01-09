@@ -38,21 +38,17 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
         mLayout = findViewById(R.id.linearLayout);
 
         //opret knap
-        mButton = (Button) findViewById(R.id.button);
+        mButton = findViewById(R.id.button);
         mButton.setOnClickListener(onClick());
 
         //intent smid datene videre
-        mButton2 = (Button)findViewById(R.id.opretmødeBtn);
+        mButton2 = findViewById(R.id.opretmødeBtn);
         mButton2.setOnClickListener(onClick());
 
         //slet
-        mButton3 = (Button)findViewById(R.id.button4);
+        mButton3 = findViewById(R.id.button4);
         mButton3.setOnClickListener(onClick());
-
-
-
     }
-
 
     public void opretPunkter(){
         if (createNewEditText().getTag().
@@ -72,68 +68,67 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
 
             if (createNewEditText().getTag().equals("a1")) {
 
-                ed = (EditText) findViewById(c);
+                ed = findViewById(c);
                 ed.setHint("mødepuntk 1");
                 c++;
             }
 
             else if (createNewEditText().getTag().equals("a2")) {
-                ed1 = (EditText) findViewById(c);
+                ed1 = findViewById(c);
                 ed1.setHint("mødepunkt 2");
                 c++;
             }
 
             else if (createNewEditText().getTag().equals("a3")) {
-                ed2 = (EditText) findViewById(c);
+                ed2 = findViewById(c);
                 ed2.setHint("mødepunkt 3");
                 c++;
             }
 
             else if (createNewEditText().getTag().equals("a4")) {
-                ed3 = (EditText) findViewById(c);
+                ed3 = findViewById(c);
                 ed3.setHint("mødepunkt 4");
                 c++;
             }
 
             else if (createNewEditText().getTag().equals("a5")) {
-                ed4 = (EditText) findViewById(c);
+                ed4 = findViewById(c);
                 ed4.setHint("mødepunkt 5");
                 c++;
             }
 
             else if (createNewEditText().getTag().equals("a6")) {
-                ed5 = (EditText) findViewById(c);
+                ed5 = findViewById(c);
                 ed5.setHint("mødepunkt 6");
                 c++;
             }
 
             else if (createNewEditText().getTag().equals("a7")) {
-                ed6 = (EditText) findViewById(c);
+                ed6 = findViewById(c);
                 ed6.setHint("mødepunkt 7");
                 c++;
             }
 
             else if (createNewEditText().getTag().equals("a8")) {
-                ed7 = (EditText) findViewById(c);
+                ed7 = findViewById(c);
                 ed7.setHint("mødepunkt 8");
                 c++;
             }
 
             else if (createNewEditText().getTag().equals("a9")) {
-                ed8 = (EditText) findViewById(c);
+                ed8 = findViewById(c);
                 ed8.setHint("mødepunkt 9");
                 c++;
             }
 
             else if (createNewEditText().getTag().equals("a10")) {
-                ed9 = (EditText) findViewById(c);
+                ed9 = findViewById(c);
                 ed9.setHint("mødepunkt 10");
                 c++;
             }
         }
 
         else {
-
             Toast.makeText(LederOpretMoedeActivity.this,
                     "Der kan ikke oprettes flere mødepunkter", Toast.LENGTH_LONG).show();
             a =10;
@@ -306,10 +301,6 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
                 else if(mButton3 == v) {
                     sletPunkt();
                 }
-
-
-
-
             }
         };
     }
@@ -328,7 +319,8 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
 */
 
     private EditText createNewEditText(){
-        final ViewGroup.LayoutParams lparams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        final ViewGroup.LayoutParams lparams =
+                new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         final EditText editText = new EditText(this);
         editText.setLayoutParams(lparams);
         editText.setHint("skriv dagsorden");
@@ -343,10 +335,6 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
         Intent intent = new Intent(LederOpretMoedeActivity.this, MoedeOprettet.class);
         startActivity(intent);
     }
-
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

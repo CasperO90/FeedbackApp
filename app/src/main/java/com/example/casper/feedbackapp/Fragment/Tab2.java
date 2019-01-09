@@ -40,13 +40,15 @@ public class Tab2 extends Fragment implements View.OnClickListener {
         gladBtn.setOnClickListener(this);
 
         //Textview
-        spm2 = view.findViewById(R.id.spm2TextView);
+        spm2 = view.findViewById(R.id.spmTextView);
         spm2.setText(R.string.spm2);
 
         surBtn.setAlpha(0.2f);
         neutralBtn.setAlpha(0.2f);
         tilfredsBtn.setAlpha(0.2f);
         gladBtn.setAlpha(0.2f);
+
+        farveCheck();
 
         return view;
     }
@@ -136,4 +138,27 @@ public class Tab2 extends Fragment implements View.OnClickListener {
             }
         }
     }
+
+
+
+
+    // opdater view og sikre sig at farven er den rigtige farve.
+    // den her kan godt blive smidt ind i logik klassen.
+    public void farveCheck(){
+        if(a == 1) {
+            surBtn.setAlpha(1f);
+        } else if (b == 1) {
+            neutralBtn.setAlpha(1f);
+        } else if (c == 1) {
+            tilfredsBtn.setAlpha(1f);
+        } else if (d == 1) {
+            gladBtn.setAlpha(1f);
+        }
+        return;
+    }
+
+
+
+
+
 }
