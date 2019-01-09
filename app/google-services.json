@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "221175567778",
+    "firebase_url": "https://feedbackapp-2dacb.firebaseio.com",
+    "project_id": "feedbackapp-2dacb",
+    "storage_bucket": "feedbackapp-2dacb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221175567778:android:697f35de382598fd",
+        "android_client_info": {
+          "package_name": "com.example.casper.feedbackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221175567778-enhkchbe1elntsu76t6rpu7vn0vo5agk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.casper.feedbackapp",
+            "certificate_hash": "be850fbf3c7d6db7f6df77ba1d4e8484c5c3ce22"
+          }
+        },
+        {
+          "client_id": "221175567778-l1016hss8549tm9rvqvtvjgm39004a0m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm15Negfzxaw2ciOlorOZnLTMaTL4B_Nc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221175567778-l1016hss8549tm9rvqvtvjgm39004a0m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
