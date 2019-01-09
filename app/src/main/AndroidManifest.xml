@@ -24,7 +24,7 @@
         <activity android:name=".Fragment.Tab4" />
         <activity android:name=".Fragment.Tab5" />
         <activity android:name=".Fragment.Tab6" />
-        <activity android:name=".Fragment.MainActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".Mødedeltager.MoedeDeltagActivity" />
         <activity android:name=".Mødeleder.FoersteLederActivity" />
         <activity
@@ -34,7 +34,7 @@
         <activity android:name=".Mødeleder.LederStartMoedeActivity" />
         <activity android:name=".Mødeleder.Highscore" />
         <activity android:name=".Mødeleder.MoedeOprettet" />
-        <activity android:name=".SlutActivity" />
+        <activity android:name=".SlutActivity"></activity>
     </application>
 
 </manifest>

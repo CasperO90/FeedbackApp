@@ -24,7 +24,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
         //Button
-        mButton5 = findViewById(R.id.button2);
+        mButton5 = (Button)findViewById(R.id.button2);
         mButton5.setOnClickListener(this);
     }
 
