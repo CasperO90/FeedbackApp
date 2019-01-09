@@ -1,5 +1,6 @@
 package com.example.casper.feedbackapp.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,10 +10,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.Fragment.Tab1;
 import com.example.casper.feedbackapp.Fragment.Tab2;
 import com.example.casper.feedbackapp.Fragment.Tab3;
@@ -28,6 +31,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
     public static int sur5,neutral5,tilfreds5,glad5;
     public static int sur,neutral,tilfreds,glad;
     int a,b,c,d = 0;
+
 
     Tab1 Score1 = new Tab1();
     Tab2 Score2 = new Tab2();
@@ -68,14 +72,11 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    public void toastTekst() {
-        Toast.makeText(getActivity(), "Dette var sidste spørgsmål", Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     public void onClick(View v) {
+
         if (v == surBtn) {
-            toastTekst();
             a++;
 
             if (a == 1) {
@@ -94,7 +95,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == neutralBtn) {
-            toastTekst();
             b++;
 
             if (b == 1) {
@@ -114,7 +114,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == tilfredsBtn) {
-            toastTekst();
             c++;
 
             if (c == 1) {
@@ -134,7 +133,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == gladBtn) {
-            toastTekst();
             d++;
 
             if (d == 1) {
@@ -154,17 +152,13 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
 
-        else if (v == btn) {
-
+        if (v == btn) {
             Log.d("ornligt","test");
-
-
 
             sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3+ Score5.sur4 +sur5;
             neutral = Score1.neutral +Score2.neutral1 +Score3.neutral2 + Score4.neutral3+ Score5.neutral4 + neutral5;
             tilfreds =Score1.tilfreds +Score2.tilfreds1 +Score3.tilfreds2 + Score4.tilfreds3+ Score5.tilfreds4 + tilfreds5;
             glad =Score1.glad +Score2.glad1 +Score3.glad2 + Score4.glad3+ Score5.glad4 + glad5;
-
 
             Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
             intent.putExtra("sur", String.valueOf(sur));
@@ -172,10 +166,9 @@ public class Tab6 extends Fragment implements View.OnClickListener {
             intent.putExtra("tilfreds", String.valueOf(tilfreds));
             intent.putExtra("glad", String.valueOf(glad));
             startActivity(intent);
-
-
         }
     }
+
 
 
     // opdater view og sikre sig at farven er den rigtige farve.
@@ -192,6 +185,4 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
         return;
     }
-
-
 }
