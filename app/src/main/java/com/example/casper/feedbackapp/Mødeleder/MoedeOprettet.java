@@ -13,6 +13,8 @@ import android.view.View.OnClickListener;
 import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.StartActivity;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.PriorityQueue;
 import java.util.Random;

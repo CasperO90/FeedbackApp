@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.view.View.OnClickListener;
 import android.widget.Toast;
 
+import com.example.casper.feedbackapp.Fragment.Tab1;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
@@ -24,7 +25,8 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
     public static String slutsur,slutneutral,sluttilfreds,slutglad ;
 
     private DatabaseReference mDatabase;
-
+    int mødetest;
+    String nytid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +36,11 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         forsideButton = findViewById(R.id.forsideButton);
         forsideButton.setOnClickListener(this);
 
+        mødetest = AppState.getMødeID();
 
+        nytid = String.valueOf(mødetest);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child(nytid);
 
        // intent
         Intent intent = getIntent();
@@ -61,6 +65,9 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
     @Override
     public void onClick(View view) {
+
+
+
 
 
 
