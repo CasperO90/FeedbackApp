@@ -34,7 +34,8 @@
         <activity android:name=".Mødeleder.LederStartMoedeActivity" />
         <activity android:name=".Mødeleder.Highscore" />
         <activity android:name=".Mødeleder.MoedeOprettet" />
-        <activity android:name=".SlutActivity" />
+        <activity android:name=".Mødeleder.LogIn"/>
+        <activity android:name=".SlutActivity"></activity>
     </application>
 
 </manifest>
