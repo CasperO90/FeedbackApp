@@ -20,8 +20,17 @@ import com.example.casper.feedbackapp.Fragment.Tab4;
 import com.example.casper.feedbackapp.Fragment.Tab5;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.SlutActivity;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Tab6 extends Fragment implements View.OnClickListener {
+
+    // Write a message to the database
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("mødeID");
+
+
+
 
     Button surBtn,neutralBtn,tilfredsBtn,gladBtn, btn;
     TextView spm6;
@@ -156,7 +165,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
 
         else if (v == btn) {
 
-            Log.d("ornligt","test");
+
 
 
 
@@ -165,6 +174,13 @@ public class Tab6 extends Fragment implements View.OnClickListener {
             tilfreds =Score1.tilfreds +Score2.tilfreds1 +Score3.tilfreds2 + Score4.tilfreds3+ Score5.tilfreds4 + tilfreds5;
             glad =Score1.glad +Score2.glad1 +Score3.glad2 + Score4.glad3+ Score5.glad4 + glad5;
 
+
+
+
+            myRef.setValue(sur);
+            myRef.setValue(neutral);
+            myRef.setValue(tilfreds);
+            myRef.setValue(glad);
 
             Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
             intent.putExtra("sur", String.valueOf(sur));
