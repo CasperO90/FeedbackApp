@@ -75,14 +75,10 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    public void toastTekst() {
-        Toast.makeText(getActivity(), "Dette var sidste spørgsmål", Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     public void onClick(View v) {
         if (v == surBtn) {
-            toastTekst();
             a++;
 
             if (a == 1) {
@@ -101,7 +97,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == neutralBtn) {
-            toastTekst();
             b++;
 
             if (b == 1) {
@@ -121,7 +116,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == tilfredsBtn) {
-            toastTekst();
             c++;
 
             if (c == 1) {
@@ -141,7 +135,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == gladBtn) {
-            toastTekst();
             d++;
 
             if (d == 1) {
