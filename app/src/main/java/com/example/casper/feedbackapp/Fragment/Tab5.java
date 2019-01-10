@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.R;
 
 public class Tab5 extends Fragment implements View.OnClickListener {
@@ -54,15 +55,10 @@ public class Tab5 extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    public void toastTekst() {
-        Toast.makeText(getActivity(), "Swipe videre", Toast.LENGTH_SHORT).show();
-    }
-
     @Override
     public void onClick(View v) {
 
         if (v == surBtn) {
-            toastTekst();
             a++;
 
             if (a == 1) {
@@ -81,7 +77,6 @@ public class Tab5 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == neutralBtn) {
-            toastTekst();
             b++;
 
             if (b == 1) {
@@ -101,7 +96,6 @@ public class Tab5 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == tilfredsBtn) {
-            toastTekst();
             c++;
 
             if (c == 1) {
@@ -121,7 +115,6 @@ public class Tab5 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == gladBtn) {
-            toastTekst();
             d++;
 
             if (d == 1) {
@@ -139,6 +132,7 @@ public class Tab5 extends Fragment implements View.OnClickListener {
                 gladBtn.setAlpha(1f);
             }
         }
+        AppState.showToast(getContext(),"Swipe videre");
     }
 
 
