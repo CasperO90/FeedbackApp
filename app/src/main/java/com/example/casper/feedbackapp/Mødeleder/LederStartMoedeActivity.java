@@ -1,14 +1,19 @@
 package com.example.casper.feedbackapp.Mødeleder;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.casper.feedbackapp.AppState;
+import com.example.casper.feedbackapp.Mødedeltager.deltagerDagsordenActivity;
 import com.example.casper.feedbackapp.R;
 import com.goodiebag.pinview.Pinview;
 
@@ -17,6 +22,11 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
     private Button mButton5;
     boolean godkendt;
     Pinview pinview;
+    private EditText editText;
+
+    private int finalID;
+    private int nytMødeID;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +41,14 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         mButton5 = (Button) findViewById(R.id.button2);
         mButton5.setOnClickListener(this);
 
+        editText = (EditText)findViewById(R.id.editText);
+
         pinview = (Pinview) findViewById(R.id.pinview);
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        AppState.gemMødeID(preferences);
+
+        nytMødeID = AppState.getMødeID();
 
 
         pinview.setPinViewEventListener(new Pinview.PinViewEventListener() {
@@ -68,9 +85,10 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
     @Override
     public void onClick(View v) {
 
+    deltagMøde();
         //videre
         if (mButton5 == v && godkendt == true) {
-            login();
+           login();
 
         }
 
@@ -95,6 +113,31 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         }
         return super.onOptionsItemSelected(item);
     }
+
+
+
+    public void deltagMøde() {
+
+        String værdi = editText.getText().toString();
+        if (værdi.matches("")) {
+            Toast.makeText(this, "Du har ikke indtastet et id", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        finalID = Integer.parseInt(værdi);
+
+        if (finalID == nytMødeID) {
+            Intent intent = new Intent(this, LogIn.class);
+            startActivity(intent);
+        }
+
+        if (finalID != nytMødeID) {
+            Toast.makeText(this, "Du har intastet et forkert id", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
 }
 
 
