@@ -87,15 +87,15 @@ public class Highscore extends AppCompatActivity {
                         String rigtigglad = map.get("rigtigglad");
 
 
-                            ny = ny + Integer.parseInt(sur);
-                            ny1 = ny1 + Integer.parseInt(mellem);
-                            ny2 = ny2 + Integer.parseInt(glad);
-                            ny3 = ny3 + Integer.parseInt(rigtigglad);
-                            Log.d("SUR", "" + ny);
-                            Log.d("MELLEM", "" + ny1);
-                            Log.d("GLaD", "" + ny2);
-                            Log.d("Rigtigglad", "" + ny3);
-                        
+                                ny = ny + Integer.parseInt(sur);
+                                ny1 = ny1 + Integer.parseInt(mellem);
+                                ny2 = ny2 + Integer.parseInt(glad);
+                                ny3 = ny3 + Integer.parseInt(rigtigglad);
+                                Log.d("SUR", "" + ny);
+                                Log.d("MELLEM", "" + ny1);
+                                Log.d("GLaD", "" + ny2);
+                                Log.d("Rigtigglad", "" + ny3);
+
                   /*
                        User models = ds.getValue(User.class);
                         sur = Integer.parseInt(models.getSur());
