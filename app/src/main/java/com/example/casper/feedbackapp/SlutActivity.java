@@ -67,11 +67,6 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
     public void onClick(View view) {
 
 
-
-
-
-
-
         HashMap<String, String> datamap = new HashMap<>();
         datamap.put("sur",slutsur);
         datamap.put("mellem",slutneutral);
