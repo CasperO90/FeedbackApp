@@ -57,6 +57,11 @@ public class Highscore extends AppCompatActivity {
         tv4 = findViewById(R.id.textView11);
         SeScoreFeedback = findViewById(R.id.SeScoreFeedback);
 
+        ny =0;
+        ny1 =0;
+        ny2 =0;
+        ny3 =0;
+
 
         //sur
         tv1.setText("");
