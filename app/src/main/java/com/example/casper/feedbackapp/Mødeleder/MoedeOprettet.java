@@ -25,6 +25,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
     private int mødeID;
     private String mødeID1;
     private Button button5;
+    private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,20 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
         //Gem møde
         AppState.setMødeID(mødeID);
+
+
+        //Møde id
+        int test = AppState.getMødeID();
+
+        //Møde id laves om til en string
+        String Datatest = String.valueOf(test);
+
+
+        mDatabase = FirebaseDatabase.getInstance().getReference().child(Datatest);
+
+        if (Datatest.equals(mDatabase)){
+            test ++;
+        }
 
         //Sæt tekst
         mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
