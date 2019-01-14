@@ -34,6 +34,10 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
 
         SeFeedback = findViewById(R.id.SeFeedback);
         SeFeedback.setOnClickListener(this);
+
+
+
+
     }
 
     public void opretMøde(){
@@ -78,5 +82,12 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         }
         return super.onOptionsItemSelected(item);
     }
+
+    // denne metode bruges til at få det til at crash.
+    public void forceCrash(View view) {
+        throw new RuntimeException("This is a crash");
+    }
+
+
 }
 

@@ -36,6 +36,10 @@
         <activity android:name=".Mødeleder.MoedeOprettet" />
         <activity android:name=".Mødeleder.LogIn"/>
         <activity android:name=".SlutActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="272e0d1fd49ef0be90ce5354ebc2bddc1d072729" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
