@@ -21,8 +21,8 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // crashlytics.
-        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
+        //crashlytics.
+       boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
         if (!EMULATOR) {
             Fabric.with(this, new Crashlytics());
         }
@@ -38,14 +38,16 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
         lederBtn = findViewById(R.id.lederBtn);
         lederBtn.setOnClickListener(this);
 
-        facebookBtn = findViewById(R.id.facebookBtn);
-        facebookBtn.setOnClickListener(this);
+
+        facebookBtn = findViewById(R.id.facebookBtn);   facebookBtn.setOnClickListener(this);
 
         linkedinBtn = findViewById(R.id.linkedinBtn);
         linkedinBtn.setOnClickListener(this);
 
         hjemmesideBtn = findViewById(R.id.hjemmesideBtn);
         hjemmesideBtn.setOnClickListener(this);
+
+
 
     }
     public void deltagMøde(){
