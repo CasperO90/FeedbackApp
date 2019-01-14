@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.SlutActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -24,22 +25,13 @@ import java.util.HashMap;
 
 public class Tab6 extends Fragment implements View.OnClickListener {
 
-    Button surBtn,neutralBtn,tilfredsBtn,gladBtn, btn;
+    Button surBtn,neutralBtn,tilfredsBtn,gladBtn;
     TextView spm6;
     public static int sur5,neutral5,tilfreds5,glad5;
-    public static int sur,neutral,tilfreds,glad;
     int a,b,c,d = 0;
-
-    Tab1 Score1 = new Tab1();
-    Tab2 Score2 = new Tab2();
-    Tab3 Score3 = new Tab3();
-    Tab4 Score4 = new Tab4();
-    Tab5 Score5 = new Tab5();
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab6, container, false);
-
-
 
         //Buttons
         surBtn = view.findViewById(R.id.surBtn);
@@ -145,33 +137,8 @@ public class Tab6 extends Fragment implements View.OnClickListener {
                 gladBtn.setAlpha(1f);
             }
         }
-
-
-        else if (v == btn) {
-
-
-            Log.d("jjajajajajajaja","jajajajajjaa");
-
-
-            sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3+ Score5.sur4 +sur5;
-            neutral = Score1.neutral +Score2.neutral1 +Score3.neutral2 + Score4.neutral3+ Score5.neutral4 + neutral5;
-            tilfreds =Score1.tilfreds +Score2.tilfreds1 +Score3.tilfreds2 + Score4.tilfreds3+ Score5.tilfreds4 + tilfreds5;
-            glad =Score1.glad +Score2.glad1 +Score3.glad2 + Score4.glad3+ Score5.glad4 + glad5;
-
-
-
-
-            Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
-            intent.putExtra("sur", String.valueOf(sur));
-            intent.putExtra("neutral", String.valueOf(neutral));
-            intent.putExtra("tilfreds", String.valueOf(tilfreds));
-            intent.putExtra("glad", String.valueOf(glad));
-            startActivity(intent);
-
-
-        }
+        AppState.showToast(getContext(),"Swipe videre");
     }
-
 
     // opdater view og sikre sig at farven er den rigtige farve.
     // den her kan godt blive smidt ind i logik klassen.
@@ -187,6 +154,4 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
         return;
     }
-
-
 }
