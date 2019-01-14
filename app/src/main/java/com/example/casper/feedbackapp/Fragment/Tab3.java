@@ -49,7 +49,6 @@ public class Tab3 extends Fragment implements View.OnClickListener {
 
         farveCheck();
 
-
         return view;
     }
 

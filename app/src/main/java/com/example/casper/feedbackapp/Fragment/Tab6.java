@@ -24,10 +24,6 @@ import java.util.HashMap;
 
 public class Tab6 extends Fragment implements View.OnClickListener {
 
-
-
-
-
     Button surBtn,neutralBtn,tilfredsBtn,gladBtn, btn;
     TextView spm6;
     public static int sur5,neutral5,tilfreds5,glad5;
@@ -46,9 +42,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
 
 
         //Buttons
-        btn = view.findViewById(R.id.afslutBtn);
-        btn.setOnClickListener(this);
-
         surBtn = view.findViewById(R.id.surBtn);
         surBtn.setOnClickListener(this);
 

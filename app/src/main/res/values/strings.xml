@@ -31,28 +31,36 @@
         Hvordan vurderer du \n mødelederens indsats idag?
     </string>
 
+    <string name="spm7">
+        Andre kommentare?
+    </string>
+
     <string name="fremskridt1">
-        1 ud af 6
+        1 ud af 7
     </string>
 
     <string name="fremskridt2">
-        2 ud af 6
+        2 ud af 7
     </string>
 
     <string name="fremskridt3">
-        3 ud af 6
+        3 ud af 7
     </string>
 
     <string name="fremskridt4">
-        4 ud af 6
+        4 ud af 7
     </string>
 
     <string name="fremskridt5">
-        5 ud af 6
+        5 ud af 7
     </string>
 
     <string name="fremskridt6">
-        6 ud af 6
+        6 ud af 7
+    </string>
+
+    <string name="fremskridt7">
+        7 ud af 7
     </string>
 
     <string name="slutTak">

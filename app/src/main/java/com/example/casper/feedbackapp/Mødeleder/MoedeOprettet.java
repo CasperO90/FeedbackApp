@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
-
 import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.StartActivity;
@@ -23,7 +22,6 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
     private TextView mødeIdTekst;
     private int mødeID;
-    private String mødeID1;
     private Button button5;
 
     @Override
