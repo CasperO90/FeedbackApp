@@ -49,7 +49,6 @@ public class Tab5 extends Fragment implements View.OnClickListener {
         tilfredsBtn.setAlpha(0.2f);
         gladBtn.setAlpha(0.2f);
 
-
         farveCheck();
 
         return view;
@@ -135,8 +134,6 @@ public class Tab5 extends Fragment implements View.OnClickListener {
         AppState.showToast(getContext(),"Swipe videre");
     }
 
-
-
     // opdater view og sikre sig at farven er den rigtige farve.
     // den her kan godt blive smidt ind i logik klassen.
     public void farveCheck(){
@@ -151,5 +148,4 @@ public class Tab5 extends Fragment implements View.OnClickListener {
         }
         return;
     }
-
 }

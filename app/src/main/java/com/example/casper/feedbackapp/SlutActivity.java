@@ -55,15 +55,16 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         Log.d("check",""+slutglad);
 
 
+
+
+
+
+
+
     }
 
     @Override
     public void onClick(View view) {
-
-
-
-
-
 
 
         HashMap<String, String> datamap = new HashMap<>();

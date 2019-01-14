@@ -1,26 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:background="#DFE0E0">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
 
-        <include
-            layout="@layout/tab_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="444dp" />
+    <include layout="@layout/tab_activity"/>
 
-        <Button
-            android:id="@+id/afslutBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/knap_baggrund"
-            android:text="@string/færdigBtn"
-            android:textColor="@android:color/background_light" />
-
-    </LinearLayout>
+</LinearLayout>
