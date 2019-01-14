@@ -8,8 +8,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+import com.crashlytics.android.Crashlytics;
 import com.example.casper.feedbackapp.Mødedeltager.MoedeDeltagActivity;
 import com.example.casper.feedbackapp.Mødeleder.FoersteLederActivity;
+import io.fabric.sdk.android.Fabric;
 
 public class StartActivity extends AppCompatActivity implements OnClickListener{
 
@@ -18,6 +20,9 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // crashlytics.
+        Fabric.with(this, new Crashlytics());
+
         setContentView(R.layout.activity_start);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false); // for set actionbar title
