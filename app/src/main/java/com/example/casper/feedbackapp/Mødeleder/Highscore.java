@@ -33,8 +33,6 @@ public class Highscore extends AppCompatActivity {
     String nytid;
     public static int a =0;
 
-    //test git
-
 
 
     @Override
