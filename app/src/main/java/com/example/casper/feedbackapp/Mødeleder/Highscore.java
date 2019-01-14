@@ -23,6 +23,7 @@ import java.util.Map;
 public class Highscore extends AppCompatActivity {
 
     //Test 2
+    // test 45
 
     TextView tv1,tv2,tv3,tv4,SeScoreFeedback;
     private int nytMødeID;
