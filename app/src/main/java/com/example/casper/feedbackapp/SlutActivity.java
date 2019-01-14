@@ -55,12 +55,6 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         Log.d("check",""+slutglad);
 
 
-
-
-
-
-
-
     }
 
     @Override

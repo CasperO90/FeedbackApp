@@ -40,8 +40,8 @@ public class AppState {
     //Metoder der opretter et tilfældigt møde id
     //Metoden skal udvides, så den også kan kontrollere eksisterende møde id'er
     public static int opretMødeID() {
-        //Random random = new Random();
-        mødeID = 10; //random.nextInt((1000) + 1);
+        Random random = new Random();
+        mødeID = random.nextInt((1000) + 1);
         return mødeID;
     }
 
