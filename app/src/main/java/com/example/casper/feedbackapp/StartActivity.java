@@ -2,6 +2,7 @@ package com.example.casper.feedbackapp;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,8 +22,10 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // crashlytics.
-        Fabric.with(this, new Crashlytics());
-
+        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
+        if (!EMULATOR) {
+            Fabric.with(this, new Crashlytics());
+        }
         setContentView(R.layout.activity_start);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false); // for set actionbar title
