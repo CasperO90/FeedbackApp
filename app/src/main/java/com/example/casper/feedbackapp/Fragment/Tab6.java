@@ -13,21 +13,17 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.casper.feedbackapp.Fragment.Tab1;
-import com.example.casper.feedbackapp.Fragment.Tab2;
-import com.example.casper.feedbackapp.Fragment.Tab3;
-import com.example.casper.feedbackapp.Fragment.Tab4;
-import com.example.casper.feedbackapp.Fragment.Tab5;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.SlutActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.HashMap;
+
 public class Tab6 extends Fragment implements View.OnClickListener {
 
-    // Write a message to the database
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("mødeID");
 
 
 
@@ -46,6 +42,8 @@ public class Tab6 extends Fragment implements View.OnClickListener {
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab6, container, false);
+
+
 
         //Buttons
         btn = view.findViewById(R.id.afslutBtn);
@@ -77,14 +75,10 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         return view;
     }
 
-    public void toastTekst() {
-        Toast.makeText(getActivity(), "Dette var sidste spørgsmål", Toast.LENGTH_SHORT).show();
-    }
 
     @Override
     public void onClick(View v) {
         if (v == surBtn) {
-            toastTekst();
             a++;
 
             if (a == 1) {
@@ -103,7 +97,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == neutralBtn) {
-            toastTekst();
             b++;
 
             if (b == 1) {
@@ -123,7 +116,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == tilfredsBtn) {
-            toastTekst();
             c++;
 
             if (c == 1) {
@@ -143,7 +135,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         }
 
         else if (v == gladBtn) {
-            toastTekst();
             d++;
 
             if (d == 1) {
@@ -166,7 +157,7 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         else if (v == btn) {
 
 
-
+            Log.d("jjajajajajajaja","jajajajajjaa");
 
 
             sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3+ Score5.sur4 +sur5;
@@ -176,11 +167,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
 
 
 
-
-            myRef.setValue(sur);
-            myRef.setValue(neutral);
-            myRef.setValue(tilfreds);
-            myRef.setValue(glad);
 
             Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
             intent.putExtra("sur", String.valueOf(sur));

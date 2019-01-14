@@ -12,13 +12,11 @@ import android.widget.TextView;
 import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.SlutActivity;
-import com.github.mikephil.charting.charts.BarChart;
 
 public class Highscore extends AppCompatActivity {
 
     TextView tv1,tv2,tv3,tv4,SeScoreFeedback;
     private int nytMødeID;
-
 
     SlutActivity Score = new SlutActivity();
 
@@ -26,7 +24,7 @@ public class Highscore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscore);
-        
+
         // action bar
         getSupportActionBar().setTitle("Se Feedback"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
