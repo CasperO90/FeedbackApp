@@ -10,8 +10,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.casper.feedbackapp.R;
+import com.example.casper.feedbackapp.SlutActivity;
 
 public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +24,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
     private Chronometer chronometer;
     private boolean running;
     private boolean afsluttet;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
