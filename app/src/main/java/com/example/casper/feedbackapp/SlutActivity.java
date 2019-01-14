@@ -53,10 +53,24 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         Log.d("check",""+slutneutral);
         Log.d("check",""+sluttilfreds);
         Log.d("check",""+slutglad);
+
+
+
+
+
+
+
+
     }
 
     @Override
     public void onClick(View view) {
+
+
+
+
+
+
 
         HashMap<String, String> datamap = new HashMap<>();
         datamap.put("sur",slutsur);
@@ -64,6 +78,8 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         datamap.put("glad",sluttilfreds);
         datamap.put("rigtigglad",slutglad);
         Log.d("nejenjejenjenje",""+slutsur);
+
+
 
         mDatabase.push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -76,6 +92,10 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
                 }
             }
         });
+
+
+
+
 
         Intent i = new Intent(this, StartActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | i.FLAG_ACTIVITY_CLEAR_TASK);
