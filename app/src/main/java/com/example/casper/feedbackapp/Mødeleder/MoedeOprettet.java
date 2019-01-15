@@ -61,7 +61,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
 
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child(nymødeID);
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID/"+nymødeID);
 
 
         mDatabase.setValue(nymødeID).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -76,8 +76,6 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
             }
         });
-
-
 
 
 

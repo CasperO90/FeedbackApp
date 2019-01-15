@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Set;
 
 public class LederStartMoedeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -39,9 +40,11 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference ref;
+    private static String brugernsMødeID;
 
     private ArrayList<String> mUserID = new ArrayList<>();
 
+    Set<String> k;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,10 +81,11 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                //String value = dataSnapshot.getValue(String.class);
-                //mUserID.add(value);
+                Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
+                k = map.keySet();
+                Log.d("test","test"+k);
 
-                Log.d("1234", "" + mUserID);
+
             }
 
 
@@ -116,7 +120,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
 
 
-       /* pinview.setPinViewEventListener(new Pinview.PinViewEventListener() {
+       pinview.setPinViewEventListener(new Pinview.PinViewEventListener() {
             @Override
             public void onDataEntered(Pinview pinview, boolean b) {
 
@@ -145,34 +149,40 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
 
         });
-        */
+
     }
 
 
     @Override
     public void onClick(View v) {
 
-    //deltagMøde();
+   // deltagMøde();
         //videre
        // if (mButton5 == v && godkendt == true) {
-        if (mButton5 == v) {
-            Log.d("nejenjenjne", "" + editText.getText().toString());
-            Log.d("jajajajja", "" + mUserID);
-            checkTal(editText.getText().toString());
-            if (checkTal(editText.getText().toString()) == true) {
+       if (mButton5 == v) {
+
+           Log.d("måskemåske",""+k);
+           brugernsMødeID = editText.getText().toString();
+
+
+            if (checkTal(brugernsMødeID) == true && godkendt == true) {
                 Log.d("den er  true", "den er  true");
-                // login();
-            } else if (checkTal(editText.getText().toString()) == false) {
-                Log.d("den er false", "den er  false");
-            } else {
-                Log.d("imorgen", "imorgen ");
+                login();
             }
+
+           else if (checkTal(brugernsMødeID) == false && godkendt == true ) {
+                Toast.makeText(this, "forkert møde ID", Toast.LENGTH_SHORT).show();
+
+            }
+            else if (checkTal(brugernsMødeID) == true && godkendt == false ) {
+                Toast.makeText(this, "forkert Pin-kode", Toast.LENGTH_SHORT).show();
+
+            }else {
+                Toast.makeText(this, "Både Møde ID og Pin-kode er forkert.", Toast.LENGTH_SHORT).show();
+            }
+
         }
 
-
-
-
-        //login();
 
 
     }
@@ -221,7 +231,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
     public Boolean checkTal(String checkString)
     {
-        for(String tal : mUserID)
+        for(String tal : k)
         {
             if (checkString.contains(tal))
             {
