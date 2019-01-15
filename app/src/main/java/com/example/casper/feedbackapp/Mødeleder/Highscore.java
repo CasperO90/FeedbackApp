@@ -34,8 +34,6 @@ public class Highscore extends AppCompatActivity {
     String nytid;
     public static int a =0;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,7 +61,6 @@ public class Highscore extends AppCompatActivity {
         ny2 =0;
         ny3 =0;
 
-
         //sur
         tv1.setText("");
         //mellem
@@ -72,7 +69,6 @@ public class Highscore extends AppCompatActivity {
         tv3.setText("");
         //rigtigglad
         tv4.setText("");
-
 
         //database
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -92,7 +88,6 @@ public class Highscore extends AppCompatActivity {
                         String glad = map.get("glad");
                         String rigtigglad = map.get("rigtigglad");
 
-
                                 ny = ny + Integer.parseInt(sur);
                                 ny1 = ny1 + Integer.parseInt(mellem);
                                 ny2 = ny2 + Integer.parseInt(glad);
@@ -109,8 +104,6 @@ public class Highscore extends AppCompatActivity {
                         glad = Integer.parseInt(models.getGlad());
                         rigtigglad = Integer.parseInt(models.getRigtigglad());
 */
-
-
                     }
 
                     //sur
@@ -121,24 +114,12 @@ public class Highscore extends AppCompatActivity {
                     tv3.setText("" + ny2);
                     //rigtigglad
                     tv4.setText("" + ny3);
-
-
-
                 }
 
                 @Override
                 public void onCancelled(DatabaseError databaseError) {
-
                 }
-
             });
-
-
-
-
-
-
-
 
         if(Score.slutsur == null){
             Score.slutsur ="";
@@ -154,19 +135,8 @@ public class Highscore extends AppCompatActivity {
             Score.slutglad ="";
         }
 
-
         SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ nytMødeID);
     }
-
-
-
-
-
-
-
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

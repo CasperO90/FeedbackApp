@@ -132,7 +132,6 @@ public class Tab4 extends Fragment implements View.OnClickListener {
         AppState.showToast(getContext(),"Swipe videre");
     }
 
-
     // opdater view og sikre sig at farven er den rigtige farve.
     // den her kan godt blive smidt ind i logik klassen.
     public void farveCheck(){
@@ -147,5 +146,4 @@ public class Tab4 extends Fragment implements View.OnClickListener {
         }
         return;
     }
-
 }
