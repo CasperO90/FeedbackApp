@@ -40,7 +40,7 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
         nytid = String.valueOf(mødetest);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child(nytid);
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID");
 
        // intent
         Intent intent = getIntent();
@@ -76,7 +76,7 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
 
 
-        mDatabase.push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        mDatabase.child(nytid).push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful()){

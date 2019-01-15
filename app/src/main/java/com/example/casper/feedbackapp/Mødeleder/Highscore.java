@@ -72,7 +72,7 @@ public class Highscore extends AppCompatActivity {
 
         //database
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference(nytid);
+        ref = FirebaseDatabase.getInstance().getReference("ModeID").child(nytid);
 
 
             ref.addValueEventListener(new ValueEventListener() {
