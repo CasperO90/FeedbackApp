@@ -10,11 +10,14 @@ import android.widget.TextView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import com.example.casper.feedbackapp.AppState;
+import com.example.casper.feedbackapp.EmailLogik.SendMailTask;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.StartActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Random;
 
@@ -62,7 +65,11 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
         //
         button5 = findViewById(R.id.forsideBtn);
         button5.setOnClickListener(this);
+
+
+
     }
+
 
     @Override
     public void onClick(View view) {
