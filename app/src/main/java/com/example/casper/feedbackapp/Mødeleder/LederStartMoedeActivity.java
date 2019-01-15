@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.view.KeyEvent;
 
@@ -27,6 +28,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
     private int finalID;
     private int nytMødeID;
+    private TextView indtastPinkode;
 
 
     @Override
@@ -45,6 +47,9 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         editText = (EditText)findViewById(R.id.editText);
 
         pinview = (Pinview) findViewById(R.id.pinview);
+
+        indtastPinkode = (TextView)findViewById(R.id.indtastPinkode);
+        indtastPinkode.setText("Pin-koden er 1234.");
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
