@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.casper.feedbackapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -34,12 +36,17 @@
         <activity android:name=".Mødeleder.LederStartMoedeActivity" />
         <activity android:name=".Mødeleder.Highscore" />
         <activity android:name=".Mødeleder.MoedeOprettet" />
-        <activity android:name=".Mødeleder.LogIn"/>
-        <activity android:name=".SlutActivity"></activity>
+        <activity android:name=".Mødeleder.LogIn" />
+        <activity android:name=".SlutActivity" />
+
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="272e0d1fd49ef0be90ce5354ebc2bddc1d072729" />
+
+        <activity
+            android:name=".Mødeleder.Statistik"
+            android:label="@string/title_activity_statistik"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

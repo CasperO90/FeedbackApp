@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.casper.feedbackapp.AppState;
@@ -25,6 +27,7 @@ public class Highscore extends AppCompatActivity {
 
     TextView tv1,tv2,tv3,tv4,SeScoreFeedback;
     private int nytMødeID;
+    Button SeStats;
 
     SlutActivity Score = new SlutActivity();
 
@@ -38,6 +41,10 @@ public class Highscore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscore);
+
+
+        // See charts button
+        SeStats = findViewById(R.id.SeStat);
 
         // action bar
         getSupportActionBar().setTitle("Se Feedback"); // for set actionbar title
@@ -146,5 +153,18 @@ public class Highscore extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+    public void onClick(View v) {
+        if (v==SeStats){
+            seStats();
+        }
+
+
+    }
+    public void seStats(){
+        Intent Stats = new Intent(this, Statistik.class);
+        startActivity(Stats);
+
+
     }
 }
