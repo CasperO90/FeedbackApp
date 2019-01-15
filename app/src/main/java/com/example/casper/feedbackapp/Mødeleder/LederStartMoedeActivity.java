@@ -41,9 +41,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference ref;
 
-    private ArrayList<String> mUserID = new ArrayList<>();
-
-    Set<String> k;
+    Set<String> TidligereMødere;
 
     public static String ID;
     @Override
@@ -82,8 +80,8 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
                 Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
-                k = map.keySet();
-                Log.d("test","test"+k);
+                TidligereMødere = map.keySet();
+                Log.d("test","test"+TidligereMødere);
 
 
             }
@@ -94,8 +92,6 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
 
-
-                Log.d("mathiasmathias",""+mUserID);
             }
 
             @Override
@@ -161,12 +157,13 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
        // if (mButton5 == v && godkendt == true) {
        if (mButton5 == v) {
 
-           Log.d("måskemåske",""+k);
+           Log.d("måskemåske",""+TidligereMødere);
 
            ID = editText.getText().toString();
             Log.d("jajajaj",""+editText.getText().toString());
+            int talVærdi = Integer.parseInt(editText.getText().toString());
 
-            if (checkTal(editText.getText().toString()) == true && godkendt == true) {
+            if (checkTal(editText.getText().toString()) == true && godkendt == true|| talVærdi==0) {
                 Log.d("den er  true", "den er  true");
                 login();
             }
@@ -232,7 +229,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
     public Boolean checkTal(String checkString)
     {
-        for(String tal : k)
+        for(String tal : TidligereMødere)
         {
             if (checkString.contains(tal))
             {
