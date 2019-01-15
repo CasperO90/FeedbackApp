@@ -69,6 +69,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         nytMødeID = AppState.getMødeID();
 
 
+        Log.d("test","test");
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         ref = FirebaseDatabase.getInstance().getReference();
 
@@ -77,8 +78,8 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
 
-                String value = dataSnapshot.getValue(String.class);
-                mUserID.add(value);
+                //String value = dataSnapshot.getValue(String.class);
+                //mUserID.add(value);
 
                 Log.d("1234", "" + mUserID);
             }
@@ -216,6 +217,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
             Toast.makeText(this, "Du har intastet et forkert id", Toast.LENGTH_SHORT).show();
         }
     }
+
 
     public Boolean checkTal(String checkString)
     {
