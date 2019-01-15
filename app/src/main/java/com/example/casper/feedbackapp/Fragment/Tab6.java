@@ -40,9 +40,6 @@ public class Tab6 extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.activity_tab6, container, false);
 
         //Buttons
-        btn = view.findViewById(R.id.afslutBtn);
-        btn.setOnClickListener(this);
-
         surBtn = view.findViewById(R.id.surBtn);
         surBtn.setOnClickListener(this);
 
