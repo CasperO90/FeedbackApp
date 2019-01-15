@@ -56,8 +56,9 @@ import java.util.List;
 
         @Override
         public void onPostExecute(Object result) {
-            statusDialog.dismiss();
+           // statusDialog.dismiss();
         }
+
 
     }
 
