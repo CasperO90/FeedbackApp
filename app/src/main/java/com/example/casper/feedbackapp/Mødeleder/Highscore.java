@@ -27,6 +27,7 @@ public class Highscore extends AppCompatActivity {
     private int nytMødeID;
 
     SlutActivity Score = new SlutActivity();
+    LederStartMoedeActivity User = new LederStartMoedeActivity();
 
     public  static int  ny, ny1, ny2, ny3;
     private FirebaseDatabase mFirebaseDatabase;
@@ -39,6 +40,7 @@ public class Highscore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscore);
 
+        Log.d("jajajaja",""+User.ID);
         // action bar
         getSupportActionBar().setTitle("Se Feedback"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
@@ -72,7 +74,7 @@ public class Highscore extends AppCompatActivity {
 
         //database
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference("ModeID").child(nytid);
+        ref = FirebaseDatabase.getInstance().getReference("ModeID").child(User.ID);
 
 
             ref.addValueEventListener(new ValueEventListener() {
@@ -135,7 +137,7 @@ public class Highscore extends AppCompatActivity {
             Score.slutglad ="";
         }
 
-        SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ nytMødeID);
+        SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ User.ID);
     }
 
     @Override

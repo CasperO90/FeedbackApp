@@ -40,12 +40,12 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference ref;
-    private static String brugernsMødeID;
 
     private ArrayList<String> mUserID = new ArrayList<>();
 
     Set<String> k;
 
+    public static String ID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -162,19 +162,20 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
        if (mButton5 == v) {
 
            Log.d("måskemåske",""+k);
-           brugernsMødeID = editText.getText().toString();
 
+           ID = editText.getText().toString();
+            Log.d("jajajaj",""+editText.getText().toString());
 
-            if (checkTal(brugernsMødeID) == true && godkendt == true) {
+            if (checkTal(editText.getText().toString()) == true && godkendt == true) {
                 Log.d("den er  true", "den er  true");
                 login();
             }
 
-           else if (checkTal(brugernsMødeID) == false && godkendt == true ) {
+           else if (checkTal(editText.getText().toString()) == false && godkendt == true ) {
                 Toast.makeText(this, "forkert møde ID", Toast.LENGTH_SHORT).show();
 
             }
-            else if (checkTal(brugernsMødeID) == true && godkendt == false ) {
+            else if (checkTal(editText.getText().toString()) == true && godkendt == false ) {
                 Toast.makeText(this, "forkert Pin-kode", Toast.LENGTH_SHORT).show();
 
             }else {

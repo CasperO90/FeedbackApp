@@ -32,8 +32,7 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         startMødeBtn = findViewById(R.id.startMødeBtn);
         startMødeBtn.setOnClickListener(this);
 
-        SeFeedback = findViewById(R.id.SeFeedback);
-        SeFeedback.setOnClickListener(this);
+
 
 
 
@@ -52,11 +51,7 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
       
     }
 
-    public void SeFeedback(){
-        Intent intent = new Intent(this, Highscore.class);
-        startActivity(intent);
 
-    }
 
     @Override
     public void onClick(View view) {
@@ -66,9 +61,6 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         }
         else if(view == startMødeBtn){
             startMøde();
-        }
-        else if (view ==SeFeedback ){
-            SeFeedback();
         }
 
     }
