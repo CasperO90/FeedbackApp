@@ -22,12 +22,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
-public class Highscore extends AppCompatActivity {
+public class Highscore extends AppCompatActivity implements View.OnClickListener {
 
 
     TextView tv1,tv2,tv3,tv4,SeScoreFeedback;
     private int nytMødeID;
-    Button SeStats;
+    Button KnapStats;
 
     SlutActivity Score = new SlutActivity();
 
@@ -44,7 +44,8 @@ public class Highscore extends AppCompatActivity {
 
 
         // See charts button
-        SeStats = findViewById(R.id.SeStat);
+        KnapStats = findViewById(R.id.SeStat);
+        KnapStats.setOnClickListener(this);
 
         // action bar
         getSupportActionBar().setTitle("Se Feedback"); // for set actionbar title
@@ -154,17 +155,18 @@ public class Highscore extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-    public void onClick(View v) {
-        if (v==SeStats){
-            seStats();
-        }
 
 
-    }
     public void seStats(){
-        Intent Stats = new Intent(this, Statistik.class);
+        Intent Stats = new Intent(this, StatistikCharts.class);
         startActivity(Stats);
 
 
     }
-}
+
+    @Override
+    public void onClick(View v) {
+        if (v == KnapStats) {
+            seStats();
+        }
+    }}

@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Mødeleder.StatistikCharts"></activity>
         <activity android:name=".Fragment.Tab1" />
         <activity
             android:name=".StartActivity"
@@ -42,11 +43,6 @@
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="272e0d1fd49ef0be90ce5354ebc2bddc1d072729" />
-
-        <activity
-            android:name=".Mødeleder.Statistik"
-            android:label="@string/title_activity_statistik"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
