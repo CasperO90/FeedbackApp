@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,6 +38,7 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference ref;
+    private String t;
 
     Set<String> TidligereMødere;
 
@@ -67,7 +69,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         nytMødeID = AppState.getMødeID();
 
 
-
         Log.d("test","test");
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         ref = FirebaseDatabase.getInstance().getReference();
@@ -76,7 +77,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         ref.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-
                 Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
                 TidligereMødere = map.keySet();
                 Log.d("test","test"+TidligereMødere);
@@ -111,6 +111,7 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
 
 
 
+
         visMødeTekst.setText("Indtast møde id " + "(" + nytMødeID + ")");
     }
 
@@ -119,29 +120,39 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
     public void onClick(View view) {
         if (view == deltagBtn) {
 
-            Log.d("måskemåske",""+TidligereMødere);
+            if (TidligereMødere == null) {
 
-            Log.d("jajajaj",""+indtastMødeID.getText().toString());
-           int talVærdi= Integer.parseInt(indtastMødeID.getText().toString());
-
-            if (checkTal(indtastMødeID.getText().toString()) == true || talVærdi ==0 ) {
-                Log.d("den er  true", "den er  true");
-                Intent intent = new Intent(this, deltagerDagsordenActivity.class);
-                startActivity(intent);
-            }
-
-            else if (checkTal(indtastMødeID.getText().toString()) == false) {
-                Toast.makeText(this, "forkert møde ID", Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(this, "Der er ingen Møde ID i Appen, prøv at gå tilbage og opret et nyt ", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Fejl på systemet ", Toast.LENGTH_SHORT).show();
+                Log.d("måskemåske", "" + TidligereMødere);
+
+                Log.d("jajajaj", "" + indtastMødeID.getText().toString());
+                t = indtastMødeID.getText().toString();
+                if (t.isEmpty()) {
+                    Toast.makeText(this, "Du skal indtaste ID ", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    int talVærdi = Integer.parseInt(indtastMødeID.getText().toString());
+
+                    if (checkTal(indtastMødeID.getText().toString()) == true || talVærdi == 0) {
+                        Log.d("den er  true", "den er  true");
+                        Intent intent = new Intent(this, deltagerDagsordenActivity.class);
+                        startActivity(intent);
+                    } else if (checkTal(indtastMødeID.getText().toString()) == false) {
+                        Toast.makeText(this, "forkert møde ID", Toast.LENGTH_SHORT).show();
+
+                    } else {
+                        Toast.makeText(this, "Fejl på systemet ", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
             }
-
-
-
-
         }
+
+
     }
+
+
 
 
 

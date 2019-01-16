@@ -25,6 +25,8 @@ import java.util.Map;
 public class Highscore extends AppCompatActivity implements View.OnClickListener {
 
 
+    LederStartMoedeActivity test = new LederStartMoedeActivity();
+
     TextView tv1,tv2,tv3,tv4,SeScoreFeedback;
     private int nytMødeID;
     Button KnapStats;
@@ -42,6 +44,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscore);
 
+        Log.d("test","jajaja"+test.ID);
 
         // See charts button
         KnapStats = findViewById(R.id.SeStat);
@@ -80,7 +83,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
 
         //database
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference(nytid);
+        ref = FirebaseDatabase.getInstance().getReference("ModeID/"+test.ID);
 
 
             ref.addValueEventListener(new ValueEventListener() {
@@ -143,7 +146,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
             Score.slutglad ="";
         }
 
-        SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ nytMødeID);
+        SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ test.ID);
     }
 
     @Override

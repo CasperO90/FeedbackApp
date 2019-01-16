@@ -41,6 +41,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference ref;
+    private String t;
 
     Set<String> TidligereMødere;
 
@@ -158,31 +159,44 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
        // if (mButton5 == v && godkendt == true) {
        if (mButton5 == v) {
 
-           Log.d("måskemåske",""+TidligereMødere);
+            ID = String.valueOf(editText.getText().toString());
 
-           ID = editText.getText().toString();
-            Log.d("jajajaj",""+editText.getText().toString());
-            int talVærdi = Integer.parseInt(editText.getText().toString());
+           Log.d("næste","næste"+ID);
 
-            if (checkTal(editText.getText().toString()) == true && godkendt == true|| talVærdi==0) {
-                Log.d("den er  true", "den er  true");
-                login();
-            }
+           if (TidligereMødere == null) {
 
-           else if (checkTal(editText.getText().toString()) == false && godkendt == true ) {
-                Toast.makeText(this, "forkert møde ID", Toast.LENGTH_SHORT).show();
+               Toast.makeText(this, "Der er ingen Møde ID i Appen, prøv at gå tilbage og opret et nyt ", Toast.LENGTH_SHORT).show();
+           }
+           else {
 
-            }
-            else if (checkTal(editText.getText().toString()) == true && godkendt == false ) {
-                Toast.makeText(this, "forkert Pin-kode", Toast.LENGTH_SHORT).show();
-
-            }else {
-                Toast.makeText(this, "Både Møde ID og Pin-kode er forkert.", Toast.LENGTH_SHORT).show();
-            }
-
-        }
+               Log.d("måskemåske", "" + TidligereMødere);
 
 
+               t = editText.getText().toString();
+               if (t.isEmpty()) {
+                   Toast.makeText(this, "Du skal indtaste ID", Toast.LENGTH_SHORT).show();
+
+               } else {
+                   Log.d("jajajaj", "" + editText.getText().toString());
+                   int talVærdi = Integer.parseInt(editText.getText().toString());
+
+                   if (checkTal(editText.getText().toString()) == true && godkendt == true || talVærdi == 0) {
+                       Log.d("den er  true", "den er  true");
+                       login();
+                   } else if (checkTal(editText.getText().toString()) == false && godkendt == true) {
+                       Toast.makeText(this, "forkert møde ID", Toast.LENGTH_SHORT).show();
+
+                   } else if (checkTal(editText.getText().toString()) == true && godkendt == false) {
+                       Toast.makeText(this, "forkert Pin-kode", Toast.LENGTH_SHORT).show();
+
+                   } else {
+                       Toast.makeText(this, "Både Møde ID og Pin-kode er forkert.", Toast.LENGTH_SHORT).show();
+                   }
+
+               }
+           }
+
+       }
 
     }
 

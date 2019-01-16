@@ -42,7 +42,6 @@ public class StatistikCharts extends AppCompatActivity {
 
 
 
-
     private DatabaseReference ref;
     BarChart barChart, barChart2;
     public  static int  ny, ny1, ny2, ny3;
@@ -51,7 +50,7 @@ public class StatistikCharts extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     PieChart pieChart;
 
-    @Override
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -96,14 +95,14 @@ public class StatistikCharts extends AppCompatActivity {
                     ny2 = ny2 + Integer.parseInt(glad);
                     ny3 = ny3 + Integer.parseInt(rigtigglad);
 
-                  /*
+                 /*
                        User models = ds.getValue(User.class);
                         sur = Integer.parseInt(models.getSur());
                         mellem = Integer.parseInt(models.getMellem());
                         glad = Integer.parseInt(models.getGlad());
                         rigtigglad = Integer.parseInt(models.getRigtigglad());
-*/
-                }
+                */
+               }
 
                 barChart = findViewById(R.id.chart);
 
@@ -202,13 +201,14 @@ public class StatistikCharts extends AppCompatActivity {
         Log.d("Rigtigglad", "" + ny3);
 
 
+/*
        // barChart = findViewById(R.id.chart);
 
 
 
 
 
-       /* barChart.setDrawBarShadow(false);
+        barChart.setDrawBarShadow(false);
 
         barChart.setDrawValueAboveBar(false);
 
@@ -292,8 +292,12 @@ public class StatistikCharts extends AppCompatActivity {
         data2.setBarWidth(1f);
 
         barChart2.setData(data2);
+
+
 */
-
-
     }
+
+
+
+
 }
