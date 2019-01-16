@@ -3,18 +3,14 @@ package com.example.casper.feedbackapp.Mødeleder;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.SystemClock;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.casper.feedbackapp.R;
-import com.example.casper.feedbackapp.SlutActivity;
 
 public class LogIn extends AppCompatActivity implements View.OnClickListener {
 

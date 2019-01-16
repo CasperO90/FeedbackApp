@@ -1,12 +1,12 @@
 package com.example.casper.feedbackapp.Fragment;
 
-import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.tabs.TabLayout;
+import androidx.appcompat.app.AppCompatActivity;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -14,12 +14,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.casper.feedbackapp.Fragment.Tab1;
-import com.example.casper.feedbackapp.Fragment.Tab2;
-import com.example.casper.feedbackapp.Fragment.Tab3;
-import com.example.casper.feedbackapp.Fragment.Tab4;
-import com.example.casper.feedbackapp.Fragment.Tab5;
-import com.example.casper.feedbackapp.Fragment.Tab6;
 import com.example.casper.feedbackapp.R;
 
 public class MainActivity extends AppCompatActivity {

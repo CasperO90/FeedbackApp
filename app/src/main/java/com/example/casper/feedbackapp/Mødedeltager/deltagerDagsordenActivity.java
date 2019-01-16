@@ -3,11 +3,11 @@ package com.example.casper.feedbackapp.Mødedeltager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,9 +30,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
     private ArrayList<DagsordenData> dagsordenListe;
     private RecyclerView recyclerView;
 
-
     private Button feedbackBtn;
-
 
     private TextView overskriftTekst, navnMøde, tidspunkt, lokation;
     private int nytMødeID;

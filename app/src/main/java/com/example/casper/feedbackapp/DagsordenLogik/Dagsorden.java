@@ -1,14 +1,16 @@
 package com.example.casper.feedbackapp.DagsordenLogik;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.casper.feedbackapp.Mødeleder.MoedeOprettet;
 import com.example.casper.feedbackapp.R;
 
 import java.util.ArrayList;
@@ -27,6 +29,16 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagsorden);
+
+        recyclerView = findViewById(R.id.recycler_view);
+
+        dagsordenAdapter = new DagsordenAdapter(listeDagsorden, this);
+
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(dagsordenAdapter);
+
 
         //EditText
         etOverskrift = findViewById(R.id.etOverskrift);
@@ -66,7 +78,7 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
         });
 
         //Button opretter dagesorden, fører videre til næste side
-        btnOpret = findViewById(R.id.btnTilfoj);
+        btnOpret = findViewById(R.id.btnOpret);
         btnOpret.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,18 +90,11 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
                 Singleton.get().setTidspunkt(sTidspunkt);
                 Singleton.get().setLokation(sLokation);
 
-                //Intent intent = new Intent();
-                //startActivity(intent);
+                Intent intent = new Intent(Dagsorden.this, MoedeOprettet.class);
+                startActivity(intent);
             }
         });
 
-        final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-
-        dagsordenAdapter = new DagsordenAdapter(listeDagsorden, this);
-
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(dagsordenAdapter);
 
     }
 

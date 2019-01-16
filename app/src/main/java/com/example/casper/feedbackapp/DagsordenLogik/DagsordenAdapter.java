@@ -1,12 +1,12 @@
 package com.example.casper.feedbackapp.DagsordenLogik;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v7.widget.RecyclerView.ViewHolder;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -67,8 +67,8 @@ public class DagsordenAdapter extends RecyclerView.Adapter<DagsordenAdapter.Recy
             super(parent);
 
             //EditText
-            etOverskrift = parent.findViewById(R.id.etOverskrift);
-            etBeskrivelse = parent.findViewById(R.id.etBeskrivelse);
+            etOverskrift = parent.findViewById(R.id.txtOverskrift);
+            etBeskrivelse = parent.findViewById(R.id.txtBeskrivelse);
             navnMøde = parent.findViewById(R.id.navnMøde);
             tidspunkt = parent.findViewById(R.id.tidspunkt);
             lokation = parent.findViewById(R.id.lokation);
