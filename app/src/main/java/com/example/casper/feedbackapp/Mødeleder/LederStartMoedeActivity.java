@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.view.KeyEvent;
 
 import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.Mødedeltager.deltagerDagsordenActivity;
@@ -132,9 +133,9 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
                 } else if (!a.equals("1234")) {
                     Toast.makeText(getApplicationContext(), "Forkert pin", Toast.LENGTH_SHORT).show();
+                    clearpin();
 
-                    //for (int i = 0; i < pinview.getPinLength(); i++) {
-                       // pinview.onKey(pinview.getFocusedChild(), KeyEvent.KEYCODE_DEL, new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DEL));
+
                     }
 
 
@@ -188,6 +189,13 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
     public void login(){
         Intent intent = new Intent(this,LogIn.class);
         startActivity(intent);
+
+    }
+
+    public void clearpin(){
+        for (int i = 0; i < pinview.getPinLength(); i++) {
+            pinview.onKey(pinview.getFocusedChild(), KeyEvent.KEYCODE_DEL, new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DEL));
+        }
 
     }
 

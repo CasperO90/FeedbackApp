@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.casper.feedbackapp.AppState;
@@ -20,14 +22,14 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
-public class Highscore extends AppCompatActivity {
+public class Highscore extends AppCompatActivity implements View.OnClickListener {
 
 
     TextView tv1,tv2,tv3,tv4,SeScoreFeedback;
     private int nytMødeID;
+    Button KnapStats;
 
     SlutActivity Score = new SlutActivity();
-    LederStartMoedeActivity User = new LederStartMoedeActivity();
 
     public  static int  ny, ny1, ny2, ny3;
     private FirebaseDatabase mFirebaseDatabase;
@@ -40,7 +42,11 @@ public class Highscore extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscore);
 
-        Log.d("jajajaja",""+User.ID);
+
+        // See charts button
+        KnapStats = findViewById(R.id.SeStat);
+        KnapStats.setOnClickListener(this);
+
         // action bar
         getSupportActionBar().setTitle("Se Feedback"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
@@ -74,7 +80,7 @@ public class Highscore extends AppCompatActivity {
 
         //database
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference("ModeID").child(User.ID);
+        ref = FirebaseDatabase.getInstance().getReference(nytid);
 
 
             ref.addValueEventListener(new ValueEventListener() {
@@ -137,7 +143,7 @@ public class Highscore extends AppCompatActivity {
             Score.slutglad ="";
         }
 
-        SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ User.ID);
+        SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ nytMødeID);
     }
 
     @Override
@@ -149,4 +155,18 @@ public class Highscore extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-}
+
+
+    public void seStats(){
+        Intent Stats = new Intent(this, StatistikCharts.class);
+        startActivity(Stats);
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == KnapStats) {
+            seStats();
+        }
+    }}
