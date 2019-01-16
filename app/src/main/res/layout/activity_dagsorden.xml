@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".DagsordenLogik.Dagsorden">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/navnMøde"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Mødenavn"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/tidspunkt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Dato og tid"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/lokation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="lokation"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opret mødepunkter nedenfor"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etOverskrift"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Overskrift"
+                android:textSize="22sp" />
+
+            <EditText
+                android:id="@+id/etBeskrivelse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Beskrivelse"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnTilfoj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tilføj mødepunkt" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/background_light"
+                android:scrollbars="vertical">
+
+            </android.support.v7.widget.RecyclerView>
+
+            <Button
+                android:id="@+id/btnOpret"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Opret dagsorden" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
