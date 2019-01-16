@@ -17,6 +17,15 @@ import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.Mødedeltager.deltagerDagsordenActivity;
 import com.example.casper.feedbackapp.R;
 import com.goodiebag.pinview.Pinview;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.Map;
+import java.util.Set;
 
 public class LederStartMoedeActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,7 +38,12 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
     private int nytMødeID;
     private TextView indtastPinkode;
 
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference ref;
 
+    Set<String> TidligereMødere;
+
+    public static String ID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +70,53 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         nytMødeID = AppState.getMødeID();
 
 
-        pinview.setPinViewEventListener(new Pinview.PinViewEventListener() {
+        Log.d("test","test");
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        ref = FirebaseDatabase.getInstance().getReference();
+
+        // når vi tilføjer noget til databasen bliver det her kørt.
+        ref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+                Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
+                TidligereMødere = map.keySet();
+                Log.d("test","test"+TidligereMødere);
+
+
+            }
+
+
+            // når databasen bliver ændret bliver det her kørt
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Log.d("hvad sker der her ","hvad sker der ");
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
+
+
+
+
+
+       pinview.setPinViewEventListener(new Pinview.PinViewEventListener() {
             @Override
             public void onDataEntered(Pinview pinview, boolean b) {
 
@@ -85,17 +145,42 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
 
         });
+
     }
+
 
     @Override
     public void onClick(View v) {
 
-    deltagMøde();
+   // deltagMøde();
         //videre
-        if (mButton5 == v && godkendt == true) {
-           login();
+       // if (mButton5 == v && godkendt == true) {
+       if (mButton5 == v) {
+
+           Log.d("måskemåske",""+TidligereMødere);
+
+           ID = editText.getText().toString();
+            Log.d("jajajaj",""+editText.getText().toString());
+            int talVærdi = Integer.parseInt(editText.getText().toString());
+
+            if (checkTal(editText.getText().toString()) == true && godkendt == true|| talVærdi==0) {
+                Log.d("den er  true", "den er  true");
+                login();
+            }
+
+           else if (checkTal(editText.getText().toString()) == false && godkendt == true ) {
+                Toast.makeText(this, "forkert møde ID", Toast.LENGTH_SHORT).show();
+
+            }
+            else if (checkTal(editText.getText().toString()) == true && godkendt == false ) {
+                Toast.makeText(this, "forkert Pin-kode", Toast.LENGTH_SHORT).show();
+
+            }else {
+                Toast.makeText(this, "Både Møde ID og Pin-kode er forkert.", Toast.LENGTH_SHORT).show();
+            }
 
         }
+
 
 
     }
@@ -139,6 +224,19 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         if (finalID != nytMødeID) {
             Toast.makeText(this, "Du har intastet et forkert id", Toast.LENGTH_SHORT).show();
         }
+    }
+
+
+    public Boolean checkTal(String checkString)
+    {
+        for(String tal : TidligereMødere)
+        {
+            if (checkString.contains(tal))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
 

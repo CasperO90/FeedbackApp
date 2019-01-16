@@ -4,15 +4,22 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.casper.feedbackapp.EmailLogik.SendMailTask;
+import com.example.casper.feedbackapp.Fragment.MainActivity;
 import com.example.casper.feedbackapp.R;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class LederOpretMoedeActivity extends AppCompatActivity {
 
@@ -21,7 +28,7 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
     public static int a = 0;
     public static int c = 0;
     public int mødeID;
-    EditText ed,ed1,ed2,ed3,ed4,ed5,ed6,ed7,ed8,ed9;
+    EditText ed,ed1,ed2,ed3,ed4,ed5,ed6,ed7,ed8,ed9, emailEditText;
     public static String text,text1,text2,text3,text4,text5,text6,text7,text8,text9 ="";
 
     @Override
@@ -48,6 +55,8 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
         //slet
         mButton3 = findViewById(R.id.button4);
         mButton3.setOnClickListener(onClick());
+
+        emailEditText = findViewById(R.id.emailEditText);
     }
 
     public void opretPunkter(){
@@ -295,6 +304,29 @@ public class LederOpretMoedeActivity extends AppCompatActivity {
                 //overfør tekst
                 else if (mButton2 == v){
                     overførTekst();
+
+                    //Sender en email til den indtastede email
+
+                    Log.i("SendMailActivity", "Send Button Clicked.");
+
+                    String fromEmail = "spnoff1@gmail.com"; // overvej at lave ny email
+
+                    String fromPassword = "spin1234"; // Husk at alle kan se koden, hvis de har kildekoden
+
+                    String toEmails = ((TextView) findViewById(R.id.emailEditText))
+                            .getText().toString();
+                    List toEmailList = Arrays.asList(toEmails
+                            .split("\\s*,\\s*"));
+                    Log.i("SendMailActivity", "To List: " + toEmailList);
+                    String emailSubject = getResources().getString(R.string.emailEmne);
+
+                    String emailBody = getResources().getString(R.string.emailText)+" ";
+
+                    new SendMailTask(LederOpretMoedeActivity.this).execute(fromEmail,
+                            fromPassword, toEmailList, emailSubject, emailBody);
+
+
+
                 }
 
                 //slet

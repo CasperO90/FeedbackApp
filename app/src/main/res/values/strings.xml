@@ -79,5 +79,13 @@
         Deltag
     </string>
 
+    <string name="emailText">
+        Dit møde er oprettet og du har følgende ID:
+    </string>
+
+    <string name="emailEmne">
+        Spin Off Møde ID
+    </string>
+
 
 </resources>

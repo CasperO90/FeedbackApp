@@ -26,10 +26,14 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
     private boolean afsluttet;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leder_slut_moede);
+
+
+
 
         // action bar
         getSupportActionBar().setTitle("Møde"); // for set actionbar title
