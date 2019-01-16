@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.ndk.CrashlyticsNdk;
 import com.example.casper.feedbackapp.Mødedeltager.MoedeDeltagActivity;
 import com.example.casper.feedbackapp.Mødeleder.FoersteLederActivity;
 import io.fabric.sdk.android.Fabric;
@@ -24,7 +25,7 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
         //crashlytics.
        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
         if (!EMULATOR) {
-            Fabric.with(this, new Crashlytics());
+            Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
         }
         setContentView(R.layout.activity_start);
 
