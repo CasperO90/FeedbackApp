@@ -42,6 +42,8 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
 
     Set<String> TidligereMødere;
 
+    public static String UserMødeID;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,7 +121,7 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
     @Override
     public void onClick(View view) {
         if (view == deltagBtn) {
-
+            UserMødeID = indtastMødeID.getText().toString();
             if (TidligereMødere == null) {
 
                 Toast.makeText(this, "Der er ingen Møde ID i Appen, prøv at gå tilbage og opret et nyt ", Toast.LENGTH_SHORT).show();
