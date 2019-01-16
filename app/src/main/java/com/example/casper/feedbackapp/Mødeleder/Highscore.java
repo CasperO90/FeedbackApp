@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.casper.feedbackapp.AppState;
@@ -20,11 +22,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.Map;
 
-public class Highscore extends AppCompatActivity {
+public class Highscore extends AppCompatActivity implements View.OnClickListener {
 
 
     TextView tv1,tv2,tv3,tv4,SeScoreFeedback;
     private int nytMødeID;
+    Button KnapStats;
 
     SlutActivity Score = new SlutActivity();
 
@@ -38,6 +41,11 @@ public class Highscore extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_highscore);
+
+
+        // See charts button
+        KnapStats = findViewById(R.id.SeStat);
+        KnapStats.setOnClickListener(this);
 
         // action bar
         getSupportActionBar().setTitle("Se Feedback"); // for set actionbar title
@@ -147,4 +155,18 @@ public class Highscore extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-}
+
+
+    public void seStats(){
+        Intent Stats = new Intent(this, StatistikCharts.class);
+        startActivity(Stats);
+
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v == KnapStats) {
+            seStats();
+        }
+    }}
