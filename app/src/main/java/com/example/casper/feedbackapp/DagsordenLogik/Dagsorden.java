@@ -38,7 +38,7 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
         //Recyclerview
         recyclerView = findViewById(R.id.recycler_view);
 
-        //Buttons
+        //Button tilføjer punkt til dagsorden
         btnTilfoj = findViewById(R.id.btnTilfoj);
         btnTilfoj.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,9 +51,13 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
                     return;
                 }
 
-                DagsordenData dagsData = new DagsordenData();
-                dagsData.setOverskrift(overskrift);
-                dagsData.setBeskrivelse(beskrivelse);
+                DagsordenData dataPunkt = new DagsordenData();
+                dataPunkt.setOverskrift(overskrift);
+                dataPunkt.setBeskrivelse(beskrivelse);
+
+                Singleton.get().tilføjPunkt(dataPunkt);
+
+                dagsordenAdapter.notifyData(Singleton.get().getDagsordenData());
 
                 //Sætter overskrift og beskrivelse til at være tom
                 etOverskrift.setText("");
@@ -61,11 +65,21 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
             }
         });
 
+        //Button opretter dagesorden, fører videre til næste side
         btnOpret = findViewById(R.id.btnTilfoj);
         btnOpret.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                sNavnMøde = navnMøde.getText().toString();
+                sTidspunkt = tidspunkt.getText().toString();
+                sLokation = lokation.getText().toString();
 
+                Singleton.get().setNavn(sNavnMøde);
+                Singleton.get().setTidspunkt(sTidspunkt);
+                Singleton.get().setLokation(sLokation);
+
+                //Intent intent = new Intent();
+                //startActivity(intent);
             }
         });
 
@@ -81,6 +95,7 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
 
     @Override
     public void OnRemoveClick(int index) {
-
+        Singleton.get().fjernPunkt(index);
+        dagsordenAdapter.notifyData(Singleton.get().getDagsordenData());
     }
 }
