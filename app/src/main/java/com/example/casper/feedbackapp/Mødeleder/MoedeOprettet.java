@@ -4,6 +4,7 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.view.View;
@@ -15,8 +16,14 @@ import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.StartActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Map;
+import java.util.Set;
 
 public class MoedeOprettet extends AppCompatActivity implements OnClickListener {
 
@@ -25,7 +32,12 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
     private String mødeID1;
     private Button button5;
     private String nymødeID;
+    private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabase;
+    private DatabaseReference ref;
+
+    Set<String> nyTidligereMødere;
+
 
 
     @Override
@@ -43,9 +55,11 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
         mødeID = AppState.opretMødeID();
 
         //Gem møde
-        AppState.setMødeID(mødeID);
+        //AppState.setMødeID(mødeID);
+
         //får det som string
         nymødeID = String.valueOf(mødeID);
+        Log.d("hvad sker der her1 ",""+nymødeID);
 
         //Sæt tekst
         mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
@@ -54,23 +68,57 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
         button5 = findViewById(R.id.forsideBtn);
         button5.setOnClickListener(this);
 
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        ref = FirebaseDatabase.getInstance().getReference();
 
-
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID/"+nymødeID);
-
-
-        mDatabase.setValue(nymødeID).addOnCompleteListener(new OnCompleteListener<Void>() {
+        ref.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onComplete(@NonNull Task<Void> task) {
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
+                nyTidligereMødere = map.keySet();
+                Log.d("test","test"+nyTidligereMødere);
 
-                if (task.isSuccessful()) {
-                    Toast.makeText(MoedeOprettet.this, "stored", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(MoedeOprettet.this, "error", Toast.LENGTH_LONG).show();
+
+
+                if(checkTal(nymødeID)== true){
+                    Log.d("hvad sker der her ",""+nymødeID);
+                    mødeID = AppState.opretMødeID();
+                    nymødeID = String.valueOf(mødeID);
+                    Log.d("hvad sker der her ","Møde ID er i brug du får et nyt  ");
+                    mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
+                    Log.d("hvad sker der her ",""+nymødeID);
+                }
+                else {
+                    Log.d("hvad sker der her ","Alt spiller ");
                 }
 
             }
+
+
+            // når databasen bliver ændret bliver det her kørt
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                Log.d("hvad sker der her ","hvad sker der ");
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
         });
+
 
 
 
@@ -79,9 +127,47 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
     @Override
     public void onClick(View view) {
         if (view == button5) {
+
+
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID/"+nymødeID);
+
+
+            mDatabase.setValue(nymødeID).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+
+                    if (task.isSuccessful()) {
+                        Toast.makeText(MoedeOprettet.this, "stored", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(MoedeOprettet.this, "error", Toast.LENGTH_LONG).show();
+                    }
+
+                }
+            });
+
+
+
+
+
+
             Intent intent = new Intent(this, StartActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);
         }
     }
+
+
+    public Boolean checkTal(String checkString)
+    {
+        for(String tal : nyTidligereMødere)
+        {
+            if (checkString.contains(tal))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 }
