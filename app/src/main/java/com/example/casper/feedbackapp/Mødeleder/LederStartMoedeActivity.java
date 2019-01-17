@@ -3,7 +3,7 @@ package com.example.casper.feedbackapp.Mødeleder;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -15,7 +15,6 @@ import android.widget.Toast;
 import android.view.KeyEvent;
 
 import com.example.casper.feedbackapp.AppState;
-import com.example.casper.feedbackapp.Mødedeltager.deltagerDagsordenActivity;
 import com.example.casper.feedbackapp.R;
 import com.goodiebag.pinview.Pinview;
 import com.google.firebase.database.ChildEventListener;
@@ -24,7 +23,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
 
