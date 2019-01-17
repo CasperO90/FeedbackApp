@@ -23,12 +23,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
-    MoedeDeltagActivity User = new MoedeDeltagActivity();
 
     Button forsideButton;
     public static String slutsur,slutneutral,sluttilfreds,slutglad ;
 
-    private DatabaseReference mDatabase;
     int mødetest;
     String nytid;
 
@@ -44,7 +42,6 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
         nytid = String.valueOf(mødetest);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID/");
 
        // intent
         Intent intent = getIntent();
@@ -69,31 +66,6 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
     @Override
     public void onClick(View view) {
-
-
-        HashMap<String, String> datamap = new HashMap<>();
-        datamap.put("sur",slutsur);
-        datamap.put("mellem",slutneutral);
-        datamap.put("glad",sluttilfreds);
-        datamap.put("rigtigglad",slutglad);
-        Log.d("nejenjejenjenje",""+slutsur);
-
-
-
-        mDatabase.child(User.UserMødeID).push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(SlutActivity.this, "Dette er gemt", Toast.LENGTH_SHORT).show();
-                }else{
-
-                    Toast.makeText(SlutActivity.this, "fejl på databasene", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-
-
 
 
         Intent i = new Intent(this, StartActivity.class);
