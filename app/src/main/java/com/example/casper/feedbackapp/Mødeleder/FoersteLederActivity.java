@@ -1,13 +1,14 @@
 package com.example.casper.feedbackapp.Mødeleder;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
 
+import com.example.casper.feedbackapp.DagsordenLogik.Dagsorden;
 import com.example.casper.feedbackapp.R;
 
 public class FoersteLederActivity extends AppCompatActivity implements OnClickListener{
@@ -40,7 +41,7 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
     }
 
     public void opretMøde(){
-        Intent intent = new Intent(this, LederOpretMoedeActivity.class);
+        Intent intent = new Intent(this, Dagsorden.class);
         startActivity(intent);
 
     }
