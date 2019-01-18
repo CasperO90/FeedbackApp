@@ -51,7 +51,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leder_start_moede);
-        
+
         // action bar
         getSupportActionBar().setTitle("Start Møde"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
