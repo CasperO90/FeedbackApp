@@ -50,7 +50,7 @@
         android:layout_marginEnd="72dp"
         android:layout_marginTop="44dp"
         app:cursorVisible="false"
-        app:forceKeyboard="true"
+        app:forceKeyboard="false"
         app:hint="0"
         app:inputType="number"
         app:layout_constraintBottom_toTopOf="@+id/button2"
