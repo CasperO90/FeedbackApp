@@ -118,13 +118,16 @@ public class MainActivity extends AppCompatActivity {
                 case 6:
                     Tab7 tab7 = new Tab7();
                     return tab7;
+                case 7:
+                    Tab8 tab8 = new Tab8();
+                    return tab8;
             }
             return null;
         }
 
         @Override
         public int getCount() {
-            return 7;
+            return 8;
         }
     }
 }

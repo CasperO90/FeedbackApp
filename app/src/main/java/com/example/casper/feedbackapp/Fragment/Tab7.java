@@ -12,65 +12,162 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.SlutActivity;
 
 public class Tab7 extends Fragment implements View.OnClickListener {
 
-    Button afslutBtn;
-    TextView spm7, surTekst, neutralTekst, tilfredsTekst, gladtekst;;
-    EditText kommentarView;
-    public static int sur,neutral,tilfreds,glad;
-    public static String slutsur,slutneutral,sluttilfreds,slutglad;
 
-    Tab1 Score1 = new Tab1();
-    Tab2 Score2 = new Tab2();
-    Tab3 Score3 = new Tab3();
-    Tab4 Score4 = new Tab4();
-    Tab5 Score5 = new Tab5();
-    Tab6 Score6 = new Tab6();
+
+    Button surBtn, neutralBtn, tilfredsBtn, gladBtn;
+    int a, b, c, d = 0;
+    TextView spm7;
+    public static int sur6, neutral6, tilfreds6, glad6;
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab7, container, false);
-
-        //Buttons
-        afslutBtn = view.findViewById(R.id.afslutBtn);
-        afslutBtn.setOnClickListener(this);
 
         //Textview
         spm7 = view.findViewById(R.id.spmTextView);
         spm7.setText(R.string.spm7);
 
-        setScore();
+        //Buttons
+        surBtn = view.findViewById(R.id.surBtn);
+        surBtn.setOnClickListener(this);
 
-        surTekst = view.findViewById(R.id.surTekst);
-        surTekst.setText("" +sur);
+        neutralBtn = view.findViewById(R.id.neutralBtn);
+        neutralBtn.setOnClickListener(this);
 
-        neutralTekst = view.findViewById(R.id.neutralTekst);
-        neutralTekst.setText("" +neutral);
+        tilfredsBtn = view.findViewById(R.id.tilfredsBtn);
+        tilfredsBtn.setOnClickListener(this);
 
-        tilfredsTekst = view.findViewById(R.id.tilfredsTekst);
-        tilfredsTekst.setText("" +tilfreds);
+        gladBtn = view.findViewById(R.id.gladBtn);
+        gladBtn.setOnClickListener(this);
 
-        gladtekst = view.findViewById(R.id.gladTekst);
-        gladtekst.setText("" +glad);
+        //Textview
+        spm7 = view.findViewById(R.id.spmTextView);
+        spm7.setText(R.string.spm5);
 
-        //EditText
-        kommentarView = view.findViewById(R.id.kommentarView);
+        surBtn.setAlpha(0.2f);
+        neutralBtn.setAlpha(0.2f);
+        tilfredsBtn.setAlpha(0.2f);
+        gladBtn.setAlpha(0.2f);
+
+        farveCheck();
+
 
         return view;
     }
 
-    public void setScore(){
-        sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3+ Score5.sur4 + Score6.sur5;
-        neutral = Score1.neutral +Score2.neutral1 +Score3.neutral2 + Score4.neutral3+ Score5.neutral4 + Score6.neutral5;
-        tilfreds =Score1.tilfreds +Score2.tilfreds1 +Score3.tilfreds2 + Score4.tilfreds3+ Score5.tilfreds4 + Score6.tilfreds5;
-        glad =Score1.glad +Score2.glad1 +Score3.glad2 + Score4.glad3+ Score5.glad4 + Score6.glad5;
-    }
 
 
     @Override
-    public void onClick (View view){
+    public void onClick(View v) {
+
+        if (v == surBtn) {
+            a++;
+
+            if (a == 1) {
+                b = 0;
+                c = 0;
+                d = 0;
+                sur6 = 1;
+                neutral6 = 0;
+                tilfreds6 = 0;
+                glad6 = 0;
+                surBtn.setAlpha(1f);
+                neutralBtn.setAlpha(0.2f);
+                tilfredsBtn.setAlpha(0.2f);
+                gladBtn.setAlpha(0.2f);
+            }
+        }
+
+        else if (v == neutralBtn) {
+            b++;
+
+            if (b == 1) {
+                a = 0;
+                c = 0;
+                d = 0;
+
+                sur6 = 0;
+                neutral6 = 1;
+                tilfreds6 = 0;
+                glad6 = 0;
+                surBtn.setAlpha(0.2f);
+                neutralBtn.setAlpha(1f);
+                tilfredsBtn.setAlpha(0.2f);
+                gladBtn.setAlpha(0.2f);
+            }
+        }
+
+        else if (v == tilfredsBtn) {
+            c++;
+
+            if (c == 1) {
+                a = 0;
+                b = 0;
+                d = 0;
+
+                sur6 = 0;
+                neutral6 = 0;
+                tilfreds6 = 1;
+                glad6 = 0;
+                surBtn.setAlpha(0.2f);
+                neutralBtn.setAlpha(0.2f);
+                tilfredsBtn.setAlpha(1f);
+                gladBtn.setAlpha(0.2f);
+            }
+        }
+
+        else if (v == gladBtn) {
+            d++;
+
+            if (d == 1) {
+                a = 0;
+                b = 0;
+                c = 0;
+
+                sur6 = 0;
+                neutral6 = 0;
+                tilfreds6 = 0;
+                glad6 = 1;
+                surBtn.setAlpha(0.2f);
+                neutralBtn.setAlpha(0.2f);
+                tilfredsBtn.setAlpha(0.2f);
+                gladBtn.setAlpha(1f);
+            }
+        }
+        AppState.showToast(getContext(),"Swipe videre");
+    }
+
+
+    // opdater view og sikre sig at farven er den rigtige farve.
+    // den her kan godt blive smidt ind i logik klassen.
+    public void farveCheck () {
+        if (a == 1) {
+            surBtn.setAlpha(1f);
+        } else if (b == 1) {
+            neutralBtn.setAlpha(1f);
+        } else if (c == 1) {
+            tilfredsBtn.setAlpha(1f);
+        } else if (d == 1) {
+            gladBtn.setAlpha(1f);
+        }
+        return;
+
+
+    }
+
+    }
+
+
+  /*
+
+    // det her skal være på den sidste side
+    @Override
+  public void onClick (View view){
 
         Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
 
@@ -88,3 +185,4 @@ public class Tab7 extends Fragment implements View.OnClickListener {
 
     }
 }
+*/

@@ -47,12 +47,13 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
     private static int spørgsmål4sur, spørgsmål4neutral1, spørgsmål4tilfreds2, spørgsmål4glad3 =0;
     private static int spørgsmål5sur, spørgsmål5neutral1, spørgsmål5tilfreds2, spørgsmål5glad3 =0;
     private static int spørgsmål6sur, spørgsmål6neutral1, spørgsmål6tilfreds2, spørgsmål6glad3 =0;
-
+    private static int spørgsmål7sur, spørgsmål7neutral1, spørgsmål7tilfreds2, spørgsmål7glad3 =0;
+    private static int spørgsmål8sur, spørgsmål8neutral1, spørgsmål8tilfreds2, spørgsmål8glad3 =0;
 
     private int nysur1,nymellem1,nyglad1,nyrigtigglad1,nysur2,nymellem2,nyglad2,nyrigtigglad2=0;
     private int nysur3,nymellem3,nyglad3,nyrigtigglad3,nysur4,nymellem4,nyglad4,nyrigtigglad4=0;
     private int nysur5,nymellem5,nyglad5,nyrigtigglad5,nysur6,nymellem6,nyglad6,nyrigtigglad6=0;
-
+    private int nysur7,nymellem7,nyglad7,nyrigtigglad7,nysur8,nymellem8,nyglad8,nyrigtigglad8=0;
 
 
 
@@ -329,8 +330,77 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
 
 
 
+                        Map<String, Object> spørgsmål7 = (Map) ds.child("/spørgsmål7").getValue();
 
 
+                        Log.d("jajajja",""+spørgsmål7);
+                        //fra Object til String
+                        String sur7 = String.valueOf(spørgsmål7.get("sur"));
+                        String mellem7 = String.valueOf(spørgsmål7.get("mellem"));
+                        String glad7 = String.valueOf(spørgsmål7.get("glad"));
+                        String rigtigglad7 =String.valueOf(spørgsmål7.get("rigtigglad"));
+
+
+                        Log.d("test1", "" + sur7);
+                        Log.d("test2", "" + mellem7);
+                        Log.d("test3", "" + glad7);
+                        Log.d("test4", "" + rigtigglad7);
+
+                        // Fra String til INT
+                        nysur7 = Integer.parseInt(sur7);
+                        nymellem7 = Integer.parseInt(mellem7);
+                        nyglad7 = Integer.parseInt(glad7);
+                        nyrigtigglad7 = Integer.parseInt(rigtigglad7);
+
+
+                        // fra hverfor sig til Samlede resultat.
+                        spørgsmål7sur = spørgsmål7sur + nysur7;
+                        spørgsmål7neutral1 = spørgsmål7neutral1 + nymellem7;
+                        spørgsmål7tilfreds2 = spørgsmål7tilfreds2 + nyglad7;
+                        spørgsmål7glad3 = spørgsmål7glad3 + nyrigtigglad7;
+
+                        Log.d("sur2", "" + spørgsmål7sur);
+                        Log.d("mellem2", "" + spørgsmål7neutral1);
+                        Log.d("glad2", "" + spørgsmål7tilfreds2);
+                        Log.d("rigtigglad2", "" + spørgsmål7glad3);
+
+
+
+
+
+                        Map<String, Object> spørgsmål8 = (Map) ds.child("/spørgsmål8").getValue();
+
+
+                        Log.d("jajajja",""+spørgsmål8);
+                        //fra Object til String
+                        String sur8 = String.valueOf(spørgsmål8.get("sur"));
+                        String mellem8 = String.valueOf(spørgsmål8.get("mellem"));
+                        String glad8 = String.valueOf(spørgsmål8.get("glad"));
+                        String rigtigglad8 =String.valueOf(spørgsmål8.get("rigtigglad"));
+
+
+                        Log.d("test1", "" + sur8);
+                        Log.d("test2", "" + mellem8);
+                        Log.d("test3", "" + glad8);
+                        Log.d("test4", "" + rigtigglad8);
+
+                        // Fra String til INT
+                        nysur8 = Integer.parseInt(sur8);
+                        nymellem8 = Integer.parseInt(mellem8);
+                        nyglad8 = Integer.parseInt(glad8);
+                        nyrigtigglad8 = Integer.parseInt(rigtigglad8);
+
+
+                        // fra hverfor sig til Samlede resultat.
+                        spørgsmål8sur = spørgsmål8sur + nysur8;
+                        spørgsmål8neutral1 = spørgsmål8neutral1 + nymellem8;
+                        spørgsmål8tilfreds2 = spørgsmål8tilfreds2 + nyglad8;
+                        spørgsmål8glad3 = spørgsmål8glad3 + nyrigtigglad8;
+
+                        Log.d("sur2", "" + spørgsmål8sur);
+                        Log.d("mellem2", "" + spørgsmål8neutral1);
+                        Log.d("glad2", "" + spørgsmål8tilfreds2);
+                        Log.d("rigtigglad2", "" + spørgsmål8glad3);
 
 
 
@@ -358,13 +428,13 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
                     }
 
                     //sur
-                    tv1.setText("" + spørgsmål6sur);
+                    tv1.setText("" + spørgsmål8sur);
                     //mellem
-                    tv2.setText("" + spørgsmål6neutral1);
+                    tv2.setText("" + spørgsmål8neutral1);
                     //glad
-                    tv3.setText("" + spørgsmål6tilfreds2);
+                    tv3.setText("" + spørgsmål8tilfreds2);
                     //rigtigglad
-                    tv4.setText("" + spørgsmål6glad3);
+                    tv4.setText("" + spørgsmål8glad3);
                 }
 
                 @Override
@@ -372,7 +442,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
                 }
             });
 
-        if(Score.slutsur == null){
+     /*   if(Score.slutsur == null){
             Score.slutsur ="";
         }
 
@@ -385,7 +455,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
         if(Score.slutglad == null){
             Score.slutglad ="";
         }
-
+*/
         SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ test.ID);
     }
 
@@ -448,6 +518,19 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
         spørgsmål6neutral1 =0;
         spørgsmål6tilfreds2 =0;
         spørgsmål6glad3 =0;
+
+        //spørgsmål 6 reset
+        spørgsmål7sur = 0;
+        spørgsmål7neutral1 =0;
+        spørgsmål7tilfreds2 =0;
+        spørgsmål7glad3 =0;
+
+
+        //spørgsmål 6 reset
+        spørgsmål8sur = 0;
+        spørgsmål8neutral1 =0;
+        spørgsmål8tilfreds2 =0;
+        spørgsmål8glad3 =0;
     }
 
 

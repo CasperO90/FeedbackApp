@@ -8,59 +8,72 @@
     <string name="section_format">Hello World from section: %1$d</string>
 
     <string name="spm1">
-        Var mødet for kort?
+        Hvor brugbar var \n dagsordenen for dig?
     </string>
 
     <string name="spm2">
-        Fik du noget ud af at deltage?
+        Hvordan vurderer du \n mødeledelsen?
     </string>
 
     <string name="spm3">
-        Startede mødet til tiden?
+        Hvordan vurderer du \n tidsstyringen?
     </string>
 
     <string name="spm4">
-        Holdte mødeleder sig til planen?
+        I hvor høj grad nåede \n I mødets mål?
     </string>
 
     <string name="spm5">
-       Synes du alt blev dækket?
+       Hvor værdifuldt oplevede \n du mødet?
     </string>
 
     <string name="spm6">
-        Hvordan vurderer du \n mødelederens indsats idag?
+        Hvor nærværende var \n deltagerne?
     </string>
 
     <string name="spm7">
-        Andre kommentare?
+        Hvor konstruktiv var \n adfærden?
     </string>
 
+    <string name="spm8">
+        Hvordan vurderer du din \n egen deltagelse?
+    </string>
+
+    <string name="afsluttende">
+        Tak for dine svar har du \n yderlige kommentar ?
+    </string>
+
+
     <string name="fremskridt1">
-        1 ud af 7
+        1 ud af 8
     </string>
 
     <string name="fremskridt2">
-        2 ud af 7
+        2 ud af 8
     </string>
 
     <string name="fremskridt3">
-        3 ud af 7
+        3 ud af 8
     </string>
 
     <string name="fremskridt4">
-        4 ud af 7
+        4 ud af 8
     </string>
 
     <string name="fremskridt5">
-        5 ud af 7
+        5 ud af 8
     </string>
 
     <string name="fremskridt6">
-        6 ud af 7
+        6 ud af 8
     </string>
 
     <string name="fremskridt7">
-        7 ud af 7
+        7 ud af 8
+    </string>
+
+    <string name="fremskridt8">
+        8 ud af 8
     </string>
 
     <string name="slutTak">
