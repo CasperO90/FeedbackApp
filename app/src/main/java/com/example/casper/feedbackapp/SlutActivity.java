@@ -34,6 +34,13 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
     int mødetest;
     String nytid;
 
+
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference ref;
+    String kommentarFraUser;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +103,31 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
     @Override
     public void onClick(View view) {
+
+        kommentarFraUser = kommentarView.getText().toString();
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        ref = FirebaseDatabase.getInstance().getReference().child("Kommentar/"+nytid);
+
+        HashMap<String, String> datamap = new HashMap<String, String>();
+
+        datamap.put("edittext",kommentarFraUser);
+
+
+        ref.push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+
+                if (task.isSuccessful()) {
+                    Toast.makeText(SlutActivity.this, "stored", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(SlutActivity.this, "error", Toast.LENGTH_LONG).show();
+                }
+
+            }
+        });
+
+
+
 
 
         Intent i = new Intent(this, StartActivity.class);

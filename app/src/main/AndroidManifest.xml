@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Fragment.Tab8"></activity>
+        <activity android:name=".Mødeleder.Kommentar"></activity>
+        <activity android:name=".Fragment.Tab8" />
         <activity android:name=".DagsordenLogik.Dagsorden" />
         <activity android:name=".Mødeleder.StatistikCharts" />
         <activity android:name=".Fragment.Tab1" />

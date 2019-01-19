@@ -20,6 +20,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
     private Chronometer chronometer;
     private boolean running;
     private boolean afsluttet;
+    private Button seKommentar;
 
 
 
@@ -42,6 +43,8 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
         mButton6 = findViewById(R.id.Afslutmoede);
         mButton7 = findViewById(R.id.SeFeedback);
+        seKommentar = findViewById(R.id.seKommentar);
+        seKommentar.setOnClickListener(this);
         mButton7.setOnClickListener(this);
         mButton6.setOnClickListener(this);
 
@@ -79,6 +82,10 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
             SeFeedback();
         }
+        else if (seKommentar == v){
+            SeKommentar();
+
+        }
 
 
     }
@@ -86,7 +93,14 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
     public void SeFeedback(){
         Intent intent = new Intent(this, Highscore.class);
         startActivity(intent);
-} @Override
+}
+    public void SeKommentar(){
+        Intent intent = new Intent(this, Kommentar.class);
+        startActivity(intent);
+    }
+
+
+@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
         int id = item.getItemId();
