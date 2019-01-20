@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.example.casper.feedbackapp.AppState;
+import com.example.casper.feedbackapp.EmailLogik.SendMailTask;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.StartActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,12 +23,14 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 public class MoedeOprettet extends AppCompatActivity implements OnClickListener {
 
-    private TextView mødeIdTekst;
+    private TextView mødeIdTekst, emailTextView;
     private int mødeID;
     private String mødeID1;
     private Button button5;
@@ -44,6 +47,9 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moede_oprettet);
+
+        emailTextView = findViewById(R.id.emailTextView);
+        emailTextView.setText("Indtast Emailadresse for at modtage møde ID på mail!");
 
         //action bar
         getSupportActionBar().setTitle("Møde er Oprettet"); // for set actionbar title
@@ -127,6 +133,26 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
     @Override
     public void onClick(View view) {
         if (view == button5) {
+
+            //Sender en email til den indtastede email
+
+            Log.i("SendMailActivity", "Send Button Clicked.");
+
+            String fromEmail = "spnoff1@gmail.com"; // overvej at lave ny email
+
+            String fromPassword = "spin1234"; // Husk at alle kan se koden, hvis de har kildekoden
+
+            String toEmails = ((TextView) findViewById(R.id.emailEditText))
+                    .getText().toString();
+            List toEmailList = Arrays.asList(toEmails
+                    .split("\\s*,\\s*"));
+            Log.i("SendMailActivity", "To List: " + toEmailList);
+            String emailSubject = getResources().getString(R.string.emailEmne);
+
+            String emailBody = getResources().getString(R.string.emailText)+mødeID;
+
+            new SendMailTask(MoedeOprettet.this).execute(fromEmail,
+                    fromPassword, toEmailList, emailSubject, emailBody);
 
 
             mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID/"+nymødeID);
