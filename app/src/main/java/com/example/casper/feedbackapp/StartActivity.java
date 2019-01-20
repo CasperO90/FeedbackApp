@@ -1,6 +1,7 @@
 package com.example.casper.feedbackapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,7 +48,6 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
 
         hjemmesideBtn = findViewById(R.id.hjemmesideBtn);
         hjemmesideBtn.setOnClickListener(this);
-
 
 
     }

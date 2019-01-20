@@ -41,6 +41,8 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference ref;
+    private DatabaseReference kk;
+
     private static int spørgsmål1sur, spørgsmål1neutral1, spørgsmål1tilfreds2, spørgsmål1glad3 =0;
     private static int spørgsmål2sur, spørgsmål2neutral1, spørgsmål2tilfreds2, spørgsmål2glad3 =0;
     private static int spørgsmål3sur, spørgsmål3neutral1, spørgsmål3tilfreds2, spørgsmål3glad3 =0;
@@ -101,6 +103,21 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
         //database
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("ModeID/"+test.ID);
+        kk = FirebaseDatabase.getInstance().getReference("ModeID/");
+
+        kk.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    Log.e(ds.getKey(), ds.getChildrenCount() + "");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
 
             ref.addValueEventListener(new ValueEventListener() {
@@ -108,7 +125,6 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
-
                         // checker hvor mange der har svaret hvad i spørgsmål 1:
                         Map<String, Object> spørgsmål1 = (Map) ds.child("spørgsmål1").getValue();
 

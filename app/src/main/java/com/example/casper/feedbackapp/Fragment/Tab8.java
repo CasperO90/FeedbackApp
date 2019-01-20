@@ -268,7 +268,7 @@ public class Tab8 extends Fragment implements View.OnClickListener {
 
 
 
-
+            reset();
         }
     }
 
@@ -286,7 +286,56 @@ public class Tab8 extends Fragment implements View.OnClickListener {
         return;
     }
 
+public void reset(){
 
+
+    sur = 0;
+    neutral=0;
+    tilfreds=0;
+    glad =0;
+
+    Score1.sur =0;
+    Score1.neutral =0;
+    Score1.tilfreds =0;
+    Score1.glad =0;
+
+    Score2.sur1 =0;
+    Score2.neutral1 =0;
+    Score2.tilfreds1 =0;
+    Score2.glad1 =0;
+
+
+    Score3.sur2 =0;
+    Score3.neutral2 =0;
+    Score3.tilfreds2 =0;
+    Score3.glad2 =0;
+
+    Score4.sur3 =0;
+    Score4.neutral3 =0;
+    Score4.tilfreds3 =0;
+    Score4.glad3 =0;
+
+    Score5.sur4 =0;
+    Score5.neutral4 =0;
+    Score5.tilfreds4 =0;
+    Score5.glad4 =0;
+
+    Score6.sur5 =0;
+    Score6.neutral5 =0;
+    Score6.tilfreds5 =0;
+    Score6.glad5 =0;
+
+    Score7.sur6 =0;
+    Score7.neutral6 =0;
+    Score7.tilfreds6 =0;
+    Score7.glad6 =0;
+
+    sur7 =0;
+    neutral7 =0;
+    tilfreds7 =0;
+    glad =0;
+
+}
 
 
     }

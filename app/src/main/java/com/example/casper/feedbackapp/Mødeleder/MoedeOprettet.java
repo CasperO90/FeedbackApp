@@ -78,8 +78,10 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
                 nyTidligereMødere = map.keySet();
                 Log.d("test","test"+nyTidligereMødere);
 
-
-
+/*
+                if (nyTidligereMødere == null){
+                    Log.d(" jajaja","ok");
+                }else
                 if(checkTal(nymødeID)== true){
                     Log.d("hvad sker der her ",""+nymødeID);
                     mødeID = AppState.opretMødeID();
@@ -87,10 +89,14 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
                     Log.d("hvad sker der her ","Møde ID er i brug du får et nyt  ");
                     mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
                     Log.d("hvad sker der her ",""+nymødeID);
+                    AppState.setMødeID(mødeID);
                 }
                 else {
                     Log.d("hvad sker der her ","Alt spiller ");
                 }
+*/
+
+
 
             }
 
@@ -118,7 +124,6 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
             }
 
         });
-
 
 
 
