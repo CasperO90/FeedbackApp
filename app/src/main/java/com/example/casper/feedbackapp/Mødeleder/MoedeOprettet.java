@@ -23,6 +23,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -40,6 +41,8 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
     private DatabaseReference ref;
 
     Set<String> nyTidligereMødere;
+
+    Boolean a=false;
 
 
 
@@ -61,7 +64,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
         mødeID = AppState.opretMødeID();
 
         //Gem møde
-        //AppState.setMødeID(mødeID);
+        AppState.setMødeID(mødeID);
 
         //får det som string
         nymødeID = String.valueOf(mødeID);
@@ -84,23 +87,29 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
                 nyTidligereMødere = map.keySet();
                 Log.d("test","test"+nyTidligereMødere);
 
-/*
-                if (nyTidligereMødere == null){
-                    Log.d(" jajaja","ok");
-                }else
-                if(checkTal(nymødeID)== true){
-                    Log.d("hvad sker der her ",""+nymødeID);
-                    mødeID = AppState.opretMødeID();
-                    nymødeID = String.valueOf(mødeID);
-                    Log.d("hvad sker der her ","Møde ID er i brug du får et nyt  ");
-                    mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
-                    Log.d("hvad sker der her ",""+nymødeID);
-                    AppState.setMødeID(mødeID);
-                }
-                else {
-                    Log.d("hvad sker der her ","Alt spiller ");
-                }
-*/
+               while (a==false) {
+
+                   if (checkTal(nymødeID) == true) {
+                       Log.d("test hvad sker der her ", "" + nymødeID);
+                       mødeID = AppState.opretMødeID();
+                       nymødeID = String.valueOf(mødeID);
+                       Log.d("test hvad sker der her ", "Møde ID er i brug du får et nyt  ");
+                       mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
+                       Log.d("test hvad sker der her ", "" + nymødeID);
+                       AppState.setMødeID(mødeID);
+
+
+
+
+
+
+
+                   } else {
+                       Log.d("hvad sker der her ", "Alt spiller ");
+                       a = true;
+
+                   }
+               }
 
 
 
