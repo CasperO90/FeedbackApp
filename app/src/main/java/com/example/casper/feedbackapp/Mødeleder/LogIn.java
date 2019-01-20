@@ -5,12 +5,19 @@ import android.content.Intent;
 import android.os.SystemClock;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.TextView;
 
 import com.example.casper.feedbackapp.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
@@ -78,12 +85,16 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
         }}
 
-        else if (mButton7==v && running==false) {
+        else if (mButton7 == v && running==false) {
 
             SeFeedback();
+
+
+
         }
         else if (seKommentar == v){
             SeKommentar();
+
 
         }
 
@@ -109,6 +120,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         }
         return super.onOptionsItemSelected(item);
 
-}}
+}
+}
 
 

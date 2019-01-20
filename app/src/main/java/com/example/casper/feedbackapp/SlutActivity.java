@@ -27,7 +27,7 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
 
     Button forsideButton;
-    public static String slutsur,slutneutral,sluttilfreds,slutglad ;
+    public  String slutsur,slutneutral,sluttilfreds,slutglad ;
     TextView surTekst, neutralTekst, tilfredsTekst, gladtekst, spmTextView;
     EditText kommentarView;
 
@@ -38,6 +38,8 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference ref;
     String kommentarFraUser;
+
+    MoedeDeltagActivity test =  new MoedeDeltagActivity();
 
 
 
@@ -106,7 +108,7 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
         kommentarFraUser = kommentarView.getText().toString();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference().child("Kommentar/"+nytid);
+        ref = FirebaseDatabase.getInstance().getReference().child("Kommentar/"+test.UserMødeID);
 
         HashMap<String, String> datamap = new HashMap<String, String>();
 
