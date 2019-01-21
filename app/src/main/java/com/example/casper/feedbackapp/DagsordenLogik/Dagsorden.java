@@ -94,8 +94,6 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
                 startActivity(intent);
             }
         });
-
-
     }
 
     @Override
