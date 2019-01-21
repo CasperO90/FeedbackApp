@@ -47,13 +47,13 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         feedbackBtn = findViewById(R.id.feedbackBtn);
         feedbackBtn.setOnClickListener(this);
 
-        overskriftTekst = findViewById(R.id.overskriftTekst);
-        overskriftTekst.setText("Velkommen til møde " + nytMødeID + "\nDagsorden ");
-
         //Hent møde id
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
         nytMødeID = AppState.getMødeID();
+
+        overskriftTekst = findViewById(R.id.overskriftTekst);
+        overskriftTekst.setText("Velkommen til møde " + nytMødeID + "\nDagsorden ");
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -69,7 +69,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         navnMøde.setText(Singleton.get().getNavn());
 
         tidspunkt = findViewById(R.id.tidspunkt);
-        tidspunkt.setText(Singleton.get().getLokation());
+        tidspunkt.setText(Singleton.get().getTidspunkt());
 
         lokation = findViewById(R.id.lokation);
         lokation.setText(Singleton.get().getLokation());
@@ -86,7 +86,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -37,17 +37,18 @@ public class Kommentar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kommentar);
 
+<<<<<<< HEAD
         getSupportActionBar().setTitle("Kommentar"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
+=======
+>>>>>>> Monica_NYT
         mlistview =(ListView)findViewById(R.id.listview);
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKommentar);
         mlistview.setAdapter(arrayAdapter);
-
-
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("Kommentar/"+test.ID);

@@ -139,8 +139,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         }
     }
 
-
-
     public void deltagMøde() {
 
         String værdi = indtastMødeID.getText().toString();
@@ -161,7 +159,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         }
     }
 
-
     public Boolean checkTal(String checkString)
     {
         for(String tal : TidligereMødere)
@@ -173,7 +170,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         }
         return false;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
