@@ -43,7 +43,6 @@ public class Kommentar extends AppCompatActivity {
 
 
 
-
         mlistview =(ListView)findViewById(R.id.listview);
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKommentar);
