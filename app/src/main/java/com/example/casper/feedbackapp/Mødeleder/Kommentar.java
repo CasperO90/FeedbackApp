@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.casper.feedbackapp.R;
 import com.google.firebase.database.ChildEventListener;
@@ -22,9 +24,11 @@ public class Kommentar extends AppCompatActivity {
 
     private DatabaseReference ref;
 
-    private ArrayList<String> mUsername = new ArrayList<>();
+    private ArrayList<String> mKommentar = new ArrayList<>();
     private ListView mlistview;
     private FirebaseDatabase mFirebaseDatabase;
+
+
 
     LederStartMoedeActivity test = new LederStartMoedeActivity();
 
@@ -33,13 +37,14 @@ public class Kommentar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kommentar);
 
-
+        getSupportActionBar().setTitle("Kommentar"); // for set actionbar title
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
         mlistview =(ListView)findViewById(R.id.listview);
 
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,mUsername);
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKommentar);
         mlistview.setAdapter(arrayAdapter);
 
 
@@ -54,12 +59,12 @@ public class Kommentar extends AppCompatActivity {
                 Map<String, Object> map = (Map) dataSnapshot.getValue();
 
                 String lol = String.valueOf(map.get("edittext"));
-                mUsername.add(lol);
+                mKommentar.add(lol);
 
 
                 arrayAdapter.notifyDataSetChanged();
 
-                Log.d("jajajaa",""+mUsername);
+                Log.d("jajajaa",""+mKommentar);
                 Log.d("nejnej",""+lol);
 
             }
@@ -90,4 +95,17 @@ public class Kommentar extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // TODO Auto-generated method stub
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+
+
 }
