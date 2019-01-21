@@ -87,7 +87,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         startActivity(intent);
     }
 
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub

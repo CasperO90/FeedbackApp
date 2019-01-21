@@ -33,16 +33,10 @@ public class Kommentar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kommentar);
 
-
-
-
-
         mlistview =(ListView)findViewById(R.id.listview);
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,mUsername);
         mlistview.setAdapter(arrayAdapter);
-
-
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("Kommentar/"+test.ID);

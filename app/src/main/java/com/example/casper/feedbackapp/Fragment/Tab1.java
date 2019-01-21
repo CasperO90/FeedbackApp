@@ -3,10 +3,14 @@ package com.example.casper.feedbackapp.Fragment;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +27,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
     Button surBtn, neutralBtn, tilfredsBtn, gladBtn;
     int a, b, c, d = 0;
     TextView spm1, overskrift;
+    private ViewPager viewPager;
 
     //public static betyder at værdierne kan blive videre givet, så når jeg kalder på dem i en anden klasse
     //har de samme værdier.
@@ -45,6 +50,8 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         gladBtn = view.findViewById(R.id.gladBtn);
         gladBtn.setOnClickListener(this);
 
+        viewPager = getActivity().findViewById(R.id.tabItem1);
+
         //Textview
         spm1 = view.findViewById(R.id.spmTextView);
         spm1.setText(R.string.spm1);
@@ -58,7 +65,18 @@ public class Tab1 extends Fragment implements View.OnClickListener {
         farveCheck();
 
         return view;
-    }
+        }
+
+        String tab;
+        public void switchToTab(String tab){
+            if(tab.equals("0")){
+                viewPager.setCurrentItem(0);
+            }else if(tab.equals("1")){
+                viewPager.setCurrentItem(1);
+            }else if(tab.equals("2")){
+                viewPager.setCurrentItem(2);
+            }
+        }
 
     // her bliver stemmerne givet, når brugeren trykker på knappen sætter den alle de andre værdier
     // til 0 for man kan kun stemme engang.
@@ -82,6 +100,7 @@ public class Tab1 extends Fragment implements View.OnClickListener {
                 neutralBtn.setAlpha(0.2f);
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
+
             }
         } else if (v == neutralBtn) {
             b++;

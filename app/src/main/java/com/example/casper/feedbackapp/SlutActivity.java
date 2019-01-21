@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.casper.feedbackapp.Fragment.Tab1;
@@ -26,10 +27,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
-    MoedeDeltagActivity User = new MoedeDeltagActivity();
-
     Button forsideButton;
-    public static String slutsur,slutneutral,sluttilfreds,slutglad ;
+    public static String slutsur,slutneutral,sluttilfreds,slutglad;
+
+    private TextView surTekst, neutralTekst, tilfredsTekst, gladTekst;
 
     private DatabaseReference mDatabase;
     int mødetest;
@@ -43,30 +44,42 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         forsideButton = findViewById(R.id.forsideButton);
         forsideButton.setOnClickListener(this);
 
+
+        //TextView
+        surTekst = findViewById(R.id.surTekst);
+        neutralTekst = findViewById(R.id.neutralTekst);
+        tilfredsTekst = findViewById(R.id.tilfredsTekst);
+        gladTekst = findViewById(R.id.gladTekst);
+
+
         mødetest = AppState.getMødeID();
 
         nytid = String.valueOf(mødetest);
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID/");
 
-       // intent
+       // intent & tekst
         Intent intent = getIntent();
          slutsur = intent.getStringExtra("sur");
+         surTekst.setText("" +slutsur);
+
          slutneutral = intent.getStringExtra("neutral");
+         neutralTekst.setText("" + slutneutral);
+
          sluttilfreds = intent.getStringExtra("tilfreds");
+         tilfredsTekst.setText("" +sluttilfreds);
+
          slutglad = intent.getStringExtra("glad");
+         gladTekst.setText("" +slutglad);
 
         Log.d("check",""+slutsur);
         Log.d("check",""+slutneutral);
         Log.d("check",""+sluttilfreds);
         Log.d("check",""+slutglad);
-
     }
 
     @Override
     public void onClick(View view) {
-
-
         HashMap<String, String> datamap = new HashMap<>();
         datamap.put("sur",slutsur);
         datamap.put("mellem",slutneutral);
@@ -74,12 +87,10 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         datamap.put("rigtigglad",slutglad);
         Log.d("nejenjejenjenje",""+slutsur);
 
-
         //Hent møde id
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
         int nytMødeID = AppState.getMødeID();
-
 
         mDatabase.child(String.valueOf(nytMødeID)).push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -87,7 +98,6 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
                 if(task.isSuccessful()){
                     Toast.makeText(SlutActivity.this, "Dette er gemt", Toast.LENGTH_SHORT).show();
                 }else{
-
                     Toast.makeText(SlutActivity.this, "fejl på databasene", Toast.LENGTH_SHORT).show();
                 }
             }
