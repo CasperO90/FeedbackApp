@@ -13,16 +13,15 @@ import com.example.casper.feedbackapp.R;
 
 public class FoersteLederActivity extends AppCompatActivity implements OnClickListener{
 
-    private Button opretMødeBtn, startMødeBtn,SeFeedback;
+    private Button opretMødeBtn, startMødeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foerste_leder);
 
-
         // action bar
-        getSupportActionBar().setTitle("Første leder"); // for set actionbar title
+        getSupportActionBar().setTitle("Tilbage til hovedskærm"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
 
@@ -32,24 +31,16 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
 
         startMødeBtn = findViewById(R.id.startMødeBtn);
         startMødeBtn.setOnClickListener(this);
-
-
-
-
-
-
     }
 
     public void opretMøde(){
         Intent intent = new Intent(this, Dagsorden.class);
         startActivity(intent);
-
     }
 
     public void startMøde(){
         Intent intent = new Intent(this, LederStartMoedeActivity.class);
         startActivity(intent);
-      
     }
 
 
@@ -80,7 +71,6 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
     public void forceCrash(View view) {
         throw new RuntimeException("This is a crash");
     }
-
 
 }
 

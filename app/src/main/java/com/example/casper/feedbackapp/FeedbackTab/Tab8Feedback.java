@@ -1,17 +1,14 @@
-package com.example.casper.feedbackapp;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+package com.example.casper.feedbackapp.FeedbackTab;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.casper.feedbackapp.Mødeleder.Highscore;
+import com.example.casper.feedbackapp.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -25,11 +22,16 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 public class Tab8Feedback extends Fragment {
 
 
     PieChart pieChart;
     BarChart barChart, barChart2;
+    private TextView spm8;
 
 
     Highscore spørgsmål8 = new Highscore();
@@ -37,9 +39,9 @@ public class Tab8Feedback extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab8_feedback, container, false);
 
-
-
-
+        //Textview
+        spm8 = view.findViewById(R.id.spmTextView);
+        spm8.setText(R.string.spm8);
 
         barChart = view.findViewById(R.id.chart);
 
@@ -64,9 +66,6 @@ public class Tab8Feedback extends Fragment {
         xAxis.setLabelCount(4);
 
 
-
-
-
         ArrayList<BarEntry> barEntries = new ArrayList<>();
 
         barEntries.add(new BarEntry(1, spørgsmål8.spørgsmål8sur));
@@ -83,21 +82,17 @@ public class Tab8Feedback extends Fragment {
 
         barChart.setData(data);
 
-
-
         pieChart = view.findViewById(R.id.chart2);
 
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5,10,5,5);
 
-
         pieChart.setDragDecelerationFrictionCoef(0.95f);
 
         pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(android.R.color.white);
         pieChart.setTransparentCircleRadius(61f);
-
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
 
@@ -106,23 +101,16 @@ public class Tab8Feedback extends Fragment {
         yValues.add(new PieEntry(spørgsmål8.spørgsmål8tilfreds2,"glad"));
         yValues.add(new PieEntry(spørgsmål8.spørgsmål8glad3,"rigtig glad"));
 
-
         PieDataSet dataSet2= new PieDataSet(yValues,"Feedback");
         dataSet2.setSliceSpace(3f);
         dataSet2.setSelectionShift(5f);
         dataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
-
 
         PieData data2 = new PieData(dataSet2);
         data.setValueTextSize(10f);
         data.setValueTextColor(android.R.color.black);
 
         pieChart.setData(data2);
-
-
-
-
-
 
         return view;
     }

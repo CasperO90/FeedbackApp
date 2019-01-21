@@ -28,8 +28,6 @@ public class Kommentar extends AppCompatActivity {
     private ListView mlistview;
     private FirebaseDatabase mFirebaseDatabase;
 
-
-
     LederStartMoedeActivity test = new LederStartMoedeActivity();
 
     @Override
@@ -37,13 +35,10 @@ public class Kommentar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kommentar);
 
-
-        getSupportActionBar().setTitle("Kommentar"); // for set actionbar title
+        getSupportActionBar().setTitle("Tilbage til oversigt"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-
-        mlistview =(ListView)findViewById(R.id.listview);
+        mlistview = findViewById(R.id.listview);
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKommentar);
         mlistview.setAdapter(arrayAdapter);
@@ -88,11 +83,6 @@ public class Kommentar extends AppCompatActivity {
 
             }
         });
-
-
-
-
-
     }
 
     @Override
@@ -103,8 +93,5 @@ public class Kommentar extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
-
     }
-
-
 }

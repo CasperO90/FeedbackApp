@@ -83,25 +83,15 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                 mButton6.setEnabled(false);
 
             } else if (isanswared == false) {
-
-
             }
-
         }
-
 
         // action bar
         getSupportActionBar().setTitle("Møde"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
-
         //chronometer = findViewById(R.id.chronometer);
         //chronometer.setFormat("Tid: %s");
-
-
-
-
-
     }
 
     @SuppressLint("WrongConstant")
@@ -127,13 +117,11 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                 editor.putString("starttid", a);
                 editor.apply();
 
-
-
                 textView.setText("Start tid: " + a);
-
                 mButton6.setText("Stop Mødet");
                 u=2;
             }
+
             else if (u==2){
                 LocalTime myObj1 = null;
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -147,9 +135,6 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("sluttid", b);
                 editor.apply();
-
-
-
 
                 textView2.setText("Slut tid: "+b);
                 mButton6.setAlpha(.4f);
@@ -182,8 +167,6 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
             mButton7.setVisibility(View.VISIBLE);
 
             mButton6.setText("Mødet er nu afsluttet");
-
-
         }
             */
 
@@ -191,24 +174,11 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
         else if (mButton7 == v) {
            SeFeedback();
-
-
         }
-
-
-
 
         else if (seKommentar == v){
             SeKommentar();
-
-
-
-
-
-
         }
-
-
     }
 
     public void SeFeedback(){
@@ -220,7 +190,6 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         startActivity(intent);
     }
 
-
 @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
@@ -229,8 +198,5 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
             finish();
         }
         return super.onOptionsItemSelected(item);
-
 }
 }
-
-

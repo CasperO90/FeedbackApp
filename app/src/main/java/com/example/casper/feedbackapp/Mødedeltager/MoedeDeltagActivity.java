@@ -49,7 +49,7 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         setContentView(R.layout.activity_moede_deltag);
 
         //action bar
-        getSupportActionBar().setTitle("Møde Deltag"); // for set actionbar title
+        getSupportActionBar().setTitle("Tilbage til hovedskærm"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
         //Buttons

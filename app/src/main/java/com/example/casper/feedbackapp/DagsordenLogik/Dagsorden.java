@@ -30,6 +30,10 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagsorden);
 
+        // action bar
+        getSupportActionBar().setTitle("Tilbage"); // for set actionbar title
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
+
         recyclerView = findViewById(R.id.recycler_view);
 
         dagsordenAdapter = new DagsordenAdapter(listeDagsorden, this);
@@ -89,6 +93,11 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
                 Singleton.get().setNavn(sNavnMøde);
                 Singleton.get().setTidspunkt(sTidspunkt);
                 Singleton.get().setLokation(sLokation);
+
+                if(sNavnMøde.matches("") || sTidspunkt.matches("") || sLokation.matches("")){
+                    Toast.makeText(view.getContext(), "Du mangler at udfylde et punkt", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 Intent intent = new Intent(Dagsorden.this, MoedeOprettet.class);
                 startActivity(intent);
