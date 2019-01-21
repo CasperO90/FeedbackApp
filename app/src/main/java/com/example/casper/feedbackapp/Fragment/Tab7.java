@@ -47,7 +47,7 @@ public class Tab7 extends Fragment implements View.OnClickListener {
 
         //Textview
         spm7 = view.findViewById(R.id.spmTextView);
-        spm7.setText(R.string.spm5);
+        spm7.setText(R.string.spm7);
 
         surBtn.setAlpha(0.2f);
         neutralBtn.setAlpha(0.2f);
