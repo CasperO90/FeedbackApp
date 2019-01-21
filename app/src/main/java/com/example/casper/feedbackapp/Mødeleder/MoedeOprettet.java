@@ -12,6 +12,7 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.example.casper.feedbackapp.AppState;
+import com.example.casper.feedbackapp.DagsordenLogik.Singleton;
 import com.example.casper.feedbackapp.EmailLogik.SendMailTask;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.StartActivity;
@@ -148,6 +149,8 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
     public void onClick(View view) {
         if (view == button5) {
 
+            Singleton.get().getDagsordenData();
+
             //Sender en email til den indtastede email
 
             Log.i("SendMailActivity", "Send Button Clicked.");
@@ -163,7 +166,10 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
             Log.i("SendMailActivity", "To List: " + toEmailList);
             String emailSubject = getResources().getString(R.string.emailEmne);
 
-            String emailBody = getResources().getString(R.string.emailText)+mødeID;
+            String emailBody = getResources().getString(R.string.emailText)+" " + mødeID + "\n" +
+               "Mødenavn: " + Singleton.get().getNavn() + "\n" +
+               "Dato og tid: " + Singleton.get().getTidspunkt() + "\n" +
+               "Lokation: " + Singleton.get().getTidspunkt();
 
             new SendMailTask(MoedeOprettet.this).execute(fromEmail,
                     fromPassword, toEmailList, emailSubject, emailBody);
