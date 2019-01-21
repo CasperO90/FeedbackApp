@@ -62,6 +62,9 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         mButton7.setOnClickListener(this);
         mButton6.setOnClickListener(this);
 
+        textView.setText("");
+        textView2.setText("");
+
         test = jep.ID;
 
 

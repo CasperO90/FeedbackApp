@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.ndk.CrashlyticsNdk;
+import com.example.casper.feedbackapp.Fragment.MainActivity;
 import com.example.casper.feedbackapp.Mødedeltager.MoedeDeltagActivity;
 import com.example.casper.feedbackapp.Mødeleder.FoersteLederActivity;
 import io.fabric.sdk.android.Fabric;
@@ -23,6 +24,10 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+       // Intent intent = new Intent(this, Main2Activity.class);
+       // startActivity(intent);
+
         //crashlytics.
        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
         if (!EMULATOR) {

@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.casper.feedbackapp.AppState;
+import com.example.casper.feedbackapp.Main2Activity;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.SlutActivity;
 import com.google.firebase.database.DataSnapshot;
@@ -43,14 +44,14 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
     private DatabaseReference ref;
     private DatabaseReference kk;
 
-    private static int spørgsmål1sur, spørgsmål1neutral1, spørgsmål1tilfreds2, spørgsmål1glad3 =0;
-    private static int spørgsmål2sur, spørgsmål2neutral1, spørgsmål2tilfreds2, spørgsmål2glad3 =0;
-    private static int spørgsmål3sur, spørgsmål3neutral1, spørgsmål3tilfreds2, spørgsmål3glad3 =0;
-    private static int spørgsmål4sur, spørgsmål4neutral1, spørgsmål4tilfreds2, spørgsmål4glad3 =0;
-    private static int spørgsmål5sur, spørgsmål5neutral1, spørgsmål5tilfreds2, spørgsmål5glad3 =0;
-    private static int spørgsmål6sur, spørgsmål6neutral1, spørgsmål6tilfreds2, spørgsmål6glad3 =0;
-    private static int spørgsmål7sur, spørgsmål7neutral1, spørgsmål7tilfreds2, spørgsmål7glad3 =0;
-    private static int spørgsmål8sur, spørgsmål8neutral1, spørgsmål8tilfreds2, spørgsmål8glad3 =0;
+    public static int spørgsmål1sur, spørgsmål1neutral1, spørgsmål1tilfreds2, spørgsmål1glad3 =0;
+    public static int spørgsmål2sur, spørgsmål2neutral1, spørgsmål2tilfreds2, spørgsmål2glad3 =0;
+    public static int spørgsmål3sur, spørgsmål3neutral1, spørgsmål3tilfreds2, spørgsmål3glad3 =0;
+    public static int spørgsmål4sur, spørgsmål4neutral1, spørgsmål4tilfreds2, spørgsmål4glad3 =0;
+    public static int spørgsmål5sur, spørgsmål5neutral1, spørgsmål5tilfreds2, spørgsmål5glad3 =0;
+    public static int spørgsmål6sur, spørgsmål6neutral1, spørgsmål6tilfreds2, spørgsmål6glad3 =0;
+    public static int spørgsmål7sur, spørgsmål7neutral1, spørgsmål7tilfreds2, spørgsmål7glad3 =0;
+    public static int spørgsmål8sur, spørgsmål8neutral1, spørgsmål8tilfreds2, spørgsmål8glad3 =0;
 
     private int nysur1,nymellem1,nyglad1,nyrigtigglad1,nysur2,nymellem2,nyglad2,nyrigtigglad2=0;
     private int nysur3,nymellem3,nyglad3,nyrigtigglad3,nysur4,nymellem4,nyglad4,nyrigtigglad4=0;
@@ -58,7 +59,10 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
     private int nysur7,nymellem7,nyglad7,nyrigtigglad7,nysur8,nymellem8,nyglad8,nyrigtigglad8=0;
 
 
-
+    private int samledesur;
+    private int samledeneutral;
+    private int samledetilfreds;
+    private int samledeglad;
 
 
     @Override
@@ -423,34 +427,33 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
 
 
 
-                        /*
-                        Map<String, String> map = (Map) ds.getValue();
 
-                        String sur = map.get("sur");
-                        String mellem = map.get("mellem");
-                        String glad = map.get("glad");
-                        String rigtigglad = map.get("rigtigglad");
+                         samledesur= spørgsmål1sur+spørgsmål2sur+spørgsmål3sur+spørgsmål4sur+spørgsmål5sur+spørgsmål6sur+spørgsmål7sur+spørgsmål8sur;
+                        samledeneutral=spørgsmål1neutral1+spørgsmål2neutral1+spørgsmål3neutral1+spørgsmål4neutral1+spørgsmål5neutral1+spørgsmål6neutral1+spørgsmål7neutral1+spørgsmål8neutral1;
+                        samledetilfreds =spørgsmål1tilfreds2+spørgsmål2tilfreds2+spørgsmål3tilfreds2+spørgsmål4tilfreds2+spørgsmål5tilfreds2+spørgsmål6tilfreds2+spørgsmål7tilfreds2+spørgsmål8tilfreds2;
+                        samledeglad =spørgsmål1glad3+spørgsmål2glad3+spørgsmål3glad3+spørgsmål4glad3+spørgsmål5glad3+spørgsmål6glad3+spørgsmål7glad3+spørgsmål8glad3;
+                               /* ny = ny + Integer.parseInt(a);
+                                ny1 = ny1 + Integer.parseInt(b);
+                                ny2 = ny2 + Integer.parseInt(c);
+                                ny3 = ny3 + Integer.parseInt(d);
 
-                                ny = ny + Integer.parseInt(sur);
-                                ny1 = ny1 + Integer.parseInt(mellem);
-                                ny2 = ny2 + Integer.parseInt(glad);
-                                ny3 = ny3 + Integer.parseInt(rigtigglad);
-                                Log.d("SUR", "" + ny);
+                                */
+                                Log.d("SUR", "" + samledesur);
                                 Log.d("MELLEM", "" + ny1);
                                 Log.d("GLaD", "" + ny2);
                                 Log.d("Rigtigglad", "" + ny3);
 
-                        */
+
                     }
 
                     //sur
-                    tv1.setText("" + spørgsmål8sur);
+                    tv1.setText("" + samledesur);
                     //mellem
-                    tv2.setText("" + spørgsmål8neutral1);
+                    tv2.setText("" + samledeneutral);
                     //glad
-                    tv3.setText("" + spørgsmål8tilfreds2);
+                    tv3.setText("" + samledetilfreds);
                     //rigtigglad
-                    tv4.setText("" + spørgsmål8glad3);
+                    tv4.setText("" + samledeglad);
                 }
 
                 @Override
@@ -472,7 +475,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
             Score.slutglad ="";
         }
 */
-        SeScoreFeedback.setText("Se Feedback \n fra møde ID: "+ test.ID);
+        SeScoreFeedback.setText("Se Samlede Feedback \n fra møde ID: "+ test.ID);
     }
 
     @Override
@@ -487,7 +490,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
 
 
     public void seStats(){
-        Intent Stats = new Intent(this, StatistikCharts.class);
+        Intent Stats = new Intent(this, Main2Activity.class);
         startActivity(Stats);
 
 
