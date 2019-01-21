@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="#DFE0E0"
     tools:context=".DagsordenLogik.Dagsorden">
 
     <ScrollView
@@ -37,14 +38,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="lokation"
+                android:hint="Lokation"
                 android:inputType="textPersonName" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
                 android:text="Opret mødepunkter nedenfor"
                 android:textAlignment="center"
+                android:textColor="@android:color/background_light"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -64,14 +69,17 @@
 
             <Button
                 android:id="@+id/btnTilfoj"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tilføj mødepunkt" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="325dp"
+                android:background="@drawable/add_btn"
+                android:textColor="@android:color/background_light" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:background="@android:color/background_light"
                 android:scrollbars="vertical">
 
@@ -79,9 +87,14 @@
 
             <Button
                 android:id="@+id/btnOpret"
-                android:layout_width="match_parent"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
-                android:text="Opret dagsorden" />
+                android:layout_marginLeft="85dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/knap_baggrund"
+                android:text="Afslut"
+                android:textColor="@android:color/background_light"
+                android:visibility="visible" />
         </LinearLayout>
     </ScrollView>
 
