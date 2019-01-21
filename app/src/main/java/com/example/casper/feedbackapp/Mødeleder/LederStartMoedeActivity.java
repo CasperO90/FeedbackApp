@@ -155,51 +155,54 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
     @Override
     public void onClick(View v) {
 
-   // deltagMøde();
+        // deltagMøde();
         //videre
-       // if (mButton5 == v && godkendt == true) {
-       if (mButton5 == v) {
+      //  if (mButton5 == v && godkendt == true) {
+
+            if(mButton5 ==v){
+
 
             ID = String.valueOf(editText.getText().toString());
 
-           Log.d("næste","næste"+ID);
+            Log.d("næste", "næste" + ID);
 
-           if (TidligereMødere == null) {
+            if (TidligereMødere == null) {
 
-               Toast.makeText(this, "Der er ingen Møde ID i Appen, prøv at gå tilbage og opret et nyt ", Toast.LENGTH_SHORT).show();
-           }
-           else {
-
-               Log.d("måskemåske", "" + TidligereMødere);
+                Toast.makeText(this, "Der er ingen Møde ID i Appen, prøv at gå tilbage og opret et nyt ", Toast.LENGTH_SHORT).show();
+            } else {
 
 
-               t = editText.getText().toString();
-               if (t.isEmpty()) {
-                   Toast.makeText(this, "Du skal indtaste ID", Toast.LENGTH_SHORT).show();
+                Log.d("måskemåske", "" + TidligereMødere);
 
-               } else {
-                   Log.d("jajajaj", "" + editText.getText().toString());
-                   int talVærdi = Integer.parseInt(editText.getText().toString());
 
-                   if (checkTal(editText.getText().toString()) == true && godkendt == true || talVærdi == 0) {
-                       Log.d("den er  true", "den er  true");
-                       login();
-                   } else if (checkTal(editText.getText().toString()) == false && godkendt == true) {
-                       Toast.makeText(this, "forkert møde ID", Toast.LENGTH_SHORT).show();
+                t = editText.getText().toString();
+                if (t.isEmpty()) {
+                    Toast.makeText(this, "Du skal indtaste ID", Toast.LENGTH_SHORT).show();
 
-                   } else if (checkTal(editText.getText().toString()) == true && godkendt == false) {
-                       Toast.makeText(this, "forkert Pin-kode", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.d("jajajaj", "" + editText.getText().toString());
+                    int talVærdi = Integer.parseInt(editText.getText().toString());
 
-                   } else {
-                       Toast.makeText(this, "Både Møde ID og Pin-kode er forkert.", Toast.LENGTH_SHORT).show();
-                   }
+                    if (checkTal(editText.getText().toString()) == true && godkendt == true || talVærdi == 0) {
+                        Log.d("den er  true", "den er  true");
+                        login();
+                    } else if (checkTal(editText.getText().toString()) == false && godkendt == true) {
+                        Toast.makeText(this, "forkert møde ID", Toast.LENGTH_SHORT).show();
 
-               }
-           }
+                    } else if (checkTal(editText.getText().toString()) == true && godkendt == false) {
+                        Toast.makeText(this, "forkert Pin-kode", Toast.LENGTH_SHORT).show();
 
-       }
+                    } else {
+                        Toast.makeText(this, "Både Møde ID og Pin-kode er forkert.", Toast.LENGTH_SHORT).show();
+                    }
 
+                }
+            }
+
+
+        }
     }
+
 
     public void login(){
         Intent intent = new Intent(this,LogIn.class);
