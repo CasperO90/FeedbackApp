@@ -166,10 +166,13 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
             Log.i("SendMailActivity", "To List: " + toEmailList);
             String emailSubject = getResources().getString(R.string.emailEmne);
 
-            String emailBody = getResources().getString(R.string.emailText)+" " + mødeID + "\n" +
-               "Mødenavn: " + Singleton.get().getNavn() + "\n" +
-               "Dato og tid: " + Singleton.get().getTidspunkt() + "\n" +
+
+                    String emailBody = getResources().getString(R.string.emailText)+" " + mødeID + "\n" +
+
+               "Mødenavn: " + Singleton.get().getNavn() + "\n\n" +
+               "Dato og tid: " + Singleton.get().getTidspunkt() + "\n\n" +
                "Lokation: " + Singleton.get().getTidspunkt();
+
 
             new SendMailTask(MoedeOprettet.this).execute(fromEmail,
                     fromPassword, toEmailList, emailSubject, emailBody);
