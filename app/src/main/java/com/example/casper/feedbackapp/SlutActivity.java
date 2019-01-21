@@ -79,7 +79,7 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         gladtekst.setText("" +slutglad);
 
         spmTextView = findViewById(R.id.spmTextView);
-        spmTextView.setText(R.string.afsluttende);
+        spmTextView.setText(R.string.afslut);
 
         //EditText
         kommentarView = findViewById(R.id.kommentarView);
