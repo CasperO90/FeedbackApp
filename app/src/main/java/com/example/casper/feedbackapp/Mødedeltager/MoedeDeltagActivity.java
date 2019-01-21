@@ -60,13 +60,11 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         //Textview
         visMødeTekst = findViewById(R.id.visMødeTekst);
 
-
         //Hent møde id
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
 
         nytMødeID = AppState.getMødeID();
-
 
         Log.d("test","test");
         mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -79,16 +77,12 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
                 Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
                 TidligereMødere = map.keySet();
                 Log.d("test","test"+TidligereMødere);
-
-
             }
 
 
             // når databasen bliver ændret bliver det her kørt
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-
             }
 
             @Override
@@ -98,18 +92,13 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
 
         });
-
-
-
 
         visMødeTekst.setText("Indtast møde id " + "(" + nytMødeID + ")");
     }
@@ -144,16 +133,9 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
                         Toast.makeText(this, "Fejl på systemet ", Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }
         }
-
-
     }
-
-
-
-
 
 
 
