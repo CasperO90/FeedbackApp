@@ -19,7 +19,6 @@ import com.example.casper.feedbackapp.DagsordenLogik.DagsordenData;
 import com.example.casper.feedbackapp.DagsordenLogik.OverforselAdapter;
 import com.example.casper.feedbackapp.DagsordenLogik.Singleton;
 import com.example.casper.feedbackapp.Fragment.MainActivity;
-import com.example.casper.feedbackapp.Mødeleder.LederOpretMoedeActivity;
 import com.example.casper.feedbackapp.R;
 
 import java.util.ArrayList;
@@ -34,8 +33,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
     private TextView overskriftTekst, navnMøde, tidspunkt, lokation;
     private int nytMødeID;
-
-    LederOpretMoedeActivity id = new LederOpretMoedeActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,7 +59,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
 
         recyclerView.setLayoutManager(layoutManager);
         dagsordenListe = Singleton.get().getDagsordenData();
