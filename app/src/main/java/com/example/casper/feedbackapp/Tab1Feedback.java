@@ -81,7 +81,6 @@ public class Tab1Feedback extends Fragment {
         barChart.setData(data);
 
 
-
         pieChart = view.findViewById(R.id.chart2);
 
         pieChart.setUsePercentValues(true);
