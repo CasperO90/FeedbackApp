@@ -15,6 +15,9 @@ import com.crashlytics.android.ndk.CrashlyticsNdk;
 import com.example.casper.feedbackapp.Fragment.MainActivity;
 import com.example.casper.feedbackapp.Mødedeltager.MoedeDeltagActivity;
 import com.example.casper.feedbackapp.Mødeleder.FoersteLederActivity;
+import com.example.casper.feedbackapp.Mødeleder.LederStartMoedeActivity;
+import com.example.casper.feedbackapp.Mødeleder.LogIn;
+
 import io.fabric.sdk.android.Fabric;
 
 public class StartActivity extends AppCompatActivity implements OnClickListener{
@@ -25,8 +28,8 @@ public class StartActivity extends AppCompatActivity implements OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       // Intent intent = new Intent(this, Main2Activity.class);
-       // startActivity(intent);
+      // Intent intent = new Intent(this, LederStartMoedeActivity.class);
+        //startActivity(intent);
 
         //crashlytics.
        boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
