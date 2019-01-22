@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Tab2Feedback">
-
+    tools:context=".FeedbackTab.Tab2Feedback">
 
 
     <ScrollView
@@ -30,9 +29,9 @@
 
             <com.github.mikephil.charting.charts.BarChart
                 android:id="@+id/chart"
-                android:layout_width="384dp"
+                android:layout_width="match_parent"
                 android:layout_height="300dp"
-                android:layout_marginBottom="129dp"
+                android:layout_marginTop="125dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
@@ -47,6 +46,21 @@
         </LinearLayout>
     </ScrollView>
 
-
+    <TextView
+        android:id="@+id/spmTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingTop="15dp"
+        android:paddingBottom="10dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

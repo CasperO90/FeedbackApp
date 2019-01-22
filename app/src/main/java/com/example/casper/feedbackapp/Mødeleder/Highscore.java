@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.casper.feedbackapp.AppState;
-import com.example.casper.feedbackapp.Main2Activity;
+import com.example.casper.feedbackapp.FeedbackTab.Main2Activity;
 import com.example.casper.feedbackapp.R;
 import com.example.casper.feedbackapp.SlutActivity;
 import com.google.firebase.database.DataSnapshot;
@@ -77,7 +77,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
         KnapStats.setOnClickListener(this);
 
         // action bar
-        getSupportActionBar().setTitle("Se Feedback"); // for set actionbar title
+        getSupportActionBar().setTitle("Tilbage til oversigt"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -310,8 +310,6 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
                         Log.d("mellem2", "" + spørgsmål5neutral1);
                         Log.d("glad2", "" + spørgsmål5tilfreds2);
                         Log.d("rigtigglad2", "" + spørgsmål5glad3);
-
-
 
 
                         Map<String, Object> spørgsmål6 = (Map) ds.child("/spørgsmål6").getValue();

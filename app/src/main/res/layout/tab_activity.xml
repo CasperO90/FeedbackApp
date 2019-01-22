@@ -78,7 +78,7 @@
         android:paddingTop="15dp"
         android:paddingBottom="10dp"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/background_light"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

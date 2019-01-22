@@ -1,17 +1,14 @@
-package com.example.casper.feedbackapp;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+package com.example.casper.feedbackapp.FeedbackTab;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.casper.feedbackapp.Mødeleder.Highscore;
+import com.example.casper.feedbackapp.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -25,10 +22,16 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+
 public class Tab1Feedback extends Fragment {
 
     PieChart pieChart;
     BarChart barChart, barChart2;
+    private TextView spm1;
 
 
     Highscore spørgsmål1 = new Highscore();
@@ -36,7 +39,9 @@ public class Tab1Feedback extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab1_feedback, container, false);
 
-
+        //Textview
+        spm1 = view.findViewById(R.id.spmTextView);
+        spm1.setText(R.string.spm1);
 
         barChart = view.findViewById(R.id.chart);
 
