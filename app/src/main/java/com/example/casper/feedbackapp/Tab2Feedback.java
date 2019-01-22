@@ -15,6 +15,7 @@ import com.example.casper.feedbackapp.Mødeleder.Highscore;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -29,7 +30,7 @@ public class Tab2Feedback extends Fragment {
 
 
     PieChart pieChart;
-    BarChart barChart, barChart2;
+    BarChart barChart;
 
 
     Highscore spørgsmål2 = new Highscore();
@@ -61,6 +62,12 @@ public class Tab2Feedback extends Fragment {
         xAxis.setDrawGridLines(false);
         xAxis.setLabelCount(4);
 
+        barChart.getAxisRight().setEnabled(false);
+
+        YAxis leftAxis = barChart.getAxisLeft();
+        leftAxis.setSpaceTop(35f);
+
+        leftAxis.setAxisMinimum(0f);
 
 
 
@@ -77,7 +84,7 @@ public class Tab2Feedback extends Fragment {
 
 
         BarData data = new BarData(barDataSet);
-        data.setBarWidth(1f);
+        data.setBarWidth(0.9f);
 
         barChart.setData(data);
 
@@ -99,11 +106,22 @@ public class Tab2Feedback extends Fragment {
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
 
-        yValues.add(new PieEntry(spørgsmål2.spørgsmål2sur,"Sur"));
-        yValues.add(new PieEntry(spørgsmål2.spørgsmål2neutral1,"mellem"));
-        yValues.add(new PieEntry(spørgsmål2.spørgsmål2tilfreds2,"glad"));
-        yValues.add(new PieEntry(spørgsmål2.spørgsmål2glad3,"rigtig glad"));
+        if(spørgsmål2.spørgsmål1sur >0) {
 
+            yValues.add(new PieEntry(spørgsmål2.spørgsmål1sur, "Sur"));
+
+
+        }
+        if(spørgsmål2.spørgsmål1neutral1 >0) {
+            yValues.add(new PieEntry(spørgsmål2.spørgsmål1neutral1, "mellem"));
+        }
+        if(spørgsmål2.spørgsmål1tilfreds2 >0) {
+            yValues.add(new PieEntry(spørgsmål2.spørgsmål1tilfreds2, "glad"));
+        }
+
+        if(spørgsmål2.spørgsmål1glad3 >0) {
+            yValues.add(new PieEntry(spørgsmål2.spørgsmål1glad3, "rigtig glad"));
+        }
 
         PieDataSet dataSet2= new PieDataSet(yValues,"Feedback");
         dataSet2.setSliceSpace(3f);
@@ -111,8 +129,9 @@ public class Tab2Feedback extends Fragment {
         dataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
 
 
+
         PieData data2 = new PieData(dataSet2);
-        data.setValueTextSize(10f);
+        data.setValueTextSize(20f);
         data.setValueTextColor(android.R.color.black);
 
         pieChart.setData(data2);

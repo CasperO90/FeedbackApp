@@ -15,12 +15,15 @@ import com.example.casper.feedbackapp.Mødeleder.Highscore;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
@@ -42,7 +45,7 @@ public class Tab1Feedback extends Fragment {
 
         barChart.setDrawBarShadow(false);
 
-        barChart.setDrawValueAboveBar(false);
+        barChart.setDrawValueAboveBar(true);
 
         barChart.setMaxVisibleValueCount(10);
 
@@ -52,6 +55,8 @@ public class Tab1Feedback extends Fragment {
 
         barChart.setHighlightFullBarEnabled(true);
 
+        barChart.getDescription().setEnabled(false);
+
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setTextSize(10f);
@@ -59,7 +64,15 @@ public class Tab1Feedback extends Fragment {
         xAxis.setDrawAxisLine(true);
         xAxis.setDrawGridLines(false);
         xAxis.setLabelCount(4);
+        xAxis.setGranularity(1f);
 
+
+        YAxis leftAxis = barChart.getAxisLeft();
+        leftAxis.setSpaceTop(35f);
+
+        leftAxis.setAxisMinimum(0f);
+
+       barChart.getAxisRight().setEnabled(false);
 
 
 
@@ -76,7 +89,7 @@ public class Tab1Feedback extends Fragment {
 
 
         BarData data = new BarData(barDataSet);
-        data.setBarWidth(1f);
+        data.setBarWidth(0.9f);
 
         barChart.setData(data);
 
@@ -95,13 +108,38 @@ public class Tab1Feedback extends Fragment {
         pieChart.setHoleColor(android.R.color.white);
         pieChart.setTransparentCircleRadius(61f);
 
+        pieChart.setCenterText("Kage");
+
+        pieChart.setDrawCenterText(true);
+
+        /*pieChart.setRotationAngle(0);
+        // enable rotation of the chart by touch
+        pieChart.setRotationEnabled(true);
+        pieChart.setHighlightPerTapEnabled(true);
+
+*/
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
 
-        yValues.add(new PieEntry(spørgsmål1.spørgsmål1sur,"Sur"));
-        yValues.add(new PieEntry(spørgsmål1.spørgsmål1neutral1,"mellem"));
-        yValues.add(new PieEntry(spørgsmål1.spørgsmål1tilfreds2,"glad"));
-        yValues.add(new PieEntry(spørgsmål1.spørgsmål1glad3,"rigtig glad"));
+        if(spørgsmål1.spørgsmål1sur >0) {
+
+            yValues.add(new PieEntry(spørgsmål1.spørgsmål1sur, "Sur"));
+
+        }
+        if(spørgsmål1.spørgsmål1neutral1 >0) {
+            yValues.add(new PieEntry(spørgsmål1.spørgsmål1neutral1, "mellem"));
+
+
+        }
+        if(spørgsmål1.spørgsmål1tilfreds2 >0) {
+            yValues.add(new PieEntry(spørgsmål1.spørgsmål1tilfreds2, "glad"));
+        }
+
+        if(spørgsmål1.spørgsmål1glad3 >0) {
+            yValues.add(new PieEntry(spørgsmål1.spørgsmål1glad3, "rigtig glad"));
+
+        }
+
 
 
         PieDataSet dataSet2= new PieDataSet(yValues,"Feedback");
@@ -110,9 +148,11 @@ public class Tab1Feedback extends Fragment {
         dataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
 
 
+
         PieData data2 = new PieData(dataSet2);
-        data.setValueTextSize(10f);
-        data.setValueTextColor(android.R.color.black);
+        data2.setValueTextSize(20f);
+        data2.setValueTextColor(android.R.color.black);
+
 
         pieChart.setData(data2);
 
