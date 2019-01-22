@@ -1,24 +1,4 @@
-package com.example.casper.feedbackapp;
-
-import com.example.casper.feedbackapp.Fragment.Tab1;
-import com.example.casper.feedbackapp.Fragment.Tab2;
-import com.example.casper.feedbackapp.Fragment.Tab3;
-import com.example.casper.feedbackapp.Fragment.Tab4;
-import com.example.casper.feedbackapp.Fragment.Tab5;
-import com.example.casper.feedbackapp.Fragment.Tab6;
-import com.example.casper.feedbackapp.Fragment.Tab7;
-import com.example.casper.feedbackapp.Fragment.Tab8;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+package com.example.casper.feedbackapp.FeedbackTab;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,8 +6,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
+
+import com.example.casper.feedbackapp.R;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class Main2Activity extends AppCompatActivity {
 
@@ -51,7 +39,6 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -64,7 +51,6 @@ public class Main2Activity extends AppCompatActivity {
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-
     }
 
 
@@ -116,7 +102,6 @@ public class Main2Activity extends AppCompatActivity {
             fragment.setArguments(args);
             return fragment;
         }
-
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -174,7 +159,6 @@ public class Main2Activity extends AppCompatActivity {
             }
             return null;
         }
-
 
         @Override
         public int getCount() {

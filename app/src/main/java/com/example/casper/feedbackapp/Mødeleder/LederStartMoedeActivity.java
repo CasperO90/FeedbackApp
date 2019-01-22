@@ -1,6 +1,5 @@
 package com.example.casper.feedbackapp.Mødeleder;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -9,8 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -53,18 +50,18 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         setContentView(R.layout.activity_leder_start_moede);
 
         // action bar
-        getSupportActionBar().setTitle("Start Møde"); // for set actionbar title
+        getSupportActionBar().setTitle("Tilbage"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
         //Button
-        mButton5 = (Button) findViewById(R.id.button2);
+        mButton5 = findViewById(R.id.button2);
         mButton5.setOnClickListener(this);
 
-        editText = (EditText)findViewById(R.id.editText);
+        editText =findViewById(R.id.editText);
 
-        pinview = (Pinview) findViewById(R.id.pinview);
+        pinview = findViewById(R.id.pinview);
 
-        indtastPinkode = (TextView)findViewById(R.id.indtastPinkode);
+        indtastPinkode = findViewById(R.id.indtastPinkode);
         indtastPinkode.setText("Pin-koden er 1234.");
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -85,16 +82,11 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
                 Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
                 TidligereMødere = map.keySet();
                 Log.d("test","test"+TidligereMødere);
-
-
             }
-
 
             // når databasen bliver ændret bliver det her kørt
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-
-
             }
 
             @Override
@@ -104,43 +96,28 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
             @Override
             public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
-
         });
-
-
-
-
-
 
        pinview.setPinViewEventListener(new Pinview.PinViewEventListener() {
             @Override
             public void onDataEntered(Pinview pinview, boolean b) {
 
-
                 String a = pinview.getValue().toString();
-
 
                 if (a.equals("1234")) {
                     godkendt = true;
 
                     Log.d("test2", "" + pinview.getValue());
 
-
                 } else if (!a.equals("1234")) {
                     Toast.makeText(getApplicationContext(), "Forkert pin", Toast.LENGTH_SHORT).show();
                     clearpin();
-
-
                     }
-
-
                 }
 
 
@@ -148,38 +125,28 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
 
 
         });
-
     }
-
 
     @Override
     public void onClick(View v) {
 
-        // deltagMøde();
-        //videre
-      //  if (mButton5 == v && godkendt == true) {
-
             if(mButton5 ==v){
-
-
             ID = String.valueOf(editText.getText().toString());
 
             Log.d("næste", "næste" + ID);
 
             if (TidligereMødere == null) {
-
                 Toast.makeText(this, "Der er ingen Møde ID i Appen, prøv at gå tilbage og opret et nyt ", Toast.LENGTH_SHORT).show();
-            } else {
-
-
+            }
+            else {
                 Log.d("måskemåske", "" + TidligereMødere);
 
-
                 t = editText.getText().toString();
+
                 if (t.isEmpty()) {
                     Toast.makeText(this, "Du skal indtaste ID", Toast.LENGTH_SHORT).show();
-
-                } else {
+                }
+                else {
                     Log.d("jajajaj", "" + editText.getText().toString());
                     int talVærdi = Integer.parseInt(editText.getText().toString());
 
@@ -195,30 +162,21 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
                     } else {
                         Toast.makeText(this, "Både Møde ID og Pin-kode er forkert.", Toast.LENGTH_SHORT).show();
                     }
-
                 }
             }
-
-
         }
     }
-
 
     public void login(){
         Intent intent = new Intent(this,LogIn.class);
         startActivity(intent);
-
     }
 
     public void clearpin(){
         for (int i = 0; i < pinview.getPinLength(); i++) {
             pinview.onKey(pinview.getFocusedChild(), KeyEvent.KEYCODE_DEL, new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DEL));
         }
-
     }
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -229,8 +187,6 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         }
         return super.onOptionsItemSelected(item);
     }
-
-
 
     public void deltagMøde() {
 
@@ -252,7 +208,6 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         }
     }
 
-
     public Boolean checkTal(String checkString)
     {
         for(String tal : TidligereMødere)
@@ -264,9 +219,4 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         }
         return false;
     }
-
-
-
 }
-
-

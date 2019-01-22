@@ -1,17 +1,14 @@
-package com.example.casper.feedbackapp;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+package com.example.casper.feedbackapp.FeedbackTab;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.casper.feedbackapp.Mødeleder.Highscore;
+import com.example.casper.feedbackapp.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -25,18 +22,24 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 public class Tab6Feedback extends Fragment {
 
-
     PieChart pieChart;
-    BarChart barChart, barChart2;
-
+    BarChart barChart;
+    private TextView spm6;
 
     Highscore spørgsmål6 = new Highscore();
+
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab6_feedback, container, false);
 
-
+        //Textview
+        spm6 = view.findViewById(R.id.spmTextView);
+        spm6.setText(R.string.spm6);
 
         barChart = view.findViewById(R.id.chart);
 
@@ -44,7 +47,7 @@ public class Tab6Feedback extends Fragment {
 
         barChart.setDrawValueAboveBar(false);
 
-        barChart.setMaxVisibleValueCount(10);
+        barChart.setMaxVisibleValueCount(50);
 
         barChart.setPinchZoom(false);
 
@@ -60,34 +63,26 @@ public class Tab6Feedback extends Fragment {
         xAxis.setDrawGridLines(false);
         xAxis.setLabelCount(4);
 
-
-
-
-
         ArrayList<BarEntry> barEntries = new ArrayList<>();
 
         barEntries.add(new BarEntry(1, spørgsmål6.spørgsmål6sur));
         barEntries.add(new BarEntry(2, spørgsmål6.spørgsmål6neutral1));
         barEntries.add(new BarEntry(3, spørgsmål6.spørgsmål6tilfreds2));
         barEntries.add(new BarEntry(4, spørgsmål6.spørgsmål6glad3));
-        BarDataSet barDataSet = new BarDataSet (barEntries, "Dataset 1");
+        BarDataSet barDataSet = new BarDataSet(barEntries, "Dataset 1");
 
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-
 
         BarData data = new BarData(barDataSet);
         data.setBarWidth(1f);
 
         barChart.setData(data);
 
-
-
         pieChart = view.findViewById(R.id.chart2);
 
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);
-        pieChart.setExtraOffsets(5,10,5,5);
-
+        pieChart.setExtraOffsets(5, 10, 5, 5);
 
         pieChart.setDragDecelerationFrictionCoef(0.95f);
 
@@ -98,29 +93,21 @@ public class Tab6Feedback extends Fragment {
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
 
-        yValues.add(new PieEntry(spørgsmål6.spørgsmål6sur,"Sur"));
-        yValues.add(new PieEntry(spørgsmål6.spørgsmål6neutral1,"mellem"));
-        yValues.add(new PieEntry(spørgsmål6.spørgsmål6tilfreds2,"glad"));
-        yValues.add(new PieEntry(spørgsmål6.spørgsmål6glad3,"rigtig glad"));
+        yValues.add(new PieEntry(spørgsmål6.spørgsmål6sur, "Sur"));
+        yValues.add(new PieEntry(spørgsmål6.spørgsmål6neutral1, "mellem"));
+        yValues.add(new PieEntry(spørgsmål6.spørgsmål6tilfreds2, "glad"));
+        yValues.add(new PieEntry(spørgsmål6.spørgsmål6glad3, "rigtig glad"));
 
-
-        PieDataSet dataSet2= new PieDataSet(yValues,"Feedback");
+        PieDataSet dataSet2 = new PieDataSet(yValues, "Feedback");
         dataSet2.setSliceSpace(3f);
         dataSet2.setSelectionShift(5f);
         dataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
-
 
         PieData data2 = new PieData(dataSet2);
         data.setValueTextSize(10f);
         data.setValueTextColor(android.R.color.black);
 
         pieChart.setData(data2);
-
-
-
-
-
-
 
         return view;
     }

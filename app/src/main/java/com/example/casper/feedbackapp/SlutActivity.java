@@ -95,31 +95,31 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
     @Override
     public void onClick(View view) {
-
-
         kommentarFraUser = kommentarView.getText().toString();
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference().child("Kommentar/"+User.UserMødeID);
+        if(!(kommentarFraUser.equals(""))) {
 
-        HashMap<String, String> datamap = new HashMap<String, String>();
+            mFirebaseDatabase = FirebaseDatabase.getInstance();
+            ref = FirebaseDatabase.getInstance().getReference().child("Kommentar/" + User.UserMødeID);
 
-        datamap.put("edittext",kommentarFraUser);
+            HashMap<String, String> datamap = new HashMap<String, String>();
+
+            datamap.put("edittext", kommentarFraUser);
 
 
-        ref.push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
+            ref.push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
 
-                if (task.isSuccessful()) {
-                    Toast.makeText(SlutActivity.this, "Dette er gemt ", Toast.LENGTH_LONG).show();
-                } else {
-                    Toast.makeText(SlutActivity.this, "Fejl", Toast.LENGTH_LONG).show();
+                    if (task.isSuccessful()) {
+                        Toast.makeText(SlutActivity.this, "Dette er gemt ", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(SlutActivity.this, "Fejl", Toast.LENGTH_LONG).show();
+                    }
+
                 }
+            });
 
-            }
-        });
-
-
+        }
 
 
 

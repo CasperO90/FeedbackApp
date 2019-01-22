@@ -45,8 +45,6 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
     Boolean a=false;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

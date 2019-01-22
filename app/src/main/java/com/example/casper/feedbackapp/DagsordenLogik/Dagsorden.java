@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +32,10 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagsorden);
 
+        // action bar
+        getSupportActionBar().setTitle("Tilbage"); // for set actionbar title
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
+
         recyclerView = findViewById(R.id.recycler_view);
 
         dagsordenAdapter = new DagsordenAdapter(listeDagsorden, this);
@@ -38,7 +44,6 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(dagsordenAdapter);
-
 
         //EditText
         etOverskrift = findViewById(R.id.etOverskrift);
@@ -90,6 +95,11 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
                 Singleton.get().setTidspunkt(sTidspunkt);
                 Singleton.get().setLokation(sLokation);
 
+                if(sNavnMøde.matches("") || sTidspunkt.matches("") || sLokation.matches("")){
+                    Toast.makeText(view.getContext(), "Du mangler at udfylde et punkt", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Intent intent = new Intent(Dagsorden.this, MoedeOprettet.class);
                 startActivity(intent);
             }
@@ -100,5 +110,15 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
     public void OnRemoveClick(int index) {
         Singleton.get().fjernPunkt(index);
         dagsordenAdapter.notifyData(Singleton.get().getDagsordenData());
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // TODO Auto-generated method stub
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

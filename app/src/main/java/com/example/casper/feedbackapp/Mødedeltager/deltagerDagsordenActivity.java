@@ -3,8 +3,11 @@ package com.example.casper.feedbackapp.Mødedeltager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,6 +22,7 @@ import com.example.casper.feedbackapp.DagsordenLogik.DagsordenData;
 import com.example.casper.feedbackapp.DagsordenLogik.OverforselAdapter;
 import com.example.casper.feedbackapp.DagsordenLogik.Singleton;
 import com.example.casper.feedbackapp.Fragment.MainActivity;
+import com.example.casper.feedbackapp.Mødeleder.MoedeOprettet;
 import com.example.casper.feedbackapp.R;
 
 import java.util.ArrayList;
@@ -40,20 +44,15 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         setContentView(R.layout.activity_deltager_dagsorden);
 
         // action bar
-        getSupportActionBar().setTitle("Dagsorden"); // for set actionbar title
+        getSupportActionBar().setTitle("Tilbage"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
         //Button
         feedbackBtn = findViewById(R.id.feedbackBtn);
         feedbackBtn.setOnClickListener(this);
 
-        //Hent møde id
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-        AppState.gemMødeID(preferences);
-        nytMødeID = AppState.getMødeID();
-
         overskriftTekst = findViewById(R.id.overskriftTekst);
-        overskriftTekst.setText("Velkommen til møde " + nytMødeID + "\nDagsorden ");
+        overskriftTekst.setText("Velkommen til møde " + MoedeDeltagActivity.UserMødeID + "\nDagsorden ");
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
