@@ -15,9 +15,15 @@ import android.widget.TextView;
 
 import com.example.casper.feedbackapp.R;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.Period;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -34,23 +40,30 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
     private static int u =1;
     private static boolean isanswared = false;
     private static boolean un;
-    private String test;
-    private  static boolean nyID;
+    private String test,test1;
+    private static boolean nyID ;
+
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 
 
     TextView textView;
     String starttid,sluttid;
 
-    LocalTime myObj,myObj1;
+   public static List<String> IDlist = new ArrayList<String>();
+
+
 
     LederStartMoedeActivity jep = new LederStartMoedeActivity();
 
-
+    Date d = new Date();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leder_slut_moede);
+
+        test = jep.ID;
+        test1 = jep.ID;
 
         textView = (TextView) findViewById(R.id.textView);
         textView2 = (TextView) findViewById(R.id.textView2);
@@ -62,36 +75,42 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         mButton7.setOnClickListener(this);
         mButton6.setOnClickListener(this);
 
+
         textView.setText("");
         textView2.setText("");
 
-        test = jep.ID;
+//109 01 +03
+        //0 41+43
+        //468 +53 +55
+
+        if(IDlist.contains(jep.ID)) {
+            Log.d("JAJAJA",""+IDlist);
 
 
-        if(isanswared== true ) {
+                    SharedPreferences preferences = getSharedPreferences("PREFS", 0);
+                    starttid = preferences.getString(test, "");
+                    sluttid = preferences.getString(test1+"a", "");
+                    textView.setText("Start tid: " + starttid);
+                    textView2.setText("Slut tid: " + sluttid);
+                    mButton6.setAlpha(.4f);
+                    mButton6.setText("Mødet er Stoppet");
+                    mButton6.setClickable(false);
+                    mButton6.setEnabled(false);
+                }
 
-            if (u == 2) {
-                SharedPreferences preferences = getSharedPreferences("PREFS", 0);
-                starttid = preferences.getString("starttid", "");
-                sluttid = preferences.getString("sluttid", "");
-
-                textView.setText("Start tid: " + starttid);
-                textView2.setText("Slut tid: " + sluttid);
-                mButton6.setAlpha(.4f);
-                mButton6.setText("Mødet er Stoppet");
-                mButton6.setClickable(false);
-                mButton6.setEnabled(false);
-
-            } else if (isanswared == false) {
-            }
-        }
+                u = 1;
 
         // action bar
         getSupportActionBar().setTitle("Møde"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
+
         //chronometer = findViewById(R.id.chronometer);
         //chronometer.setFormat("Tid: %s");
+
+
+
+
     }
 
     @SuppressLint("WrongConstant")
@@ -102,48 +121,40 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         if(mButton6 ==v){
 
             if (u== 1) {
-                LocalTime myObj = null;
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    myObj = LocalTime.now();
-                }
-                System.out.println(myObj);
-                Log.d("adasdasd", "" + myObj);
+               String a = sdf.format(Calendar.getInstance().getTime());
 
-
-                String a = String.valueOf(myObj);
-
+                textView.setText("Start tid: "+ a);
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("starttid", a);
+                editor.putString(test, a);
                 editor.apply();
 
-                textView.setText("Start tid: " + a);
                 mButton6.setText("Stop Mødet");
                 u=2;
             }
-
             else if (u==2){
-                LocalTime myObj1 = null;
-                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-                    myObj1 = LocalTime.now();
-                }
-                System.out.println(myObj1);
-                Log.d("adasdasd",""+myObj1);
-                String  b = String.valueOf(myObj1);
 
+                String b = sdf.format(Calendar.getInstance().getTime());
                 SharedPreferences preferences = getSharedPreferences("PREFS",0);
                 SharedPreferences.Editor editor = preferences.edit();
-                editor.putString("sluttid", b);
+                editor.putString(test1+"a", b);
                 editor.apply();
 
-                textView2.setText("Slut tid: "+b);
+
+
+
+                textView2.setText("Slut tid: "+ b);
                 mButton6.setAlpha(.4f);
                 mButton6.setText("Mødet er Stoppet");
                 mButton6.setClickable(false);
                 mButton6.setEnabled(false);
-                boolean q = true;
-                isanswared = true;
-                nyID = false;
+                nyID= true;
+
+                test = jep.ID;
+                IDlist.add(test);
+                Log.d("IDlist",""+IDlist);
+
+
             }
 
         }
@@ -167,6 +178,8 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
             mButton7.setVisibility(View.VISIBLE);
 
             mButton6.setText("Mødet er nu afsluttet");
+
+
         }
             */
 
@@ -174,11 +187,24 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
         else if (mButton7 == v) {
            SeFeedback();
+
+
         }
+
+
+
 
         else if (seKommentar == v){
             SeKommentar();
+
+
+
+
+
+
         }
+
+
     }
 
     public void SeFeedback(){
@@ -190,6 +216,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         startActivity(intent);
     }
 
+
 @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
@@ -198,5 +225,8 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
             finish();
         }
         return super.onOptionsItemSelected(item);
+
 }
 }
+
+
