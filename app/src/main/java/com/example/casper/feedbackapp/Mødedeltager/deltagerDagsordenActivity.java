@@ -77,9 +77,9 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         recyclerView.setLayoutManager(layoutManager);
-       // dagsordenListe = Singleton.get().getDagsordenData();
-       // overforselAdapter = new OverforselAdapter(dagsordenListe);
-       // recyclerView.setAdapter(overforselAdapter);
+        dagsordenListe = Singleton.get().getDagsordenData();
+        overforselAdapter = new OverforselAdapter(dagsordenListe);
+        recyclerView.setAdapter(overforselAdapter);
 
         navnMøde = findViewById(R.id.navnMøde);
         navnMøde.setText("");
