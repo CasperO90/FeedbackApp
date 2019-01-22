@@ -1,9 +1,11 @@
 package com.example.casper.feedbackapp.Fragment;
 
 import android.content.Intent;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -143,121 +145,23 @@ public class Tab6 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(1f);
             }
-            AppState.showToast(getContext(),"Swipe videre");
+            AppState.showToast(getContext(), "Swipe videre");
         }
-
-        /*else if (v == button3) {
-
-
-            Log.d("jjajajajajajaja","jajajajajjaa");
-
-            sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3+ Score5.sur4 +sur5;
-            neutral = Score1.neutral +Score2.neutral1 +Score3.neutral2 + Score4.neutral3+ Score5.neutral4 + neutral5;
-            tilfreds =Score1.tilfreds +Score2.tilfreds1 +Score3.tilfreds2 + Score4.tilfreds3+ Score5.tilfreds4 + tilfreds5;
-            glad =Score1.glad +Score2.glad1 +Score3.glad2 + Score4.glad3+ Score5.glad4 + glad5;
-
-            Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
-            intent.putExtra("sur", String.valueOf(sur));
-            intent.putExtra("neutral", String.valueOf(neutral));
-            intent.putExtra("tilfreds", String.valueOf(tilfreds));
-            intent.putExtra("glad", String.valueOf(glad));
-            startActivity(intent);
-
-
-
-            mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID/"+test.UserMødeID);
-            //opretter indholdet glad sur, mellem, rigtigglad
-            HashMap<String, String> datamap1 = new HashMap<String, String>();
-            HashMap<String, String> datamap2 = new HashMap<String, String>();
-            HashMap<String, String> datamap3 = new HashMap<String, String>();
-            HashMap<String, String> datamap4 = new HashMap<String, String>();
-            HashMap<String, String> datamap5 = new HashMap<String, String>();
-            HashMap<String, String> datamap6 = new HashMap<String, String>();
-
-            // opretter den øverste gren
-            HashMap<String, HashMap> ny = new HashMap<String, HashMap>();
-            ny.put("spørgsmål1",datamap1);
-            ny.put("spørgsmål2",datamap2);
-            ny.put("spørgsmål3",datamap3);
-            ny.put("spørgsmål4",datamap4);
-            ny.put("spørgsmål5",datamap5);
-            ny.put("spørgsmål6",datamap6);
-
-
-            // deforskellige svar.
-            datamap1.put("sur", String.valueOf(Score1.sur));
-            datamap1.put("mellem", String.valueOf(Score1.neutral));
-            datamap1.put("glad", String.valueOf(Score1.tilfreds));
-            datamap1.put("rigtigglad", String.valueOf(Score1.glad));
-
-            datamap2.put("sur", String.valueOf(Score2.sur1));
-            datamap2.put("mellem", String.valueOf(Score2.neutral1));
-            datamap2.put("glad", String.valueOf(Score2.tilfreds1));
-            datamap2.put("rigtigglad", String.valueOf(Score2.glad1));
-
-            datamap3.put("sur", String.valueOf(Score3.sur2));
-            datamap3.put("mellem", String.valueOf(Score3.neutral2));
-            datamap3.put("glad", String.valueOf(Score3.tilfreds2));
-            datamap3.put("rigtigglad", String.valueOf(Score3.glad2));
-
-            datamap4.put("sur", String.valueOf(Score4.sur3));
-            datamap4.put("mellem", String.valueOf(Score4.neutral3));
-            datamap4.put("glad", String.valueOf(Score4.tilfreds3));
-            datamap4.put("rigtigglad", String.valueOf(Score4.glad3));
-
-            datamap5.put("sur", String.valueOf(Score5.sur4));
-            datamap5.put("mellem", String.valueOf(Score5.neutral4));
-            datamap5.put("glad", String.valueOf(Score5.tilfreds4));
-            datamap5.put("rigtigglad", String.valueOf(Score5.glad4));
-
-            datamap6.put("sur", String.valueOf(sur5));
-            datamap6.put("mellem", String.valueOf(neutral5));
-            datamap6.put("glad", String.valueOf(tilfreds5));
-            datamap6.put("rigtigglad", String.valueOf(glad5));
-
-
-
-
-            mDatabase.push().setValue(ny).addOnCompleteListener(new OnCompleteListener<Void>() {
-                @Override
-                public void onComplete(@NonNull Task<Void> task) {
-
-                    if (task.isSuccessful()) {
-                        Toast.makeText(getContext(), "Gemt", Toast.LENGTH_SHORT).show();
-
-                    } else {
-                        Toast.makeText(getContext(), "Fejl", Toast.LENGTH_SHORT).show();
-                    }
-                    a++;
-
-                }
-            });
-
-
-
-
-        }*/
-
     }
 
-
-        // opdater view og sikre sig at farven er den rigtige farve.
-        // den her kan godt blive smidt ind i logik klassen.
-        public void farveCheck () {
-            if (a == 1) {
-                surBtn.setAlpha(1f);
-            } else if (b == 1) {
-                neutralBtn.setAlpha(1f);
-            } else if (c == 1) {
-                tilfredsBtn.setAlpha(1f);
-            } else if (d == 1) {
-                gladBtn.setAlpha(1f);
-            }
-            return;
-
-
+    // opdater view og sikre sig at farven er den rigtige farve.
+    // den her kan godt blive smidt ind i logik klassen.
+    public void farveCheck() {
+        if (a == 1) {
+            surBtn.setAlpha(1f);
+        } else if (b == 1) {
+            neutralBtn.setAlpha(1f);
+        } else if (c == 1) {
+            tilfredsBtn.setAlpha(1f);
+        } else if (d == 1) {
+            gladBtn.setAlpha(1f);
         }
-
-
+        return;
     }
+}
 

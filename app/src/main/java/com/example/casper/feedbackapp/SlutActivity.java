@@ -31,8 +31,8 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
     MoedeDeltagActivity User = new MoedeDeltagActivity();
 
     Button forsideButton;
-    public static String slutsur,slutneutral,sluttilfreds,slutglad ;
-    TextView surTekst,neutralTekst,tilfredsTekst,gladtekst, spmTextView;
+    public static String slutsur, slutneutral, sluttilfreds, slutglad;
+    TextView surTekst, neutralTekst, tilfredsTekst, gladtekst, spmTextView;
     EditText kommentarView;
 
     private DatabaseReference ref;
@@ -40,8 +40,6 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
     String kommentarFraUser;
     int mødetest;
     String nytid;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,29 +53,28 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         sluttilfreds = intent.getStringExtra("tilfreds");
         slutglad = intent.getStringExtra("glad");
 
-        Log.d("check",""+slutsur);
-        Log.d("check",""+slutneutral);
-        Log.d("check",""+sluttilfreds);
-        Log.d("check",""+slutglad);
+        Log.d("check", "" + slutsur);
+        Log.d("check", "" + slutneutral);
+        Log.d("check", "" + sluttilfreds);
+        Log.d("check", "" + slutglad);
 
 
         forsideButton = findViewById(R.id.forsideButton);
         forsideButton.setOnClickListener(this);
 
-
         surTekst = findViewById(R.id.surTekst);
-        surTekst.setText("" +slutsur);
+        surTekst.setText("" + slutsur);
 
         neutralTekst = findViewById(R.id.neutralTekst);
-        neutralTekst.setText("" +slutneutral);
+        neutralTekst.setText("" + slutneutral);
 
         tilfredsTekst = findViewById(R.id.tilfredsTekst);
-        tilfredsTekst.setText("" +sluttilfreds);
+        tilfredsTekst.setText("" + sluttilfreds);
 
         gladtekst = findViewById(R.id.gladTekst);
-        gladtekst.setText("" +slutglad);
+        gladtekst.setText("" + slutglad);
 
-       // spmTextView = findViewById(R.id.spmTextView);
+        // spmTextView = findViewById(R.id.spmTextView);
         //spmTextView.setText(R.string.afslut);
 
         //EditText
@@ -86,24 +83,18 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
         mødetest = AppState.getMødeID();
 
         nytid = String.valueOf(mødetest);
-
-
-
-
-
     }
 
     @Override
     public void onClick(View view) {
 
-
         kommentarFraUser = kommentarView.getText().toString();
         mFirebaseDatabase = FirebaseDatabase.getInstance();
-        ref = FirebaseDatabase.getInstance().getReference().child("Kommentar/"+User.UserMødeID);
+        ref = FirebaseDatabase.getInstance().getReference().child("Kommentar/" + User.UserMødeID);
 
         HashMap<String, String> datamap = new HashMap<String, String>();
 
-        datamap.put("edittext",kommentarFraUser);
+        datamap.put("edittext", kommentarFraUser);
 
 
         ref.push().setValue(datamap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -118,12 +109,6 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
 
             }
         });
-
-
-
-
-
-        
         Intent i = new Intent(this, StartActivity.class);
         i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | i.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(i);

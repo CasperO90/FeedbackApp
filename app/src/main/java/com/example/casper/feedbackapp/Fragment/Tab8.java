@@ -27,13 +27,12 @@ import java.util.HashMap;
 
 public class Tab8 extends Fragment implements View.OnClickListener {
 
-    Button surBtn,neutralBtn,tilfredsBtn,gladBtn,button3;
+    Button surBtn, neutralBtn, tilfredsBtn, gladBtn, button3;
     TextView spm8;
-    public static int sur7,neutral7,tilfreds7,glad7;
-    public static int sur,neutral,tilfreds,glad;
-    int a,b,c,d = 0;
+    public static int sur7, neutral7, tilfreds7, glad7;
+    public static int sur, neutral, tilfreds, glad;
+    int a, b, c, d = 0;
     private DatabaseReference mDatabase;
-
 
     Tab1 Score1 = new Tab1();
     Tab2 Score2 = new Tab2();
@@ -44,8 +43,6 @@ public class Tab8 extends Fragment implements View.OnClickListener {
     Tab7 Score7 = new Tab7();
 
     MoedeDeltagActivity test = new MoedeDeltagActivity();
-
-
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_tab8, container, false);
@@ -63,7 +60,7 @@ public class Tab8 extends Fragment implements View.OnClickListener {
         gladBtn = view.findViewById(R.id.gladBtn);
         gladBtn.setOnClickListener(this);
 
-        button3 =view.findViewById(R.id.button3);
+        button3 = view.findViewById(R.id.button3);
         button3.setOnClickListener(this);
 
 
@@ -99,9 +96,7 @@ public class Tab8 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
-
-        else if (v == neutralBtn) {
+        } else if (v == neutralBtn) {
             b++;
 
             if (b == 1) {
@@ -118,9 +113,7 @@ public class Tab8 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
-
-        else if (v == tilfredsBtn) {
+        } else if (v == tilfredsBtn) {
             c++;
 
             if (c == 1) {
@@ -137,9 +130,7 @@ public class Tab8 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(1f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
-
-        else if (v == gladBtn) {
+        } else if (v == gladBtn) {
             d++;
 
             if (d == 1) {
@@ -156,17 +147,15 @@ public class Tab8 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(1f);
             }
-        }
-
-        else if (v == button3) {
+        } else if (v == button3) {
 
 
-            Log.d("jjajajajajajaja","jajajajajjaa");
+            Log.d("jjajajajajajaja", "jajajajajjaa");
 
-            sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3+ Score5.sur4 +Score6.sur5+Score7.sur6+sur7;
-            neutral = Score1.neutral +Score2.neutral1 +Score3.neutral2 + Score4.neutral3+ Score5.neutral4 + Score6.neutral5+Score7.neutral6+neutral7;
-            tilfreds =Score1.tilfreds +Score2.tilfreds1 +Score3.tilfreds2 + Score4.tilfreds3+ Score5.tilfreds4 + Score6.tilfreds5+Score7.tilfreds6+tilfreds7;
-            glad =Score1.glad +Score2.glad1 +Score3.glad2 + Score4.glad3+ Score5.glad4 + Score6.glad5+Score7.glad6+glad7;
+            sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3 + Score5.sur4 + Score6.sur5 + Score7.sur6 + sur7;
+            neutral = Score1.neutral + Score2.neutral1 + Score3.neutral2 + Score4.neutral3 + Score5.neutral4 + Score6.neutral5 + Score7.neutral6 + neutral7;
+            tilfreds = Score1.tilfreds + Score2.tilfreds1 + Score3.tilfreds2 + Score4.tilfreds3 + Score5.tilfreds4 + Score6.tilfreds5 + Score7.tilfreds6 + tilfreds7;
+            glad = Score1.glad + Score2.glad1 + Score3.glad2 + Score4.glad3 + Score5.glad4 + Score6.glad5 + Score7.glad6 + glad7;
 
             Intent intent = new Intent(getActivity(), SlutActivity.class);
 
@@ -177,9 +166,7 @@ public class Tab8 extends Fragment implements View.OnClickListener {
             intent.putExtra("glad", String.valueOf(glad));
             startActivity(intent);
 
-
-
-            mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID/"+test.UserMødeID);
+            mDatabase = FirebaseDatabase.getInstance().getReference().child("ModeID/" + test.UserMødeID);
             //opretter indholdet glad sur, mellem, rigtigglad
             HashMap<String, String> datamap1 = new HashMap<String, String>();
             HashMap<String, String> datamap2 = new HashMap<String, String>();
@@ -192,15 +179,14 @@ public class Tab8 extends Fragment implements View.OnClickListener {
 
             // opretter den øverste gren
             HashMap<String, HashMap> ny = new HashMap<String, HashMap>();
-            ny.put("spørgsmål1",datamap1);
-            ny.put("spørgsmål2",datamap2);
-            ny.put("spørgsmål3",datamap3);
-            ny.put("spørgsmål4",datamap4);
-            ny.put("spørgsmål5",datamap5);
-            ny.put("spørgsmål6",datamap6);
-            ny.put("spørgsmål7",datamap7);
-            ny.put("spørgsmål8",datamap8);
-
+            ny.put("spørgsmål1", datamap1);
+            ny.put("spørgsmål2", datamap2);
+            ny.put("spørgsmål3", datamap3);
+            ny.put("spørgsmål4", datamap4);
+            ny.put("spørgsmål5", datamap5);
+            ny.put("spørgsmål6", datamap6);
+            ny.put("spørgsmål7", datamap7);
+            ny.put("spørgsmål8", datamap8);
 
             // deforskellige svar.
             datamap1.put("sur", String.valueOf(Score1.sur));
@@ -244,37 +230,27 @@ public class Tab8 extends Fragment implements View.OnClickListener {
             datamap8.put("rigtigglad", String.valueOf(glad7));
 
 
-
-
             mDatabase.push().setValue(ny).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
 
                     if (task.isSuccessful()) {
-                       Toast.makeText(getContext(), "Gemt", Toast.LENGTH_SHORT).show();
-
-
-
+                        Toast.makeText(getContext(), "Gemt", Toast.LENGTH_SHORT).show();
 
                     } else {
-                       Toast.makeText(getContext(), "Fejl", Toast.LENGTH_SHORT).show();
-
+                        Toast.makeText(getContext(), "Fejl", Toast.LENGTH_SHORT).show();
 
                     }
                     a++;
-
                 }
             });
-
-
 
             reset();
         }
     }
 
-
-    public void farveCheck(){
-        if(a == 1) {
+    public void farveCheck() {
+        if (a == 1) {
             surBtn.setAlpha(1f);
         } else if (b == 1) {
             neutralBtn.setAlpha(1f);
@@ -286,57 +262,53 @@ public class Tab8 extends Fragment implements View.OnClickListener {
         return;
     }
 
-public void reset(){
+    public void reset() {
+
+        sur = 0;
+        neutral = 0;
+        tilfreds = 0;
+        glad = 0;
+
+        Score1.sur = 0;
+        Score1.neutral = 0;
+        Score1.tilfreds = 0;
+        Score1.glad = 0;
+
+        Score2.sur1 = 0;
+        Score2.neutral1 = 0;
+        Score2.tilfreds1 = 0;
+        Score2.glad1 = 0;
 
 
-    sur = 0;
-    neutral=0;
-    tilfreds=0;
-    glad =0;
+        Score3.sur2 = 0;
+        Score3.neutral2 = 0;
+        Score3.tilfreds2 = 0;
+        Score3.glad2 = 0;
 
-    Score1.sur =0;
-    Score1.neutral =0;
-    Score1.tilfreds =0;
-    Score1.glad =0;
+        Score4.sur3 = 0;
+        Score4.neutral3 = 0;
+        Score4.tilfreds3 = 0;
+        Score4.glad3 = 0;
 
-    Score2.sur1 =0;
-    Score2.neutral1 =0;
-    Score2.tilfreds1 =0;
-    Score2.glad1 =0;
+        Score5.sur4 = 0;
+        Score5.neutral4 = 0;
+        Score5.tilfreds4 = 0;
+        Score5.glad4 = 0;
 
+        Score6.sur5 = 0;
+        Score6.neutral5 = 0;
+        Score6.tilfreds5 = 0;
+        Score6.glad5 = 0;
 
-    Score3.sur2 =0;
-    Score3.neutral2 =0;
-    Score3.tilfreds2 =0;
-    Score3.glad2 =0;
+        Score7.sur6 = 0;
+        Score7.neutral6 = 0;
+        Score7.tilfreds6 = 0;
+        Score7.glad6 = 0;
 
-    Score4.sur3 =0;
-    Score4.neutral3 =0;
-    Score4.tilfreds3 =0;
-    Score4.glad3 =0;
-
-    Score5.sur4 =0;
-    Score5.neutral4 =0;
-    Score5.tilfreds4 =0;
-    Score5.glad4 =0;
-
-    Score6.sur5 =0;
-    Score6.neutral5 =0;
-    Score6.tilfreds5 =0;
-    Score6.glad5 =0;
-
-    Score7.sur6 =0;
-    Score7.neutral6 =0;
-    Score7.tilfreds6 =0;
-    Score7.glad6 =0;
-
-    sur7 =0;
-    neutral7 =0;
-    tilfreds7 =0;
-    glad =0;
-
-}
-
-
+        sur7 = 0;
+        neutral7 = 0;
+        tilfreds7 = 0;
+        glad = 0;
     }
+}
 

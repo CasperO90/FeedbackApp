@@ -29,7 +29,7 @@ import androidx.fragment.app.Fragment;
 public class Tab5Feedback extends Fragment {
 
     PieChart pieChart;
-    BarChart barChart, barChart2;
+    BarChart barChart;
     private TextView spm5;
 
     Highscore spørgsmål5 = new Highscore();
@@ -63,10 +63,6 @@ public class Tab5Feedback extends Fragment {
         xAxis.setDrawGridLines(false);
         xAxis.setLabelCount(4);
 
-
-
-
-
         ArrayList<BarEntry> barEntries = new ArrayList<>();
 
         barEntries.add(new BarEntry(1, spørgsmål5.spørgsmål5sur));
@@ -77,13 +73,10 @@ public class Tab5Feedback extends Fragment {
 
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
-
         BarData data = new BarData(barDataSet);
         data.setBarWidth(1f);
 
         barChart.setData(data);
-
-
 
         pieChart = view.findViewById(R.id.chart2);
 
@@ -91,13 +84,11 @@ public class Tab5Feedback extends Fragment {
         pieChart.getDescription().setEnabled(false);
         pieChart.setExtraOffsets(5,10,5,5);
 
-
         pieChart.setDragDecelerationFrictionCoef(0.95f);
 
         pieChart.setDrawHoleEnabled(true);
         pieChart.setHoleColor(android.R.color.white);
         pieChart.setTransparentCircleRadius(61f);
-
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
 
@@ -106,23 +97,16 @@ public class Tab5Feedback extends Fragment {
         yValues.add(new PieEntry(spørgsmål5.spørgsmål5tilfreds2,"glad"));
         yValues.add(new PieEntry(spørgsmål5.spørgsmål5glad3,"rigtig glad"));
 
-
         PieDataSet dataSet2= new PieDataSet(yValues,"Feedback");
         dataSet2.setSliceSpace(3f);
         dataSet2.setSelectionShift(5f);
         dataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
-
 
         PieData data2 = new PieData(dataSet2);
         data.setValueTextSize(10f);
         data.setValueTextColor(android.R.color.black);
 
         pieChart.setData(data2);
-
-
-
-
-
 
         return view;
     }

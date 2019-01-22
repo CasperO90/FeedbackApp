@@ -5,7 +5,6 @@ import android.util.Log;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Properties;
-
 import javax.mail.Message;
 import javax.mail.MessagingException;
 import javax.mail.Session;
@@ -31,10 +30,6 @@ public class GMail {
     Session mailSession;
     MimeMessage emailMessage;
 
-    public GMail() {
-
-    }
-
     public GMail(String fromEmail, String fromPassword,
                  List toEmailList, String emailSubject, String emailBody) {
         this.fromEmail = fromEmail;
@@ -57,10 +52,9 @@ public class GMail {
         emailMessage = new MimeMessage(mailSession);
 
         emailMessage.setFrom(new InternetAddress(fromEmail, fromEmail));
-        for (int i = 0; i < toEmailList.size(); i++)
-        {
+        for (int i = 0; i < toEmailList.size(); i++) {
             String str = (String) toEmailList.get(i);
-            Log.i("GMail","toEmail: "+str);
+            Log.i("GMail", "toEmail: " + str);
             emailMessage.addRecipient(Message.RecipientType.TO,
                     new InternetAddress(str));
         }
@@ -76,7 +70,7 @@ public class GMail {
 
         Transport transport = mailSession.getTransport("smtp");
         transport.connect(emailHost, fromEmail, fromPassword);
-        Log.i("GMail","allrecipients: "+emailMessage.getAllRecipients());
+        Log.i("GMail", "allrecipients: " + emailMessage.getAllRecipients());
         transport.sendMessage(emailMessage, emailMessage.getAllRecipients());
         transport.close();
         Log.i("GMail", "Email sent successfully.");

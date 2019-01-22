@@ -1,24 +1,20 @@
 package com.example.casper.feedbackapp.Fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.casper.feedbackapp.AppState;
 import com.example.casper.feedbackapp.R;
-import com.example.casper.feedbackapp.SlutActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 public class Tab7 extends Fragment implements View.OnClickListener {
-
-
 
     Button surBtn, neutralBtn, tilfredsBtn, gladBtn;
     int a, b, c, d = 0;
@@ -56,11 +52,8 @@ public class Tab7 extends Fragment implements View.OnClickListener {
 
         farveCheck();
 
-
         return view;
     }
-
-
 
     @Override
     public void onClick(View v) {
@@ -81,9 +74,7 @@ public class Tab7 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
-
-        else if (v == neutralBtn) {
+        } else if (v == neutralBtn) {
             b++;
 
             if (b == 1) {
@@ -100,9 +91,7 @@ public class Tab7 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(0.2f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
-
-        else if (v == tilfredsBtn) {
+        } else if (v == tilfredsBtn) {
             c++;
 
             if (c == 1) {
@@ -119,9 +108,7 @@ public class Tab7 extends Fragment implements View.OnClickListener {
                 tilfredsBtn.setAlpha(1f);
                 gladBtn.setAlpha(0.2f);
             }
-        }
-
-        else if (v == gladBtn) {
+        } else if (v == gladBtn) {
             d++;
 
             if (d == 1) {
@@ -139,13 +126,12 @@ public class Tab7 extends Fragment implements View.OnClickListener {
                 gladBtn.setAlpha(1f);
             }
         }
-        AppState.showToast(getContext(),"Swipe videre");
+        AppState.showToast(getContext(), "Swipe videre");
     }
-
 
     // opdater view og sikre sig at farven er den rigtige farve.
     // den her kan godt blive smidt ind i logik klassen.
-    public void farveCheck () {
+    public void farveCheck() {
         if (a == 1) {
             surBtn.setAlpha(1f);
         } else if (b == 1) {
@@ -156,33 +142,5 @@ public class Tab7 extends Fragment implements View.OnClickListener {
             gladBtn.setAlpha(1f);
         }
         return;
-
-
-    }
-
-    }
-
-
-  /*
-
-    // det her skal være på den sidste side
-    @Override
-  public void onClick (View view){
-
-        Intent intent = new Intent(getActivity().getBaseContext(), SlutActivity.class);
-
-        slutsur = intent.getStringExtra("sur");
-        slutneutral = intent.getStringExtra("neutral");
-        sluttilfreds = intent.getStringExtra("tilfreds");
-        slutglad = intent.getStringExtra("glad");
-
-        intent.putExtra("sur", String.valueOf(sur));
-        intent.putExtra("neutral", String.valueOf(neutral));
-        intent.putExtra("tilfreds", String.valueOf(tilfreds));
-        intent.putExtra("glad", String.valueOf(glad));
-        intent.putExtra("kommentar", String.valueOf(kommentarView));
-        startActivity(intent);
-
     }
 }
-*/

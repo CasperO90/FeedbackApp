@@ -29,11 +29,9 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
 
     private Button deltagBtn;
     private EditText indtastMødeID;
-    private int MødeIDIntastet;
     private int nytMødeID;
     private TextView visMødeTekst;
     private int finalID;
-
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference ref;
@@ -81,7 +79,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
                 Log.d("test","test"+TidligereMødere);
             }
 
-
             // når databasen bliver ændret bliver det her kørt
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String s) {
@@ -105,7 +102,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         visMødeTekst.setText("Indtast møde id " + "(" + nytMødeID + ")");
     }
 
-
     @Override
     public void onClick(View view) {
         if (view == deltagBtn) {
@@ -120,7 +116,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
                 t = indtastMødeID.getText().toString();
                 if (t.isEmpty()) {
                     Toast.makeText(this, "Du skal indtaste ID ", Toast.LENGTH_SHORT).show();
-
                 } else {
                     int talVærdi = Integer.parseInt(indtastMødeID.getText().toString());
 
