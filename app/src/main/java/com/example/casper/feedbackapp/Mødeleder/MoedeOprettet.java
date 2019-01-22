@@ -26,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -40,6 +41,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabase;
     private DatabaseReference ref;
+    private DatabaseReference bla;
 
     Set<String> nyTidligereMødere;
 
@@ -192,6 +194,37 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
                 }
             });
 
+
+           bla = FirebaseDatabase.getInstance().getReference().child("Dagsorden/"+nymødeID);
+            HashMap<String, String> datamap12 = new HashMap<String, String>();
+            // deforskellige svar.
+            datamap12.put("Navn", Singleton.get().getNavn());
+            datamap12.put("Tidspunkt", Singleton.get().getTidspunkt());
+            datamap12.put("Lokation", Singleton.get().getLokation());
+
+            HashMap<String, Object> datamap22 = new HashMap<String, Object>();
+            datamap22.put("Mødepunkter", Singleton.get().getDagsordenData());
+
+
+            HashMap<String, Object> datamap33 = new HashMap<String, Object>();
+            datamap33.put("test",datamap22);
+            datamap33.put("test1",datamap12);
+
+
+           bla.push().setValue(datamap33).addOnCompleteListener(new OnCompleteListener<Void>() {
+               @Override
+               public void onComplete(@NonNull Task<Void> task) {
+
+                   if (task.isSuccessful()) {
+                       Toast.makeText(MoedeOprettet.this, "stored", Toast.LENGTH_LONG).show();
+                   } else {
+                       Toast.makeText(MoedeOprettet.this, "error", Toast.LENGTH_LONG).show();
+                   }
+
+               }
+
+
+           });
 
 
 

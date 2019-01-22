@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,8 +21,14 @@ import com.example.casper.feedbackapp.DagsordenLogik.OverforselAdapter;
 import com.example.casper.feedbackapp.DagsordenLogik.Singleton;
 import com.example.casper.feedbackapp.Fragment.MainActivity;
 import com.example.casper.feedbackapp.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class deltagerDagsordenActivity extends AppCompatActivity implements OnClickListener {
 
@@ -33,6 +40,15 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
     private TextView overskriftTekst, navnMøde, tidspunkt, lokation;
     private int nytMødeID;
+
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference ref;
+    private DatabaseReference kaka;
+
+    String navn1,tidspunkt1,lokation1;
+   Object lokation2;
+
+    MoedeDeltagActivity test = new MoedeDeltagActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +69,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         nytMødeID = AppState.getMødeID();
 
         overskriftTekst = findViewById(R.id.overskriftTekst);
-        overskriftTekst.setText("Velkommen til møde " + nytMødeID + "\nDagsorden ");
+        overskriftTekst.setText("Velkommen til møde " + test.UserMødeID + "\nDagsorden ");
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -61,21 +77,67 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         final LinearLayoutManager layoutManager = new LinearLayoutManager(this);
 
         recyclerView.setLayoutManager(layoutManager);
-        dagsordenListe = Singleton.get().getDagsordenData();
-        overforselAdapter = new OverforselAdapter(dagsordenListe);
-        recyclerView.setAdapter(overforselAdapter);
+       // dagsordenListe = Singleton.get().getDagsordenData();
+       // overforselAdapter = new OverforselAdapter(dagsordenListe);
+       // recyclerView.setAdapter(overforselAdapter);
 
         navnMøde = findViewById(R.id.navnMøde);
-        navnMøde.setText(Singleton.get().getNavn());
+        navnMøde.setText("");
 
         tidspunkt = findViewById(R.id.tidspunkt);
-        tidspunkt.setText(Singleton.get().getTidspunkt());
+        tidspunkt.setText("");
 
         lokation = findViewById(R.id.lokation);
-        lokation.setText(Singleton.get().getLokation());
-    }
+        lokation.setText("");
 
-    @Override
+
+        mFirebaseDatabase = FirebaseDatabase.getInstance();
+        ref = FirebaseDatabase.getInstance().getReference("Dagsorden/" + test.UserMødeID);
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                    // checker hvor mange der har svaret hvad i spørgsmål 1:
+                    Map<String, Object> kkk = (Map) ds.child("test1").getValue();
+
+                    navn1 = String.valueOf(kkk.get("Navn"));
+                    tidspunkt1 = String.valueOf(kkk.get("Tidspunkt"));
+                    lokation1 = String.valueOf(kkk.get("Lokation"));
+
+
+                    Log.d("test1", "" + navn1);
+                    Log.d("test2", "" + tidspunkt1);
+                    Log.d("test3", "" + lokation1);
+
+
+                    navnMøde.setText("" + navn1);
+                    tidspunkt.setText("" + tidspunkt1);
+                    lokation.setText("" + lokation1);
+
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+
+        });
+
+
+
+        }
+
+
+
+
+
+
+            @Override
     public void onClick(View view) {
         if (view == feedbackBtn) {
             startFeedback();
