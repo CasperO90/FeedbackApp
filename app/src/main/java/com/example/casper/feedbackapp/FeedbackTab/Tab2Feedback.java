@@ -50,7 +50,7 @@ public class Tab2Feedback extends Fragment {
 
         barChart.setDrawValueAboveBar(false);
 
-        barChart.setMaxVisibleValueCount(10);
+        barChart.setMaxVisibleValueCount(50);
 
         barChart.setPinchZoom(false);
 

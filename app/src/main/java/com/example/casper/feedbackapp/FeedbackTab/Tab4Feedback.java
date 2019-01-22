@@ -48,7 +48,7 @@ public class Tab4Feedback extends Fragment {
 
         barChart.setDrawValueAboveBar(false);
 
-        barChart.setMaxVisibleValueCount(10);
+        barChart.setMaxVisibleValueCount(50);
 
         barChart.setPinchZoom(false);
 
