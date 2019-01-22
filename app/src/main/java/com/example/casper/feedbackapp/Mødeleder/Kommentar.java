@@ -28,6 +28,7 @@ public class Kommentar extends AppCompatActivity {
     private ListView mlistview;
     private FirebaseDatabase mFirebaseDatabase;
 
+    private TextView textView7;
     LederStartMoedeActivity test = new LederStartMoedeActivity();
 
     @Override
@@ -35,12 +36,17 @@ public class Kommentar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kommentar);
 
+        textView7 =(TextView)findViewById(R.id.textView7);
+        textView7.setText("Kommentar fra Møde ID "+test.ID);
+
+
         getSupportActionBar().setTitle("Tilbage til oversigt"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         mlistview = findViewById(R.id.listview);
 
-        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKommentar);
+        final ArrayAdapter arrayAdapter = new CustomArrayAdapter(this, mKommentar);
+       // final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mKommentar);
         mlistview.setAdapter(arrayAdapter);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
