@@ -39,7 +39,6 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -52,7 +51,6 @@ public class Main2Activity extends AppCompatActivity {
 
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
-
     }
 
 
@@ -104,7 +102,6 @@ public class Main2Activity extends AppCompatActivity {
             fragment.setArguments(args);
             return fragment;
         }
-
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -162,7 +159,6 @@ public class Main2Activity extends AppCompatActivity {
             }
             return null;
         }
-
 
         @Override
         public int getCount() {

@@ -1,6 +1,5 @@
 package com.example.casper.feedbackapp.Mødeleder;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
@@ -9,8 +8,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -133,10 +130,6 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
     @Override
     public void onClick(View v) {
 
-        // deltagMøde();
-        //videre
-      //  if (mButton5 == v && godkendt == true) {
-
             if(mButton5 ==v){
             ID = String.valueOf(editText.getText().toString());
 
@@ -183,7 +176,6 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         for (int i = 0; i < pinview.getPinLength(); i++) {
             pinview.onKey(pinview.getFocusedChild(), KeyEvent.KEYCODE_DEL, new KeyEvent(KeyEvent.ACTION_UP, KeyEvent.KEYCODE_DEL));
         }
-
     }
 
     @Override

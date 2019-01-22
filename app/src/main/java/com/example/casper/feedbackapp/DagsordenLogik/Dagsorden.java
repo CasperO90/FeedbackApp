@@ -45,7 +45,6 @@ public class Dagsorden extends AppCompatActivity implements RemoveClickListner{
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(dagsordenAdapter);
 
-
         //EditText
         etOverskrift = findViewById(R.id.etOverskrift);
         etBeskrivelse = findViewById(R.id.etBeskrivelse);

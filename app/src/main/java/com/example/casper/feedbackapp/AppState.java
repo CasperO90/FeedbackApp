@@ -12,7 +12,6 @@ import java.util.Random;
 
 public class AppState {
 
-
     private static int mødeID;
     private static final String MØDEIDE = "mødeid";
 
@@ -25,10 +24,9 @@ public class AppState {
         return mødeID;
     }
 
-   public static int hentMødeID(SharedPreferences preferences) {
+    public static int hentMødeID(SharedPreferences preferences) {
         int loadMødeID = preferences.getInt(MØDEIDE, Activity.MODE_PRIVATE);
         return loadMødeID;
-
     }
 
     public static void gemMødeID(SharedPreferences preferences) {
@@ -38,15 +36,12 @@ public class AppState {
         editor.commit();
     }
 
-
     //Metoder der opretter et tilfældigt møde id
     //Metoden skal udvides, så den også kan kontrollere eksisterende møde id'er
     public static int opretMødeID() {
-
         Random random = new Random();
         mødeID = random.nextInt((1000) + 1);
         return mødeID;
-
     }
 
     //Besked der vises når der skal skiftes fragement

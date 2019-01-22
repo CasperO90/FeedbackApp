@@ -28,11 +28,9 @@ import androidx.fragment.app.Fragment;
 
 public class Tab8Feedback extends Fragment {
 
-
     PieChart pieChart;
-    BarChart barChart, barChart2;
+    BarChart barChart;
     private TextView spm8;
-
 
     Highscore spørgsmål8 = new Highscore();
 
@@ -65,17 +63,15 @@ public class Tab8Feedback extends Fragment {
         xAxis.setDrawGridLines(false);
         xAxis.setLabelCount(4);
 
-
         ArrayList<BarEntry> barEntries = new ArrayList<>();
 
         barEntries.add(new BarEntry(1, spørgsmål8.spørgsmål8sur));
         barEntries.add(new BarEntry(2, spørgsmål8.spørgsmål8neutral1));
         barEntries.add(new BarEntry(3, spørgsmål8.spørgsmål8tilfreds2));
         barEntries.add(new BarEntry(4, spørgsmål8.spørgsmål8glad3));
-        BarDataSet barDataSet = new BarDataSet (barEntries, "Dataset 1");
+        BarDataSet barDataSet = new BarDataSet(barEntries, "Dataset 1");
 
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
-
 
         BarData data = new BarData(barDataSet);
         data.setBarWidth(1f);
@@ -86,7 +82,7 @@ public class Tab8Feedback extends Fragment {
 
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(false);
-        pieChart.setExtraOffsets(5,10,5,5);
+        pieChart.setExtraOffsets(5, 10, 5, 5);
 
         pieChart.setDragDecelerationFrictionCoef(0.95f);
 
@@ -96,12 +92,12 @@ public class Tab8Feedback extends Fragment {
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
 
-        yValues.add(new PieEntry(spørgsmål8.spørgsmål8sur,"Sur"));
-        yValues.add(new PieEntry(spørgsmål8.spørgsmål8neutral1,"mellem"));
-        yValues.add(new PieEntry(spørgsmål8.spørgsmål8tilfreds2,"glad"));
-        yValues.add(new PieEntry(spørgsmål8.spørgsmål8glad3,"rigtig glad"));
+        yValues.add(new PieEntry(spørgsmål8.spørgsmål8sur, "Sur"));
+        yValues.add(new PieEntry(spørgsmål8.spørgsmål8neutral1, "mellem"));
+        yValues.add(new PieEntry(spørgsmål8.spørgsmål8tilfreds2, "glad"));
+        yValues.add(new PieEntry(spørgsmål8.spørgsmål8glad3, "rigtig glad"));
 
-        PieDataSet dataSet2= new PieDataSet(yValues,"Feedback");
+        PieDataSet dataSet2 = new PieDataSet(yValues, "Feedback");
         dataSet2.setSliceSpace(3f);
         dataSet2.setSelectionShift(5f);
         dataSet2.setColors(ColorTemplate.COLORFUL_COLORS);
