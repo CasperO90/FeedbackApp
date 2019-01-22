@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:background="#DFE0E0"
-    tools:context=".Main2Activity">
+    tools:context=".FeedbackTab.Main2Activity">
 
 
     <com.google.android.material.appbar.AppBarLayout

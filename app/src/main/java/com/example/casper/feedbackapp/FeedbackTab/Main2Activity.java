@@ -1,24 +1,4 @@
-package com.example.casper.feedbackapp;
-
-import com.example.casper.feedbackapp.Fragment.Tab1;
-import com.example.casper.feedbackapp.Fragment.Tab2;
-import com.example.casper.feedbackapp.Fragment.Tab3;
-import com.example.casper.feedbackapp.Fragment.Tab4;
-import com.example.casper.feedbackapp.Fragment.Tab5;
-import com.example.casper.feedbackapp.Fragment.Tab6;
-import com.example.casper.feedbackapp.Fragment.Tab7;
-import com.example.casper.feedbackapp.Fragment.Tab8;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
+package com.example.casper.feedbackapp.FeedbackTab;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -26,8 +6,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.TextView;
+
+import com.example.casper.feedbackapp.R;
+import com.google.android.material.tabs.TabLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 public class Main2Activity extends AppCompatActivity {
 

@@ -40,7 +40,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         setContentView(R.layout.activity_deltager_dagsorden);
 
         // action bar
-        getSupportActionBar().setTitle("Dagsorden"); // for set actionbar title
+        getSupportActionBar().setTitle("Tilbage"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
 
         //Button

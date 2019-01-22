@@ -1,17 +1,14 @@
-package com.example.casper.feedbackapp;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+package com.example.casper.feedbackapp.FeedbackTab;
 
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.casper.feedbackapp.Mødeleder.Highscore;
+import com.example.casper.feedbackapp.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -25,18 +22,24 @@ import com.github.mikephil.charting.utils.ColorTemplate;
 
 import java.util.ArrayList;
 
-public class Tab1Feedback extends Fragment {
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+public class Tab5Feedback extends Fragment {
 
     PieChart pieChart;
     BarChart barChart, barChart2;
+    private TextView spm5;
 
-
-    Highscore spørgsmål1 = new Highscore();
+    Highscore spørgsmål5 = new Highscore();
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_tab1_feedback, container, false);
+        View view = inflater.inflate(R.layout.activity_tab5_feedback, container, false);
 
-
+        //Textview
+        spm5 = view.findViewById(R.id.spmTextView);
+        spm5.setText(R.string.spm5);
 
         barChart = view.findViewById(R.id.chart);
 
@@ -66,10 +69,10 @@ public class Tab1Feedback extends Fragment {
 
         ArrayList<BarEntry> barEntries = new ArrayList<>();
 
-        barEntries.add(new BarEntry(1, spørgsmål1.spørgsmål1sur));
-        barEntries.add(new BarEntry(2, spørgsmål1.spørgsmål1neutral1));
-        barEntries.add(new BarEntry(3, spørgsmål1.spørgsmål1tilfreds2));
-        barEntries.add(new BarEntry(4, spørgsmål1.spørgsmål1glad3));
+        barEntries.add(new BarEntry(1, spørgsmål5.spørgsmål5sur));
+        barEntries.add(new BarEntry(2, spørgsmål5.spørgsmål5neutral1));
+        barEntries.add(new BarEntry(3, spørgsmål5.spørgsmål5tilfreds2));
+        barEntries.add(new BarEntry(4, spørgsmål5.spørgsmål5glad3));
         BarDataSet barDataSet = new BarDataSet (barEntries, "Dataset 1");
 
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
@@ -98,10 +101,10 @@ public class Tab1Feedback extends Fragment {
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
 
-        yValues.add(new PieEntry(spørgsmål1.spørgsmål1sur,"Sur"));
-        yValues.add(new PieEntry(spørgsmål1.spørgsmål1neutral1,"mellem"));
-        yValues.add(new PieEntry(spørgsmål1.spørgsmål1tilfreds2,"glad"));
-        yValues.add(new PieEntry(spørgsmål1.spørgsmål1glad3,"rigtig glad"));
+        yValues.add(new PieEntry(spørgsmål5.spørgsmål5sur,"Sur"));
+        yValues.add(new PieEntry(spørgsmål5.spørgsmål5neutral1,"mellem"));
+        yValues.add(new PieEntry(spørgsmål5.spørgsmål5tilfreds2,"glad"));
+        yValues.add(new PieEntry(spørgsmål5.spørgsmål5glad3,"rigtig glad"));
 
 
         PieDataSet dataSet2= new PieDataSet(yValues,"Feedback");
@@ -121,10 +124,7 @@ public class Tab1Feedback extends Fragment {
 
 
 
-
-
-
-
         return view;
     }
 }
+
