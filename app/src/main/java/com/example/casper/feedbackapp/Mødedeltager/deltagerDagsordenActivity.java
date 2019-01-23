@@ -29,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Set;
 
 public class deltagerDagsordenActivity extends AppCompatActivity implements OnClickListener {
 
@@ -43,10 +44,8 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference ref;
-    private DatabaseReference kaka;
 
     String navn1,tidspunkt1,lokation1;
-   Object lokation2;
 
     MoedeDeltagActivity test = new MoedeDeltagActivity();
 
@@ -131,7 +130,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
 
 
         }
-
 
 
 

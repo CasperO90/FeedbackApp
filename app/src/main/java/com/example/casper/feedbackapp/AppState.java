@@ -3,6 +3,8 @@ package com.example.casper.feedbackapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -10,11 +12,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Random;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class AppState {
 
     private static int mødeID;
     private static final String MØDEIDE = "mødeid";
-
 
     public static void setMødeID(int IDmøde) {
         mødeID = IDmøde;
@@ -25,14 +28,13 @@ public class AppState {
     }
 
     public static int hentMødeID(SharedPreferences preferences) {
-        int loadMødeID = preferences.getInt(MØDEIDE, Activity.MODE_PRIVATE);
+        int loadMødeID = preferences.getInt(MØDEIDE, MODE_PRIVATE);
         return loadMødeID;
     }
 
     public static void gemMødeID(SharedPreferences preferences) {
         int nytMødeID = hentMødeID(preferences);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt(MØDEIDE, nytMødeID);
         editor.commit();
     }
 
@@ -49,4 +51,6 @@ public class AppState {
         Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
 
     }
+
+
 }
