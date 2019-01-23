@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Mødeleder.Kommentar"
-    android:background="@color/colorPrimary">
+    android:background="#FFFFFF">
 
     <ListView
         android:id="@+id/listview"
@@ -18,7 +18,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        android:divider="#000000"
+        android:dividerHeight="7px"/>
 
     <TextView
         android:id="@+id/textView7"
