@@ -32,16 +32,14 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
     private Button mButton6;
     private Button mButton7;
-    private Chronometer chronometer;
-    private boolean running;
-    private boolean afsluttet;
+
     private Button seKommentar;
     private TextView textView2;
-    private static int u =1;
-    private static boolean isanswared = false;
-    private static boolean un;
+    public static int u =1;
+
+
     private String test,test1;
-    private static boolean nyID ;
+
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 
@@ -148,7 +146,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
                 mButton6.setText("Mødet er Stoppet");
                 mButton6.setClickable(false);
                 mButton6.setEnabled(false);
-                nyID= true;
+
 
                 test = jep.ID;
                 IDlist.add(test);

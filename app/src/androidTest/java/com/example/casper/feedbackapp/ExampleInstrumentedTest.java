@@ -1,12 +1,17 @@
 package com.example.casper.feedbackapp;
 
+import android.app.Instrumentation;
 import android.content.Context;
+
+import com.example.casper.feedbackapp.Fragment.MainActivity;
+
 import androidx.test.InstrumentationRegistry;
 import androidx.test.runner.AndroidJUnit4;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static androidx.test.InstrumentationRegistry.getInstrumentation;
 import static org.junit.Assert.*;
 
 /**
