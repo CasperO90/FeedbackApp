@@ -16,34 +16,34 @@ import static android.content.Context.MODE_PRIVATE;
 
 public class AppState {
 
-    private static int mødeID;
-    private static final String MØDEIDE = "mødeid";
+    private static int mødeID1;
+    private static final String MØDEIDE1 = "mødeid1";
 
     public static void setMødeID(int IDmøde) {
-        mødeID = IDmøde;
+        mødeID1 = IDmøde;
     }
 
     public static int getMødeID() {
-        return mødeID;
+        return mødeID1;
     }
 
     public static int hentMødeID(SharedPreferences preferences) {
-        int loadMødeID = preferences.getInt(MØDEIDE, MODE_PRIVATE);
-        return loadMødeID;
+        int loadMødeID1 = preferences.getInt(MØDEIDE1, MODE_PRIVATE);
+        return loadMødeID1;
     }
 
     public static void gemMødeID(SharedPreferences preferences) {
-        int nytMødeID = hentMødeID(preferences);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.commit();
+        int nytMødeID1 = hentMødeID(preferences);
+        SharedPreferences.Editor editor1 = preferences.edit();
+        editor1.commit();
     }
 
     //Metoder der opretter et tilfældigt møde id
     //Metoden skal udvides, så den også kan kontrollere eksisterende møde id'er
     public static int opretMødeID() {
         Random random = new Random();
-        mødeID = random.nextInt((1000) + 1);
-        return mødeID;
+        mødeID1 = random.nextInt((1000) + 1);
+        return mødeID1;
     }
 
     //Besked der vises når der skal skiftes fragement

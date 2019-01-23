@@ -49,7 +49,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
     Set<String> nyTidligereMødere;
 
-    Boolean a=false;
+    public static Boolean a=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
