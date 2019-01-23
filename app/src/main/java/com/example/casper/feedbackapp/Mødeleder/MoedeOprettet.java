@@ -171,7 +171,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
                "Mødenavn: " + Singleton.get().getNavn() + "\n\n" +
                "Dato og tid: " + Singleton.get().getTidspunkt() + "\n\n" +
-               "Lokation: " + Singleton.get().getTidspunkt();
+               "Lokation: " + Singleton.get().getLokation();
 
 
             new SendMailTask(MoedeOprettet.this).execute(fromEmail,
