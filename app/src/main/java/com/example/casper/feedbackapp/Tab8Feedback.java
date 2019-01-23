@@ -56,7 +56,6 @@ public class Tab8Feedback extends Fragment {
 
         barChart.setHighlightFullBarEnabled(true);
 
-        barChart.getAxisRight().setEnabled(false);
 
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
@@ -69,8 +68,9 @@ public class Tab8Feedback extends Fragment {
 
         YAxis leftAxis = barChart.getAxisLeft();
         leftAxis.setSpaceTop(35f);
-
         leftAxis.setAxisMinimum(0f);
+
+        barChart.getAxisRight().setEnabled(false);
 
 
 
