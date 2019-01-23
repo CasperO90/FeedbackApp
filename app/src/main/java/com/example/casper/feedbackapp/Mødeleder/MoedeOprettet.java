@@ -3,6 +3,8 @@ package com.example.casper.feedbackapp.Mødeleder;
 import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -12,6 +14,8 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.example.casper.feedbackapp.AppState;
+import com.example.casper.feedbackapp.DagsordenLogik.Dagsorden;
+import com.example.casper.feedbackapp.DagsordenLogik.DagsordenData;
 import com.example.casper.feedbackapp.DagsordenLogik.Singleton;
 import com.example.casper.feedbackapp.EmailLogik.SendMailTask;
 import com.example.casper.feedbackapp.R;
@@ -98,7 +102,8 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
                        mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
                        Log.d("test hvad sker der her ", "" + nymødeID);
                        AppState.setMødeID(mødeID);
-
+                       AppState.getMødeID();
+                       Log.d("getMødeID skal stemme overens  ", "" + AppState.getMødeID());
 
 
 
@@ -203,8 +208,9 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
             datamap12.put("Lokation", Singleton.get().getLokation());
 
             HashMap<String, Object> datamap22 = new HashMap<String, Object>();
-            datamap22.put("Mødepunkter", Singleton.get().getDagsordenData());
-
+            datamap22.put("mode", Singleton.get().getDagsordenData());
+            //datamap22.put("overskrift",ny.getOverskrift() );
+          //  datamap22.put("beskrivelse",ny.getBeskrivelse() );
 
             HashMap<String, Object> datamap33 = new HashMap<String, Object>();
             datamap33.put("test",datamap22);
@@ -225,7 +231,6 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
 
 
            });
-
 
 
 

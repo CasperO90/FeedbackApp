@@ -1,9 +1,12 @@
 package com.example.casper.feedbackapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -26,6 +29,8 @@ public class StartActivity extends AppCompatActivity implements OnClickListener 
 
         // Intent intent = new Intent(this, Main2Activity.class);
         // startActivity(intent);
+
+
 
         //crashlytics.
         boolean EMULATOR = Build.PRODUCT.contains("sdk") || Build.MODEL.contains("Emulator");
