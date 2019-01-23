@@ -12,6 +12,7 @@ import com.example.casper.feedbackapp.R;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -55,6 +56,8 @@ public class Tab5Feedback extends Fragment {
 
         barChart.setHighlightFullBarEnabled(true);
 
+        barChart.getAxisRight().setEnabled(false);
+
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setTextSize(10f);
@@ -62,6 +65,15 @@ public class Tab5Feedback extends Fragment {
         xAxis.setDrawAxisLine(true);
         xAxis.setDrawGridLines(false);
         xAxis.setLabelCount(4);
+
+        YAxis leftAxis = barChart.getAxisLeft();
+        leftAxis.setSpaceTop(35f);
+
+        leftAxis.setAxisMinimum(0f);
+
+
+
+
 
         ArrayList<BarEntry> barEntries = new ArrayList<>();
 
@@ -74,7 +86,7 @@ public class Tab5Feedback extends Fragment {
         barDataSet.setColors(ColorTemplate.COLORFUL_COLORS);
 
         BarData data = new BarData(barDataSet);
-        data.setBarWidth(1f);
+        data.setBarWidth(0.9f);
 
         barChart.setData(data);
 
@@ -92,11 +104,21 @@ public class Tab5Feedback extends Fragment {
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
 
-        yValues.add(new PieEntry(spørgsmål5.spørgsmål5sur,"Sur"));
-        yValues.add(new PieEntry(spørgsmål5.spørgsmål5neutral1,"mellem"));
-        yValues.add(new PieEntry(spørgsmål5.spørgsmål5tilfreds2,"glad"));
-        yValues.add(new PieEntry(spørgsmål5.spørgsmål5glad3,"rigtig glad"));
+        if(spørgsmål5.spørgsmål1sur >0) {
 
+            yValues.add(new PieEntry(spørgsmål5.spørgsmål1sur, "Sur"));
+
+        }
+        if(spørgsmål5.spørgsmål1neutral1 >0) {
+            yValues.add(new PieEntry(spørgsmål5.spørgsmål1neutral1, "mellem"));
+        }
+        if(spørgsmål5.spørgsmål1tilfreds2 >0) {
+            yValues.add(new PieEntry(spørgsmål5.spørgsmål1tilfreds2, "glad"));
+        }
+
+        if(spørgsmål5.spørgsmål1glad3 >0) {
+            yValues.add(new PieEntry(spørgsmål5.spørgsmål1glad3, "rigtig glad"));
+        }
         PieDataSet dataSet2= new PieDataSet(yValues,"Feedback");
         dataSet2.setSliceSpace(3f);
         dataSet2.setSelectionShift(5f);
