@@ -111,7 +111,7 @@ public class SlutActivity extends AppCompatActivity implements OnClickListener {
                 public void onComplete(@NonNull Task<Void> task) {
 
                     if (task.isSuccessful()) {
-                        Toast.makeText(SlutActivity.this, "Dette er gemt ", Toast.LENGTH_LONG).show();
+                        Toast.makeText(SlutActivity.this, "Din feedback er modtaget ", Toast.LENGTH_LONG).show();
                     } else {
                         Toast.makeText(SlutActivity.this, "Fejl", Toast.LENGTH_LONG).show();
                     }
