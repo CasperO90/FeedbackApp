@@ -50,9 +50,6 @@
         <activity android:name=".DagsordenLogik.Dagsorden"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Mødeleder.StatistikCharts"
-            android:configChanges="orientation"
-            android:screenOrientation="portrait"/>
         <activity android:name=".Fragment.Tab1"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>

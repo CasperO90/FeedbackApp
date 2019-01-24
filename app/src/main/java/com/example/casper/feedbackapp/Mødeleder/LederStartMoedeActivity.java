@@ -188,25 +188,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         return super.onOptionsItemSelected(item);
     }
 
-    public void deltagMøde() {
 
-        String værdi = editText.getText().toString();
-        if (værdi.matches("")) {
-            Toast.makeText(this, "Du har ikke indtastet et id", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        finalID = Integer.parseInt(værdi);
-
-        if (finalID == nytMødeID) {
-            Intent intent = new Intent(this, LogIn.class);
-            startActivity(intent);
-        }
-
-        if (finalID != nytMødeID) {
-            Toast.makeText(this, "Du har intastet et forkert id", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     public Boolean checkTal(String checkString)
     {

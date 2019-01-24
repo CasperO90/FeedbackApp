@@ -108,24 +108,6 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
         //database
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("ModeID/" + test.ID);
-        kk = FirebaseDatabase.getInstance().getReference("ModeID/"+test.ID);
-
-        kk.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    Log.e(ds.getKey(), ds.getChildrenCount() + "");
-                    k = ds.getChildrenCount();
-                    Log.d("jaada",""+k);
-
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -431,6 +413,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
 
     public void seStats() {
         Intent Stats = new Intent(this, Main2Activity.class);
+        finish();
         startActivity(Stats);
     }
 

@@ -155,6 +155,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
         //else if (mButton7 == v && running==false) {
 
         else if (mButton7 == v) {
+
             SeFeedback();
         } else if (seKommentar == v) {
             SeKommentar();
@@ -163,6 +164,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener {
 
     public void SeFeedback() {
         Intent intent = new Intent(this, Highscore.class);
+
         startActivity(intent);
     }
 

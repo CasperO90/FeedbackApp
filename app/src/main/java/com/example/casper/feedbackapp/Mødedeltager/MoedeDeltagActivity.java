@@ -132,25 +132,7 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
         }
     }
 
-    public void deltagMøde() {
 
-        String værdi = indtastMødeID.getText().toString();
-        if (værdi.matches("")) {
-            Toast.makeText(this, "Du har ikke indtastet et id", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        finalID = Integer.parseInt(værdi);
-
-        if (finalID == nytMødeID) {
-            Intent intent = new Intent(this, deltagerDagsordenActivity.class);
-            startActivity(intent);
-        }
-
-        if (finalID != nytMødeID) {
-            Toast.makeText(this, "Du har intastet et forkert id", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     public Boolean checkTal(String checkString)
     {
