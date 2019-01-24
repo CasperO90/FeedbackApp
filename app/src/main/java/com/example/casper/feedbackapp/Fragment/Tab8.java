@@ -234,12 +234,11 @@ public class Tab8 extends Fragment implements View.OnClickListener {
                 public void onComplete(@NonNull Task<Void> task) {
 
                     if (task.isSuccessful()) {
-                        //Toast.makeText(getContext(), "Gemt", Toast.LENGTH_SHORT).show();
-
+                        Log.d("Test","Dette er gemt");
                     } else {
-                        Toast.makeText(getContext(), "Fejl", Toast.LENGTH_SHORT).show();
-
+                        Log.d("Test","Dette er ikke gemt");
                     }
+
                     a++;
                 }
             });
