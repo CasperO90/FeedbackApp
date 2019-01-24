@@ -62,16 +62,17 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
         //action bar
         getSupportActionBar().setTitle("Møde er Oprettet"); // for set actionbar title
 
-        //Textview
-        mødeOprettet = findViewById(R.id.mødeOprettet);
-
 
         //Opretter møde id
         mødeID = AppState.opretMødeID();
 
+
+        //Textview der viser mødeID
+        mødeOprettet = findViewById(R.id.mødeOprettet);
+        mødeOprettet.setText("Tillykke \n dit møde er oprettet \n dit ID er: " + mødeID);
+
         //Gem møde
         AppState.setMødeID(mødeID);
-        mødeOprettet.setText("Tillykke \n dit møde er oprettet \n dit ID er: " + mødeID);
 
         //får det som string
         nymødeID = String.valueOf(mødeID);
@@ -193,9 +194,9 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
                 public void onComplete(@NonNull Task<Void> task) {
 
                     if (task.isSuccessful()) {
-                        Toast.makeText(MoedeOprettet.this, "stored", Toast.LENGTH_LONG).show();
+                        Log.d("Test","Dette er gemt");
                     } else {
-                        Toast.makeText(MoedeOprettet.this, "error", Toast.LENGTH_LONG).show();
+                        Log.d("Test","Dette er ikke gemt");
                     }
 
                 }
@@ -224,9 +225,9 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
                public void onComplete(@NonNull Task<Void> task) {
 
                    if (task.isSuccessful()) {
-                       Toast.makeText(MoedeOprettet.this, "Møde Oprettet", Toast.LENGTH_LONG).show();
+                       Log.d("Test","Dette er gemt");
                    } else {
-                       Toast.makeText(MoedeOprettet.this, "error", Toast.LENGTH_LONG).show();
+                       Log.d("Test","Dette er ikke gemt");
                    }
 
                }
