@@ -73,9 +73,6 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
         overskriftTekst = findViewById(R.id.overskriftTekst);
         overskriftTekst.setText("Velkommen til møde " + test.UserMødeID + "\nDagsorden ");
 
-        Integer idMøde = Integer.valueOf(test.UserMødeID);
-        if (nytMødeID == idMøde) {
-
 
             recyclerView = findViewById(R.id.recycler_view);
             recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -135,7 +132,7 @@ public class deltagerDagsordenActivity extends AppCompatActivity implements OnCl
             });
 
 
-        }
+
     }
 
 
