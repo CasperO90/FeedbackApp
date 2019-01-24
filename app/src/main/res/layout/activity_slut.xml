@@ -111,7 +111,7 @@
             android:id="@+id/forsideButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="90dp"
             android:background="@drawable/knap_baggrund"
             android:fontFamily="sans-serif"
             android:text="@string/færdigBtn"
