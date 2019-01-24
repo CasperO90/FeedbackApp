@@ -29,10 +29,10 @@
     <TextView
         android:id="@+id/indtastID"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="636dp"
+        android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:paddingTop="30dp"
+        android:paddingBottom="30dp"
         android:text="Indtast møde ID"
         android:textAlignment="center"
         android:textAllCaps="true"
@@ -40,7 +40,10 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <com.goodiebag.pinview.Pinview
@@ -49,9 +52,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="444dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:cursorVisible="false"
         app:forceKeyboard="false"
@@ -59,10 +62,9 @@
         app:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintTop_toTopOf="@+id/indtastID"
+        app:layout_constraintVertical_bias="0.671"
         app:password="true"
         app:pinHeight="40dp"
         app:pinLength="4"
@@ -85,7 +87,7 @@
         app:layout_constraintEnd_toEndOf="@+id/indtastPinkode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.774" />
+        app:layout_constraintVertical_bias="0.809" />
 
     <EditText
         android:id="@+id/editText"
