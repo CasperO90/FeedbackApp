@@ -9,35 +9,38 @@
 
     <TextView
         android:id="@+id/indtastPinkode"
-        android:layout_width="419dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="249dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/colorPrimary"
+        android:paddingTop="30dp"
         android:text="Indtast pinkode"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toTopOf="@+id/indtastID" />
 
     <TextView
         android:id="@+id/indtastID"
-        android:layout_width="419dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="57dp"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="636dp"
         android:background="@color/colorPrimary"
+        android:paddingTop="30dp"
         android:text="Indtast møde ID"
         android:textAlignment="center"
-        android:textColor="@android:color/black"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/editText"
+        android:textAllCaps="true"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <com.goodiebag.pinview.Pinview
@@ -46,17 +49,20 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="48dp"
-        android:layout_marginEnd="72dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="444dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="8dp"
         app:cursorVisible="false"
         app:forceKeyboard="false"
         app:hint="0"
         app:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/indtastPinkode"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
         app:password="true"
         app:pinHeight="40dp"
         app:pinLength="4"
@@ -76,22 +82,27 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/indtastPinkode"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.933" />
+        app:layout_constraintVertical_bias="0.774" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="63dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:ems="10"
+        android:hint="Møde ID"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/indtastPinkode"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/indtastID" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.261" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
