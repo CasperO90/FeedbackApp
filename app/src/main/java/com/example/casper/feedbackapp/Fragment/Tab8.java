@@ -150,7 +150,6 @@ public class Tab8 extends Fragment implements View.OnClickListener {
         } else if (v == button3) {
 
 
-            Log.d("jjajajajajajaja", "jajajajajjaa");
 
             sur = Score1.sur + Score2.sur1 + Score3.sur2 + Score4.sur3 + Score5.sur4 + Score6.sur5 + Score7.sur6 + sur7;
             neutral = Score1.neutral + Score2.neutral1 + Score3.neutral2 + Score4.neutral3 + Score5.neutral4 + Score6.neutral5 + Score7.neutral6 + neutral7;
@@ -235,7 +234,7 @@ public class Tab8 extends Fragment implements View.OnClickListener {
                 public void onComplete(@NonNull Task<Void> task) {
 
                     if (task.isSuccessful()) {
-                        Toast.makeText(getContext(), "Gemt", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(getContext(), "Gemt", Toast.LENGTH_SHORT).show();
 
                     } else {
                         Toast.makeText(getContext(), "Fejl", Toast.LENGTH_SHORT).show();

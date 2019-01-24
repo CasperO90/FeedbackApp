@@ -98,8 +98,6 @@ public class MoedeDeltagActivity extends AppCompatActivity implements OnClickLis
             }
 
         });
-
-        visMødeTekst.setText("Indtast møde id " + "(" + nytMødeID + ")");
     }
 
     @Override

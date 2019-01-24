@@ -170,9 +170,10 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/knap_baggrund"
-        android:text="Se udvidet Statestik "
+        android:fontFamily="sans-serif"
+        android:text="udvidet Statestik "
         android:textColor="@android:color/background_light"
-        android:textSize="12sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
