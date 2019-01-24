@@ -39,6 +39,11 @@ public class Main2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        // action bar
+        getSupportActionBar().setTitle("test"); // for set actionbar title
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
+
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -72,6 +77,7 @@ public class Main2Activity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }
