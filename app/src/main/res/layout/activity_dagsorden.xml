@@ -89,7 +89,7 @@
                 android:id="@+id/btnTilfoj"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="340dp"
+                android:layout_marginLeft="300dp"
                 android:background="@drawable/addtryk"
                 android:textColor="@android:color/background_light" />
 
