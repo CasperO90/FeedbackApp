@@ -37,7 +37,7 @@ import java.util.Set;
 
 public class MoedeOprettet extends AppCompatActivity implements OnClickListener {
 
-    private TextView mødeIdTekst, emailTextView;
+    private TextView emailTextView, mødeOprettet;
     private int mødeID;
     private String mødeID1;
     private Button button5;
@@ -57,13 +57,16 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
         setContentView(R.layout.activity_moede_oprettet);
 
         emailTextView = findViewById(R.id.emailTextView);
-        emailTextView.setText("Indtast Emailadresse for at modtage møde ID på mail!");
+        emailTextView.setText("Indtast din mail for at modtage dit møde ID");
 
         //action bar
         getSupportActionBar().setTitle("Møde er Oprettet"); // for set actionbar title
 
         //Textview
-        mødeIdTekst = findViewById(R.id.mødeIdTekst);
+        //mødeIdTekst = findViewById(R.id.mødeIdTekst);
+
+        mødeOprettet = findViewById(R.id.mødeOprettet);
+        mødeOprettet.setText("Tillykke \n dit møde er oprettet \n dit ID er: " + mødeID);
 
         //Opretter møde id
         mødeID = AppState.opretMødeID();
@@ -76,7 +79,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
         Log.d("hvad sker der her1 ",""+nymødeID);
 
         //Sæt tekst
-        mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
+       // mødeIdTekst.setText("Dit møde ID er følgende: \n" + mødeID);
 
         //
         button5 = findViewById(R.id.forsideBtn);
@@ -99,7 +102,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
                        mødeID = AppState.opretMødeID();
                        nymødeID = String.valueOf(mødeID);
                        Log.d("test hvad sker der her ", "Møde ID er i brug du får et nyt  ");
-                       mødeIdTekst.setText("Dit møde id er følgende: " + mødeID);
+                       mødeOprettet.setText("Tillykke \n dit møde er oprettet \n dit ID er: " + mødeID);
                        Log.d("test hvad sker der her ", "" + nymødeID);
                        AppState.setMødeID(mødeID);
                        AppState.getMødeID();
