@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.view.View.OnClickListener;
+import android.widget.ImageView;
 
 import com.example.casper.feedbackapp.DagsordenLogik.Dagsorden;
 import com.example.casper.feedbackapp.R;
@@ -14,6 +15,7 @@ import com.example.casper.feedbackapp.R;
 public class FoersteLederActivity extends AppCompatActivity implements OnClickListener{
 
     private Button opretMødeBtn, startMødeBtn;
+    private ImageView image;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +25,10 @@ public class FoersteLederActivity extends AppCompatActivity implements OnClickLi
         // action bar
         getSupportActionBar().setTitle("Tilbage til hovedskærm"); // for set actionbar title
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // for add back arrow in action bar
+
+
+        //imageview
+        image = findViewById(R.id.imageView3);
 
 
         //Button
