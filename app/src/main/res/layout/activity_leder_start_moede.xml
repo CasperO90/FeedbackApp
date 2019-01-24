@@ -83,6 +83,7 @@
         android:text="Login"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/indtastPinkode"
         app:layout_constraintStart_toStartOf="parent"

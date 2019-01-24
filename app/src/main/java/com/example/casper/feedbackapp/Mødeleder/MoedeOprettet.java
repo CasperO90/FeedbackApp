@@ -63,16 +63,15 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
         getSupportActionBar().setTitle("Møde er Oprettet"); // for set actionbar title
 
         //Textview
-        //mødeIdTekst = findViewById(R.id.mødeIdTekst);
-
         mødeOprettet = findViewById(R.id.mødeOprettet);
-        mødeOprettet.setText("Tillykke \n dit møde er oprettet \n dit ID er: " + mødeID);
+
 
         //Opretter møde id
         mødeID = AppState.opretMødeID();
 
         //Gem møde
         AppState.setMødeID(mødeID);
+        mødeOprettet.setText("Tillykke \n dit møde er oprettet \n dit ID er: " + mødeID);
 
         //får det som string
         nymødeID = String.valueOf(mødeID);
