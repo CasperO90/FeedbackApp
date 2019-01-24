@@ -9,6 +9,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-condensed-light"
+
         android:text="Imorge gik det rigtigt godt måske i over morgen går det endnu bedre"
+        android:textAlignment="viewStart"
+        android:textColor="#000000"
         android:textSize="20sp" />
 </LinearLayout>
