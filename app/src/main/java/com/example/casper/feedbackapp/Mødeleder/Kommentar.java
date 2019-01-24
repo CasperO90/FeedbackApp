@@ -37,7 +37,7 @@ public class Kommentar extends AppCompatActivity {
         setContentView(R.layout.activity_kommentar);
 
         textView7 =(TextView)findViewById(R.id.textView7);
-        textView7.setText("Kommentar fra Møde ID "+test.ID);
+        textView7.setText("Kommentare fra Møde ID "+test.ID);
 
 
         getSupportActionBar().setTitle("Tilbage til oversigt"); // for set actionbar title

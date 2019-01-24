@@ -81,7 +81,7 @@ public class DagsordenAdapter extends RecyclerView.Adapter<DagsordenAdapter.Recy
             mainLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(itemView.getContext(), "Position " + Integer.toString(getPosition()), Toast.LENGTH_SHORT).show();
+                  //  Toast.makeText(itemView.getContext(), "Position " + Integer.toString(getPosition()), Toast.LENGTH_SHORT).show();
                 }
             });
 
