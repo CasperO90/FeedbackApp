@@ -62,7 +62,7 @@ public class LederStartMoedeActivity extends AppCompatActivity implements View.O
         pinview = findViewById(R.id.pinview);
 
         indtastPinkode = findViewById(R.id.indtastPinkode);
-        indtastPinkode.setText("Pin-koden er 1234.");
+        indtastPinkode.setText("Pin-koden er 1234");
 
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         AppState.gemMødeID(preferences);
