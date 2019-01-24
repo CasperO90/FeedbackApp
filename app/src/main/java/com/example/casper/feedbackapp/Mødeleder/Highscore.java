@@ -64,6 +64,7 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
     private int samledetilfreds;
     private int samledeglad;
 
+    static Long k;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,13 +108,16 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
         //database
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         ref = FirebaseDatabase.getInstance().getReference("ModeID/" + test.ID);
-        kk = FirebaseDatabase.getInstance().getReference("ModeID/");
+        kk = FirebaseDatabase.getInstance().getReference("ModeID/"+test.ID);
 
         kk.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     Log.e(ds.getKey(), ds.getChildrenCount() + "");
+                    k = ds.getChildrenCount();
+                    Log.d("jaada",""+k);
+
                 }
             }
 
@@ -410,6 +414,8 @@ public class Highscore extends AppCompatActivity implements View.OnClickListener
             public void onCancelled(DatabaseError databaseError) {
             }
         });
+
+
         SeScoreFeedback.setText("Se Samlede Feedback \n fra møde ID: " + test.ID);
     }
 
