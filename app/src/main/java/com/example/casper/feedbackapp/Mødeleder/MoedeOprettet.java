@@ -172,11 +172,11 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
             String emailSubject = getResources().getString(R.string.emailEmne);
 
 
-                    String emailBody = getResources().getString(R.string.emailText)+" " + mødeID + "\n" +
+                    String emailBody = getResources().getString(R.string.emailText)+" " + mødeID + "\n" + "| " +
 
-               "Mødenavn: " + Singleton.get().getNavn() + "\n\n" +
-               "Dato og tid: " + Singleton.get().getTidspunkt() + "\n\n" +
-               "Lokation: " + Singleton.get().getLokation();
+               "Mødenavn: " + Singleton.get().getNavn() + "\n\n" +  "| " +
+               "Dato og tid: " + Singleton.get().getTidspunkt() + "\n\n" + "| " +
+                "Lokation: " + Singleton.get().getLokation();
 
 
             new SendMailTask(MoedeOprettet.this).execute(fromEmail,
@@ -222,7 +222,7 @@ public class MoedeOprettet extends AppCompatActivity implements OnClickListener 
                public void onComplete(@NonNull Task<Void> task) {
 
                    if (task.isSuccessful()) {
-                       Toast.makeText(MoedeOprettet.this, "stored", Toast.LENGTH_LONG).show();
+                       Toast.makeText(MoedeOprettet.this, "Møde Oprettet", Toast.LENGTH_LONG).show();
                    } else {
                        Toast.makeText(MoedeOprettet.this, "error", Toast.LENGTH_LONG).show();
                    }
