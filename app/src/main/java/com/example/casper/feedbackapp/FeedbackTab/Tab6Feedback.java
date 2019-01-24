@@ -46,7 +46,7 @@ public class Tab6Feedback extends Fragment {
 
         barChart.setDrawBarShadow(false);
 
-        barChart.setDrawValueAboveBar(false);
+        barChart.setDrawValueAboveBar(true);
 
         barChart.setMaxVisibleValueCount(50);
 
@@ -58,6 +58,8 @@ public class Tab6Feedback extends Fragment {
 
         barChart.getAxisRight().setEnabled(false);
 
+        barChart.getDescription().setEnabled(false);
+
         XAxis xAxis = barChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.setTextSize(10f);
@@ -65,6 +67,7 @@ public class Tab6Feedback extends Fragment {
         xAxis.setDrawAxisLine(true);
         xAxis.setDrawGridLines(false);
         xAxis.setLabelCount(4);
+        xAxis.setGranularity(1f);
 
         YAxis leftAxis = barChart.getAxisLeft();
         leftAxis.setSpaceTop(35f);
@@ -90,6 +93,8 @@ public class Tab6Feedback extends Fragment {
 
         barChart.setData(data);
 
+
+        /*
         pieChart = view.findViewById(R.id.chart2);
 
         pieChart.setUsePercentValues(true);
@@ -129,7 +134,7 @@ public class Tab6Feedback extends Fragment {
         data.setValueTextColor(android.R.color.black);
 
         pieChart.setData(data2);
-
+*/
         return view;
     }
 }

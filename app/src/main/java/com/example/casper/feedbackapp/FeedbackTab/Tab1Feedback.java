@@ -97,8 +97,7 @@ public class Tab1Feedback extends Fragment {
 
         barChart.setData(data);
 
-
-
+        /*
         pieChart = view.findViewById(R.id.chart2);
 
         pieChart.setUsePercentValues(true);
@@ -115,14 +114,14 @@ public class Tab1Feedback extends Fragment {
         pieChart.setCenterText("Kage");
 
         pieChart.setDrawCenterText(true);
-
+*/
         /*pieChart.setRotationAngle(0);
         // enable rotation of the chart by touch
         pieChart.setRotationEnabled(true);
         pieChart.setHighlightPerTapEnabled(true);
 
 */
-
+/*
         ArrayList<PieEntry> yValues = new ArrayList<>();
 
         if(spørgsmål1.spørgsmål1sur >0) {
@@ -166,7 +165,7 @@ public class Tab1Feedback extends Fragment {
 
 
 
-
+*/
 
         return view;
     }
