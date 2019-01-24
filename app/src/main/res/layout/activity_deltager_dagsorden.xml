@@ -4,9 +4,8 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     android:background="#DFE0E0"
+    android:orientation="vertical"
     tools:context=".Mødedeltager.deltagerDagsordenActivity"
     tools:layout_editor_absoluteY="81dp">
 
@@ -17,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:background="@color/colorPrimary"
+        android:padding="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textAlignment="center"
@@ -50,14 +50,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:paddingTop="8dp"
+            android:padding="10dp"
             tools:layout_editor_absoluteY="731dp">
 
         </androidx.recyclerview.widget.RecyclerView>
@@ -72,7 +73,8 @@
             android:fontFamily="sans-serif"
             android:text="Start feedback"
             android:textAlignment="center"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:textSize="16sp" />
     </LinearLayout>
 
 </LinearLayout>
